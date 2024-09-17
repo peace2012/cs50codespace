@@ -11,6 +11,7 @@ int main(void) {
     while (h < 1 || h > 8);
 
     for (int i = 0; i < h; i++) {
-        printf("%c", #);
+        printf("#  ");
+        printf("#\n");
     }
 }
