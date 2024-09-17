@@ -16,7 +16,7 @@ int main(void) {
             printf(" ");
         }
 
-        for (int j = 0; j < h; j++) {
+        for (int j = 0; j < 1; j++) {
             printf("#");
         }
 
