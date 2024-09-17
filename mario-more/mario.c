@@ -12,11 +12,11 @@ int main(void) {
 
     for (int i = 0; i < h; i++) {
 
-        for (int j = 0; j < h-1; j--) {
+        for (int j = 0; j < h-1; j++) {
             printf(" ");
         }
 
-        for (int j = 0; j < 1; j++) {
+        for (int j = 0; j < h; j++) {
             printf("#");
         }
 
