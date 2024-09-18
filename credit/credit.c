@@ -18,7 +18,7 @@ int main(void)
 
     int card_number_length = count_number_length(card_number);
 
-    create_array(1, card_number, card_number_length);
+    create_array(0, card_number, card_number_length);
 
     // check card type using length and first two digits //
 
@@ -73,7 +73,7 @@ void create_array(int array_type,long card_num, int num_len)
 
     // place every other char from old array into new array
     int j = 0;
-    for (int i = 0; i < strlen(card_array); i += 2)
+    for (int i = array_type; i < strlen(card_array); i += 2)
     {
     ARRAY_NAME[j] = card_array[i];
     j++;
@@ -81,7 +81,6 @@ void create_array(int array_type,long card_num, int num_len)
     // Add the null terminator
     ARRAY_NAME[j] = '\0';
     // You can now use new array as needed
-    printf("%s\n", card_array);
     printf("%s\n", ARRAY_NAME);
 }
 
