@@ -36,7 +36,7 @@ int check_algorithm(long card_num, int num_length)
     char first_digits[100] = "";
     char digit[2];
 
-    for (int i = 10; i < ; pow(i,100))
+    for (long i = 10; i < ; pow(i,100))
 
 
     int _1 = ((number / 10) % 10)*2
