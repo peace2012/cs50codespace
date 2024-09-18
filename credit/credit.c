@@ -72,20 +72,20 @@ char* create_array(int array_type,long card_num, int num_len)
         return NULL;
     }
 
-    // Define arrays
-    char first_array[new_array_length];
-    char second_array[new_array_length];
-    char *ARRAY_NAME;
+    // // Define arrays
+    // char first_array[new_array_length];
+    // char second_array[new_array_length];
+    // char *ARRAY_NAME;
 
-    // Choose array based on array_type
-    switch (array_type) {
-        case 0:
-            ARRAY_NAME = first_array;
-            break;
-        case 1:
-            ARRAY_NAME = second_array;
-            break;
-    }
+    // // Choose array based on array_type
+    // switch (array_type) {
+    //     case 0:
+    //         ARRAY_NAME = first_array;
+    //         break;
+    //     case 1:
+    //         ARRAY_NAME = second_array;
+    //         break;
+    // }
 
     // place every other char from old array into new array
     int j = 0;
