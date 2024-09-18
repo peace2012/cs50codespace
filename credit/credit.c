@@ -5,7 +5,7 @@
 
 long get_card_number(long *number);
 
-void check_algorithm(long card_num, int num_len);
+void create_array(int array_type,long card_num, int num_len);
 
 int count_number_length(long card_num);
 int first_two_digits (long number, int card_number_length);
@@ -18,7 +18,7 @@ int main(void)
 
     int card_number_length = count_number_length(card_number);
 
-     check_algorithm(card_number, card_number_length);
+    create_array(0, card_number, card_number_length);
 
     // check card type using length and first two digits //
 
