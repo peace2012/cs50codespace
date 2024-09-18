@@ -19,7 +19,7 @@ void type_of_card(long card_number);
 
     int sum_of_digits = 0;
 
-    char card_type[10];
+    char card_type[12];
 
 int main(void)
 {
@@ -187,7 +187,7 @@ void type_of_card(long card_number)
 
     if (card_length == 15 && two_digits == 37)
     {
-        card_type = "AMEX";
+        strcpy(card_type, "AMEX");
     }
     else if (card_length == 16)
     {
@@ -198,19 +198,19 @@ void type_of_card(long card_number)
             case 55:
             case 51:
             case 52:
-                card_type = "MASTERCARD";
+                strcpy(card_type, "MASTERCARD");
                 break;
             case 41:
             case 40:
             case 49:
-                card_type = "VISA";
+                strcpy(card_type, "VISA");
                 break;
             default:
-                card_type = "INVALID";
+                strcpy(card_type, "INVALID");
         }
     }
     else
-        card_type = "INVALID";
+        strcpy(card_type, "INVALID");
 }
 
 // // Define arrays
