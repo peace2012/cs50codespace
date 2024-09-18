@@ -41,9 +41,10 @@ return *card_num;
 
 // algorithm //
 
-// function to take every other digit and multiply by 2 //
+// function to take every other digit and multiply by 2
 
-void create_array(int array_type,long card_num, int num_len)
+// function to create an array using card number
+char* create_array(int array_type,long card_num, int num_len)
 {
     // initialise array length of card number
     char card_array[num_len + 1];
