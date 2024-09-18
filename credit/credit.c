@@ -70,7 +70,7 @@ char* create_array(int array_type,long card_num, int num_len)
     int output_array_length = ( strlen(card_array) / 2 ) + 1;
 
         // Allocate memory for the array
-    char *output_array = malloc((output_array_length) * sizeof(char));
+    char *output_array = malloc(output_array_length * sizeof(char));
     if (output_array == NULL)
     {
         // Handle memory allocation failure
@@ -90,22 +90,20 @@ char* create_array(int array_type,long card_num, int num_len)
     return output_array;
 }
 
-int* string_to_digits(char input_array)
+int* string_to_digits(char *input_array)
 {
-
-        int *output_array = malloc((array_length) * sizeof(char));
+    int array_length = strlen(input_array);
+    int *output_array = malloc(array_length * sizeof(int));
     if (output_array == NULL)
     {
         // Handle memory allocation failure
         return NULL;
     }
-    int array_length = sizeof(input_array) / sizeof(input_array[0]);
-    int output_array[];
+
     for (int i = 0; i < array_length; i++)
     {
-        output_array[i] = input_array[i];
+        output_array[i] = input_array[i] - '0';
     }
-    output_array[i] = '\0';
     return output_array;
 }
 
