@@ -2,10 +2,11 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include <stdlib.h>
 
 long get_card_number(long *number);
 
-void create_array(int array_type,long card_num, int num_len);
+char* create_array(int array_type,long card_num, int num_len);
 
 int count_number_length(long card_num);
 int first_two_digits (long number, int card_number_length);
@@ -18,7 +19,9 @@ int main(void)
 
     int card_number_length = count_number_length(card_number);
 
-    create_array(0, card_number, card_number_length);
+    char first_array = create_array(0, card_number, card_number_length);
+
+    printf
 
     // check card type using length and first two digits //
 
@@ -46,6 +49,7 @@ return *card_num;
 // function to create an array using card number
 char* create_array(int array_type,long card_num, int num_len)
 {
+
     // initialise array length of card number
     char card_array[num_len + 1];
 
@@ -54,6 +58,14 @@ char* create_array(int array_type,long card_num, int num_len)
 
     // calculate length of new array
     int new_array_length = ( strlen(card_array) / 2 ) + 1;
+
+        // Allocate memory for the array
+    char *array = malloc((new_array_length) * sizeof(char));
+    if (array == NULL)
+    {
+        // Handle memory allocation failure
+        return NULL;
+    }
 
     // Define arrays
     char first_array[new_array_length];
@@ -68,8 +80,6 @@ char* create_array(int array_type,long card_num, int num_len)
         case 1:
             ARRAY_NAME = second_array;
             break;
-        default:
-            return; // Handle invalid array_type
     }
 
     // place every other char from old array into new array
@@ -82,7 +92,7 @@ char* create_array(int array_type,long card_num, int num_len)
     // Add the null terminator
     ARRAY_NAME[j] = '\0';
     // You can now use new array as needed
-    printf("%s\n", ARRAY_NAME);
+    return ARRAY_NAME;
 }
 
 // count the number of digits in the cart number //
