@@ -29,7 +29,16 @@ int main(void)
 
 // function to take every other digit and multiply by 2 //
 
+int check_algorithm(long number)
+{
+    int last_digit;
 
+    number
+
+    if (last_digit = 0) {
+        return 1;
+    }
+}
 
 // function prompts user for card number //
 long get_card_number(long *number)
