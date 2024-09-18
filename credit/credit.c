@@ -23,9 +23,9 @@ int main(void)
     char *first_array = create_array(0, card_number, card_number_length);
 
 if (first_array !=NULL) {
-    int first_array_length = strlen(*first-array);
+    int first_array_length = strlen(first-array);
 
-    int *first_integer_array = string_to_digits(*first_array);
+    int *first_integer_array = string_to_digits(first_array);
 
     if (first_integer_array !=NULL)
     {
