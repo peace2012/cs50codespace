@@ -49,7 +49,6 @@ int main(void)
 
 void calculate_digits(long card_num, int num_len)
 {
-
     char *first_array = create_array(0, card_num, num_len);
 
     if (first_array != NULL)
