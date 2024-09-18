@@ -29,11 +29,14 @@ int main(void)
 
 // function to take every other digit and multiply by 2 //
 
-int check_algorithm(long number)
+int check_algorithm(long number,)
 {
     int last_digit;
 
-    char result
+    char first_digits[100] = "";
+    char digit[2];
+
+    for (int i = 10; i < ; pow(i,100))
 
 
     int _1 = ((number / 10) % 10)*2
