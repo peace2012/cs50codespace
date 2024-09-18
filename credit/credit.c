@@ -33,6 +33,9 @@ int check_algorithm(long card_num, int num_length)
 {
     int last_digit;
 
+    char card_num_array[16];
+    sprintf(card_num_array, "%i", card_num);
+
     char first_digits[100] = "";
     char digit[2];
 
