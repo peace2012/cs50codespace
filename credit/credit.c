@@ -26,7 +26,12 @@ int main(void)
         free(first_array);
     }
 
-
+    char *second_array = create_array(1, card_number, card_number_length);
+    if (second_array !=NULL)
+    {
+        printf("%s\n", second_array);
+        free(second_array);
+    }
 
     // check card type using length and first two digits //
 
@@ -91,13 +96,13 @@ char* create_array(int array_type,long card_num, int num_len)
     int j = 0;
     for (int i = array_type; i < strlen(card_array); i += 2)
     {
-    ARRAY_NAME[j] = card_array[i];
+    array[j] = card_array[i];
     j++;
     }
     // Add the null terminator
-    ARRAY_NAME[j] = '\0';
+    array[j] = '\0';
     // You can now use new array as needed
-    return ARRAY_NAME;
+    return array;
 }
 
 // count the number of digits in the cart number //
