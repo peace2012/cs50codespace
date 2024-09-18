@@ -59,7 +59,7 @@ int first_two_digits = first_two_digits(card_number, card_length);
 
 if ( card_length == 15 && first_two_digits == 37 )
 {
-    return AMEX;
+    return "AMEX";
 }
 else if ( card_length == 16 )
 {
@@ -69,13 +69,15 @@ else if ( card_length == 16 )
         case 55:
         case 51:
         case 52:
-        return MCARD;
+        return "MCARD";
         break;
         case 41:
         case 40:
         case 49:
-        return VISA;
+        return "VISA";
         break;
+        default:
+        return "INVALID";
     }
-}
+} else return "INVALID";
 }
