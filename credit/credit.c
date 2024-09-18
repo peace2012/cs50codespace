@@ -22,10 +22,16 @@ int main(void)
 
     char *first_array = create_array(0, card_number, card_number_length);
     int *first_integer_array = string_to_digits(*first_array);
-    if (first_array !=NULL)
+    if (first_integer_array !=NULL)
     {
-        printf("%i\n", first_integer_array);
         free(first_array);
+
+        for (int i = 0; i < array_length; i++)
+    {
+        output_array[i] = input_array[i] - '0';
+    }
+
+
          free(first_integer_array);
     }
 
