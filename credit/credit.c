@@ -32,6 +32,7 @@ int main(void)
     {
 
         calculate_digits(card_number, card_number_length);
+        printf("sum_of_digits);
 
         if (sum_of_digits % 10 == 0) {
             type_of_card(card_number);
