@@ -43,8 +43,20 @@ return *card_num;
 
 // function to take every other digit and multiply by 2 //
 
-void create_array(,long card_num, int num_len)
+void create_array(int array_type,long card_num, int num_len)
 {
+    switch (array_type) {
+        case 0:
+        const int ARRAY_NAME = first_array;
+        int i = 0;
+        break;
+        case 1:
+        const int ARRAY_NAME = first_array;
+        int i = 1;
+        break;
+        default:
+    }
+
     // initialise array length of card number
     char card_array[num_len + 1];
 
@@ -52,23 +64,23 @@ void create_array(,long card_num, int num_len)
     sprintf(card_array, "%li", card_num);
 
     // calculate length of new array
-    int _1array_length = ( strlen(card_array) / 2 ) + 1;
+    int new_array_length = ( strlen(card_array) / 2 ) + 1;
 
     // initialize new array
-    char first_array[_1array_length];
+    char ARRAY_NAME[new_array_length];
 
     // place every other char from old array into new array
     int j = 0;
     for (int i = 0; i < strlen(card_array); i += 2)
     {
-    first_array[j] = card_array[i];
+    ARRAY_NAME[j] = card_array[i];
     j++;
     }
     // Add the null terminator
-    first_array[j] = '\0';
-    // You can now use first_array as needed
+    ARRAY_NAME[j] = '\0';
+    // You can now use new array as needed
     printf("%s\n", card_array);
-    printf("%s\n", first_array);
+    printf("%s\n", ARRAY_NAME);
 }
 
 // count the number of digits in the cart number //
