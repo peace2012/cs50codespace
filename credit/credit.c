@@ -67,6 +67,7 @@ void check_algorithm(long card_num, int num_len)
     // Add the null terminator
     first_array[j] = '\0';
     // You can now use first_array as needed
+    printf("%s\n", card_array);
     printf("%s\n", first_array);
 }
 
