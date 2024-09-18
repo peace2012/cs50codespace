@@ -88,7 +88,7 @@ char* create_array(int array_type,long card_num, int num_len)
     return array;
 }
 
-int string_to_digits()
+int string_to_digits(char array)
 {
     int array[];
     for (int i = 0; i < )
