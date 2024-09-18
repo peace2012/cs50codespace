@@ -19,9 +19,9 @@ int main(void)
 
     int card_number_length = count_number_length(card_number);
 
-    char first_array = create_array(0, card_number, card_number_length);
+    char* first_array = create_array(0, card_number, card_number_length);
 
-    printf
+    printf("%s\n", first_array);
 
     // check card type using length and first two digits //
 
