@@ -21,6 +21,17 @@ int main(void)
 
     int card_number_length = count_number_length(card_number);
 
+    if (card_number_length == 15 || 16)
+    {
+        if (sum_of_digits % 10 == 0) {
+            
+        }
+    }
+    else
+    {
+        printf("INVALID\n");
+    }
+
     char *first_array = create_array(0, card_number, card_number_length);
 
     if (first_array != NULL)
@@ -68,7 +79,7 @@ int main(void)
         }
     }
 
-    if (sum_of_digits % 10 == 0)
+    if ()
     {
         printf("valid\n");
     }
