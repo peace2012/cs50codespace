@@ -42,6 +42,8 @@ int main(void)
         printf("INVALID\n");
     }
 
+
+
     char *first_array = create_array(0, card_number, card_number_length);
 
     if (first_array != NULL)
