@@ -1,48 +1,53 @@
 #include <cs50.h>
 #include <stdio.h>
 
+void print_hashes(int n);
+void print_pyramid(int i, int height);
+
+const int MIN_HEIGHT = 1;
+const int MAX_HEIGHT = 8;
+
 int main(void)
 {
-
-    // initiates integer h or height of the pyramid//
-    int h;
-
-    // do while loop verifying the int is between 1 and 8//
+    // check height is between 1 and 8 //
+    int height;
     do
     {
-        h = get_int("Height: ");
+        height = get_int("Height: ");
     }
-    while (h < 1 || h > 8);
+    while (height < MIN_HEIGHT || height > MAX_HEIGHT);
 
-    /*loop repeats for height of the pyramid
-    each loop will print one line of the pyramid*/
-    for (int i = 0; i < h; i++)
+    // loop prints each line of pyramid //
+    for (int i = 0; i < height; i++)
     {
 
-        /*loop repeats the spaces before the first # sign
-        a decreasing sequence*/
-        for (int j = h - i - 1; j > 0; j--)
-        {
-            printf(" ");
-        }
-        /*loop prints the required number of # in the left side of pyramid
-        an increasing sequence from 0 to the height of pyramid less 1*/
-        for (int k = 0; k < i; k++)
-        {
-            printf("#");
-        }
-
-        // all pyramids include the character # followed by two spaces//
-        printf("#  ");
-
-        /*loop prints the required number of # to the right side of the pyramid
-        an increasing sequence as with the # on the left side*/
-        for (int l = 0; l < i; l++)
-        {
-            printf("#");
-        }
-
-        // all pyramids include the character # then a new line//
-        printf("#\n");
+        print_pyramid(i, height);
     }
+}
+
+// function to loop through printing required # //
+void print_hashes(int n)
+{
+    for (int hash = 0; hash < n; hash++)
+    {
+        printf("#");
+    }
+}
+
+// function to print pyramid //
+void print_pyramid(int i, int height)
+{
+    // loop prints spaces before # //
+    for (int space = height - i - 1; space > 0; space--)
+    {
+        printf(" ");
+    }
+    print_hashes(i);
+
+    // all pyramids include # then two spaces//
+    printf("#  ");
+    print_hashes(i);
+
+    // all include # then new line//
+    printf("#\n");
 }
