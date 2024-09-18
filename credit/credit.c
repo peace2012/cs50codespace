@@ -28,7 +28,8 @@ int main(void)
         // input function for sum of digits here
 
         if (sum_of_digits % 10 == 0) {
-            type_of_card(card_number)
+            type_of_card(card_number);
+            printf("%c\n", card_type);
         }
     }
     else
@@ -184,7 +185,7 @@ void type_of_card(long card_number)
 
     if (card_length == 15 && two_digits == 37)
     {
-        card_type = "AMEX\n";
+        card_type = "AMEX";
     }
     else if (card_length == 16)
     {
@@ -195,19 +196,19 @@ void type_of_card(long card_number)
             case 55:
             case 51:
             case 52:
-                card_type = "MASTERCARD\n";
+                card_type = "MASTERCARD";
                 break;
             case 41:
             case 40:
             case 49:
-                card_type = "VISA\n";
+                card_type = "VISA";
                 break;
             default:
-                card_type = "INVALID\n";
+                card_type = "INVALID";
         }
     }
     else
-        card_type = "INVALID\n";
+        card_type = "INVALID";
 }
 
 // // Define arrays
