@@ -21,16 +21,10 @@ int main(void)
 
 
 // function to indicate if card is Visa, MCard, Amex or Invalid //
-int type_of_card()
+string type_of_card(long card_number)
 {
-// starts with correct characters //
-do
-{
-    get_card_number(card_number);
-}
-while (card_number !== )
 
-// is correct length for card type //
+switch
 
 }
 
