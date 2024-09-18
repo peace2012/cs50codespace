@@ -33,17 +33,24 @@ int check_algorithm(long card_num, int num_len)
 {
     int last_digit;
 
-    char card_num_array[num_len];
-    sprintf(card_num_array, "%i", card_num);
+    // initialise array length of card number //
+    char card_array[num_len];
 
+    // convert integers to string and place in array //
+    sprintf(card_array, "%i", card_num);
+
+    // calculate length of new array //
     int _1array_length = ( strlen(card_num_array) / 2 ) + 1;
 
-    char first_calc_array[_1array_length];
+    // initialize new array //
+    char first_array[_1array_length];
 
-    for (int i = 1; i < strlen(card_num_array); i + 2) {
-    new_array[i] = str[i];
-}
-new_array[strlen(str)] = '\0';  // Add the null terminator
+    // place every other char from old array into new array //
+    for (int i = 1; i < strlen(card_num_array); i + 2)
+    {
+    first_array[i] = card_num_array[i];
+    }
+    first_array[strlen(str)] = '\0';  // Add the null terminator
 
 
 
