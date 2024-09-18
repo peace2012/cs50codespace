@@ -23,7 +23,7 @@ int main(void)
 
     int card_number_length = count_number_length(card_number);
 
-    if (card_number_length == 15 || 16)
+    if (card_number_length == 15 || card_number_length == 16)
     {
 
         // input function for sum of digits here
