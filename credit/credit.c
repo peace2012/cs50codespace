@@ -41,10 +41,12 @@ int main(void)
     {
         printf("INVALID\n");
     }
+}
 
+void calculate_digits(long card_num, int num_len)
+{
 
-
-    char *first_array = create_array(0, card_number, card_number_length);
+    char *first_array = create_array(0, card_num, num_len);
 
     if (first_array != NULL)
     {
@@ -72,7 +74,7 @@ int main(void)
         }
     }
 
-    char *second_array = create_array(1, card_number, card_number_length);
+    char *second_array = create_array(1, card_num, num_len);
     if (second_array != NULL)
     {
         int second_array_length = strlen(second_array);
