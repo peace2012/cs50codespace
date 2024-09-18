@@ -75,21 +75,6 @@ char* create_array(int array_type,long card_num, int num_len)
         return NULL;
     }
 
-    // // Define arrays
-    // char first_array[new_array_length];
-    // char second_array[new_array_length];
-    // char *ARRAY_NAME;
-
-    // // Choose array based on array_type
-    // switch (array_type) {
-    //     case 0:
-    //         ARRAY_NAME = first_array;
-    //         break;
-    //     case 1:
-    //         ARRAY_NAME = second_array;
-    //         break;
-    // }
-
     // place every other char from old array into new array
     int j = 0;
     for (int i = array_type; i < strlen(card_array); i += 2)
@@ -102,6 +87,8 @@ char* create_array(int array_type,long card_num, int num_len)
     // You can now use new array as needed
     return array;
 }
+
+int string_to_digits
 
 // count the number of digits in the cart number //
 int count_number_length(long card_num)
@@ -151,3 +138,21 @@ else if ( card_length == 16 )
     }
 } else return 4;
 }
+
+
+
+
+    // // Define arrays
+    // char first_array[new_array_length];
+    // char second_array[new_array_length];
+    // char *ARRAY_NAME;
+
+    // // Choose array based on array_type
+    // switch (array_type) {
+    //     case 0:
+    //         ARRAY_NAME = first_array;
+    //         break;
+    //     case 1:
+    //         ARRAY_NAME = second_array;
+    //         break;
+    // }
