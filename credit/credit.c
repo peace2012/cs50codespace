@@ -28,7 +28,7 @@ int main(void)
 
         for (int i = 0; i < array_length; i++)
             {
-                
+                first_integer_array[i] = first_integer_array[i] * 2;
             }
 
 
