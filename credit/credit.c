@@ -6,6 +6,8 @@ int main(void)
 
     // take input from user //
 
+    long l = get_long("Number: ")
+
 }
 
 
@@ -15,7 +17,7 @@ int type_of_card()
 {
 
 // starts with correct characters //
-
+    if ()
 
 // is correct length for card type //
 
