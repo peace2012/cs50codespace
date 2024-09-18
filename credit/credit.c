@@ -48,7 +48,9 @@ int check_algorithm(long card_num, int num_len)
     // place every other char from old array into new array //
     for (int i = 1; i < strlen(card_num_array); i + 2)
     {
-    first_array[i] = card_num_array[i];
+    int j = 0;
+    first_array[j] = card_num_array[i];
+    j++;
     }
     first_array[strlen(str)] = '\0';  // Add the null terminator
 
