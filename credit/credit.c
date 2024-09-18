@@ -65,11 +65,11 @@ char* create_array(int array_type,long card_num, int num_len)
     sprintf(card_array, "%li", card_num);
 
     // calculate length of new array
-    int new_array_length = ( strlen(card_array) / 2 ) + 1;
+    int output_array_length = ( strlen(card_array) / 2 ) + 1;
 
         // Allocate memory for the array
-    char *array = malloc((new_array_length) * sizeof(char));
-    if (array == NULL)
+    char *output_array = malloc((output_array_length) * sizeof(char));
+    if (output_array == NULL)
     {
         // Handle memory allocation failure
         return NULL;
@@ -79,23 +79,24 @@ char* create_array(int array_type,long card_num, int num_len)
     int j = 0;
     for (int i = array_type; i < strlen(card_array); i += 2)
     {
-    array[j] = card_array[i];
+    output_array[j] = card_array[i];
     j++;
     }
     // Add the null terminator
-    array[j] = '\0';
+    output_array[j] = '\0';
     // You can now use new array as needed
-    return array;
+    return output_array;
 }
 
-int string_to_digits(char array)
+int string_to_digits(char input_array)
 {
-    int array_length = sizeof(array) / sizeof(array[0]);
-    int new_array[];
+    int array_length = sizeof(input_array) / sizeof(input_array[0]);
+    int output_array[];
     for (int i = 0; i < array_length; i++)
     {
-
+        output_array[i] = input_array[i];
     }
+    return output_array;
 }
 
 // count the number of digits in the cart number //
