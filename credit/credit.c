@@ -18,7 +18,7 @@ int main(void)
 
     int card_number_length = count_number_length(card_number);
 
-    create_array(0, card_number, card_number_length);
+    create_array(1, card_number, card_number_length);
 
     // check card type using length and first two digits //
 
@@ -45,7 +45,7 @@ return *card_num;
 
 void create_array(int array_type,long card_num, int num_len)
 {
- // initialise array length of card number
+    // initialise array length of card number
     char card_array[num_len + 1];
 
     // convert integers to string and place in array
