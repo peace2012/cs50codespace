@@ -21,7 +21,11 @@ int main(void)
     int card_number_length = count_number_length(card_number);
 
     char *first_array = create_array(0, card_number, card_number_length);
+
+    int first_array_length = strlen(*first-array);
+
     int *first_integer_array = string_to_digits(*first_array);
+
     if (first_integer_array !=NULL)
     {
         free(first_array);
