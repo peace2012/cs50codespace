@@ -36,11 +36,11 @@ int check_algorithm(long card_num, int num_len)
     char card_num_array[num_len];
     sprintf(card_num_array, "%i", card_num);
 
-    int _1array_length = ( strlen(card_num_array) + 1 ) / 2
+    int _1array_length = ( strlen(card_num_array) / 2 ) + 1;
 
     char first_calc_array[_1array_length];
 
-    for (int i = 1; i < strlen(str); i + 2) {
+    for (int i = 1; i < strlen(card_num_array); i + 2) {
     new_array[i] = str[i];
 }
 new_array[strlen(str)] = '\0';  // Add the null terminator
