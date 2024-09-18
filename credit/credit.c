@@ -27,6 +27,9 @@ int main(void)
 
 // algorithm //
 
+// function to take every other digit and multiply by 2 //
+
+
 
 // function prompts user for card number //
 long get_card_number(long *number)
