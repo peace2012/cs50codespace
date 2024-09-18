@@ -4,13 +4,19 @@
 int main(void)
 {
 
+    // take input from user //
+
 }
 
-// function determine if 
-int correct_length()
+
 
 // function indicate if card is Visa, MCard, Amex or Invalid //
 int type_of_card()
 {
+
+// starts with correct characters //
+
+
+// is correct length for card type //
 
 }
