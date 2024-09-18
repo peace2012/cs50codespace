@@ -36,7 +36,11 @@ int check_algorithm(long card_num, int num_length)
     char card_num_array[16];
     sprintf(card_num_array, "%i", card_num);
 
-    
+    char str[] = "12345";
+for (int i = 0; i < strlen(str); i++) {
+    char part = str[i];
+    // Process each part as needed
+}
 
     char first_digits[100] = "";
     char digit[2];
