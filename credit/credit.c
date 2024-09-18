@@ -59,7 +59,7 @@ void check_algorithm(long card_num, int num_len)
 
     // place every other char from old array into new array
     int j = 0;
-    for (int i = 1; i < strlen(card_array); i += 2)
+    for (int i = 0; i < strlen(card_array); i += 2)
     {
     first_array[j] = card_array[i];
     j++;
