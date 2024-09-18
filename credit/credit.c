@@ -9,7 +9,11 @@ int main(void)
 {
  long card_number;
     // take input from user //
+    get_card_number(&card_number);
 
+
+// if type of card and algorithm are the same return value//
+// if they are different return invalid //
 
 
 }
@@ -31,9 +35,10 @@ while (card_number !== )
 }
 
 // function prompts user for card number //
-void get_card_number(long number)
+long get_card_number(long *number)
 {
-number = get_long("Number: ");
+*number = get_long("Number: ");
+return *number;
 }
 
 // count the number of digits in the cart number //
