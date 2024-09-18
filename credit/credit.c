@@ -21,11 +21,12 @@ int main(void)
     int card_number_length = count_number_length(card_number);
 
     char *first_array = create_array(0, card_number, card_number_length);
-    int *first_integer_array = string_to_digits(first_array);
+    int *first_integer_array = string_to_digits(*first_array);
     if (first_array !=NULL)
     {
-        printf("%i\n", first_array);
+        printf("%i\n", first_integer_array);
         free(first_array);
+         free(first_integer_array);
     }
 
     // take each digit in the array, multiply by 2 and put it back in the array
