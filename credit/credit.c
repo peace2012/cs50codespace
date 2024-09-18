@@ -3,7 +3,7 @@
 
 int main(void)
 {
-
+ long card_number;
     // take input from user //
 
 
@@ -18,16 +18,18 @@ int type_of_card()
 // starts with correct characters //
 do
 {
-    get_card_number();
+    get_card_number(card_number);
 }
-while ()
+while (card_number !== )
 
 // is correct length for card type //
 
 }
 
 // function prompts user for card number //
-void get_card_number(void)
+void get_card_number(number)
 {
-long l = get_long("Number: ");
+number = get_long("Number: ");
 }
+
+// isolate first two digits of the card number //
