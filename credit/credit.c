@@ -1,10 +1,11 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 long get_card_number(long *number);
 
-int check_algorithm(long card_num, int num_len)
+void check_algorithm(long card_num, int num_len);
 
 int count_number_length(long card_num);
 int first_two_digits (long number, int card_number_length);
@@ -17,7 +18,7 @@ int main(void)
 
     int card_number_length = count_number_length(card_number);
 
-     check_algorithm(card_number, card_number_length)
+     check_algorithm(card_number, card_number_length);
 
     // check card type using length and first two digits //
 
@@ -42,7 +43,7 @@ return *card_num;
 
 // function to take every other digit and multiply by 2 //
 
-char check_algorithm(long card_num, int num_len)
+void check_algorithm(long card_num, int num_len)
 {
     // initialise array length of card number
     char card_array[num_len + 1];
@@ -66,7 +67,7 @@ char check_algorithm(long card_num, int num_len)
     // Add the null terminator
     first_array[j] = '\0';
     // You can now use first_array as needed
-    printf
+    printf("%s\n", first_array);
 }
 
 // count the number of digits in the cart number //
