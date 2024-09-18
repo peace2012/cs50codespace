@@ -33,8 +33,12 @@ int check_algorithm(long number)
 {
     int last_digit;
 
-    int 1 = (number / 10) % 10
-    (number / 1000) % 10
+    int product
+
+    int _1 = ((number / 10) % 10)*2
+    int _1a = (number / 100) % 10
+    int _2 = ((number / 1000) % 10)*2
+    int _2a = (number / 10000) % 10)
 
     if (last_digit = 0) {
         return 1;
