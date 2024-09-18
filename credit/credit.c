@@ -33,8 +33,6 @@ if (first_array !=NULL) {
     {
         free(first_array);
 
-
-
         for (int i = 0; i < first_array_length; i++)
             {
                 if ((first_integer_array[i] * 2) < 10)
