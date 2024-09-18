@@ -17,11 +17,12 @@ int *string_to_digits(char *input_array);
 int first_two_digits(long number, int card_number_length);
 void type_of_card(long card_number);
 
-int main(void)
-{
     int sum_of_digits = 0;
 
-    char card_type = '\0';
+    char card_type;
+
+int main(void)
+{
 
     long card_number = get_card_number(&card_number);
 
