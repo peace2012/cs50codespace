@@ -33,7 +33,7 @@ int check_algorithm(long number)
 {
     int last_digit;
 
-    int product
+    char result
 
 
     int _1 = ((number / 10) % 10)*2
