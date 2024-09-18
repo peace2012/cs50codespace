@@ -73,7 +73,12 @@ if (first_array !=NULL) {
     }
 
 if (sum_of_digits % 10 == 0)
+{
     printf("valid\n");
+}
+else
+{
+    printf("invalid\n");
 }
 
 // function prompts user for card number
