@@ -90,8 +90,12 @@ char* create_array(int array_type,long card_num, int num_len)
 
 int string_to_digits(char array)
 {
-    int array[];
-    for (int i = 0; i < )
+    int array_length = sizeof(array) / sizeof(array[0]);
+    int new_array[];
+    for (int i = 0; i < array_length; i++)
+    {
+
+    }
 }
 
 // count the number of digits in the cart number //
