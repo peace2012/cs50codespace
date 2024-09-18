@@ -12,6 +12,9 @@ int main(void)
     get_card_number(&card_number);
 
 
+
+
+
 // if type of card and algorithm are the same return value//
 // if they are different return invalid //
 
@@ -23,9 +26,17 @@ int main(void)
 // function to indicate if card is Visa, MCard, Amex or Invalid //
 string type_of_card(long card_number)
 {
+int card_length = count_number_length(card_number);
+int first_two_digits = first_two_digits (card_number, card_length)
 
-switch
-
+if ( card_length == 15 && first_two_digits == 37 )
+{
+    return AMEX;
+}
+else if ( card_length == 16 )
+{
+    switch(first_two_digits)
+}
 }
 
 // function prompts user for card number //
