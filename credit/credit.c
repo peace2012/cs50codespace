@@ -25,7 +25,7 @@ int main(void)
 if (first_array !=NULL) {
     int first_array_length = strlen(first_array);
 
-    int *first_integer_array = string_to_digits(*first_array);
+    int *first_integer_array = string_to_digits(first_array);
 
     if (first_integer_array !=NULL)
     {
