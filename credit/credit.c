@@ -27,9 +27,9 @@ int main(void)
         free(first_array);
 
         for (int i = 0; i < array_length; i++)
-    {
-        output_array[i] = input_array[i] - '0';
-    }
+            {
+                
+            }
 
 
          free(first_integer_array);
@@ -97,6 +97,7 @@ char* create_array(int array_type,long card_num, int num_len)
     return output_array;
 }
 
+// function to change string to digits
 int* string_to_digits(char *input_array)
 {
     int array_length = strlen(input_array);
@@ -113,6 +114,9 @@ int* string_to_digits(char *input_array)
     }
     return output_array;
 }
+
+// function to multiply each digit by 2
+
 
 // count the number of digits in the cart number //
 int count_number_length(long card_num)
