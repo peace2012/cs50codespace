@@ -26,6 +26,10 @@ int main(void)
         free(first_array);
     }
 
+    // take each digit in the array, multiply by 2 and put it back in the array
+
+    // extract it again and then add all numbers in the array
+
     char *second_array = create_array(1, card_number, card_number_length);
     if (second_array !=NULL)
     {
@@ -33,14 +37,8 @@ int main(void)
         free(second_array);
     }
 
-    // check card type using length and first two digits //
-
-    // int card_type_code = type_of_card(card_number);
-    // printf("%i\n",card_type_code);
-
-
-// if type of card and algorithm are the same return value//
-// if they are different return invalid //
+    // extract each digit in the array
+    // add them together with the total from the first array
 
 
 }
