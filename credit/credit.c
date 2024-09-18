@@ -16,6 +16,8 @@ int type_of_card(long card_number);
 
 int main(void)
 {
+    int sum_of_digits = 0;
+
     long card_number = get_card_number(&card_number);
 
     int card_number_length = count_number_length(card_number);
@@ -31,7 +33,7 @@ if (first_array !=NULL) {
     {
         free(first_array);
 
-        int sum_of_digits = 0;
+
 
         for (int i = 0; i < first_array_length; i++)
             {
@@ -70,10 +72,8 @@ if (first_array !=NULL) {
     }
     }
 
-    // extract each digit in the array
-    // add them together with the total from the first array
-
-
+if (sum_of_digits % 10 == 0)
+    printf("valid\n");
 }
 
 // function prompts user for card number
