@@ -33,23 +33,23 @@ number = get_long("Number: ");
 }
 
 // isolate first two digits of the card number //
-int first_two_digits (long number, int counter)
+int first_two_digits (long number, int card_number_length)
 {
-    number = number /
+    return int first_two digits = number / card_number_length;
 }
 
 // count the number of digits in the cart number //
 int count_number_length(long number)
 {
     // initialize counter to 0 //
-    int counter = 0;
+    int card_number_length = 0;
 
     // loop to divide number by 10 until 0 //
     while (number > 0)
     {
         number = number / 10;
         // increment the county in each iteraction //
-        counter++;
+        card_number_length++;
     }
-return counter
+return card_number_length
 }
