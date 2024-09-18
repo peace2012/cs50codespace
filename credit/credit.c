@@ -33,6 +33,10 @@ number = get_long("Number: ");
 }
 
 // isolate first two digits of the card number //
+int first_two_digits (long number, int counter)
+{
+    number = number /
+}
 
 // count the number of digits in the cart number //
 int count_number_length(long number)
