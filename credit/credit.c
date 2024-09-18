@@ -19,7 +19,7 @@ void type_of_card(long card_number);
 
     int sum_of_digits = 0;
 
-    char *card_type;
+    char card_type[10];
 
 int main(void)
 {
@@ -35,7 +35,7 @@ int main(void)
 
         if (sum_of_digits % 10 == 0) {
             type_of_card(card_number);
-            printf("%c\n", *card_type);
+            printf("%c\n", card_type);
         }
         else
         {
