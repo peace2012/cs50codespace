@@ -19,20 +19,13 @@ int main(void)
     printf("%i",card_type_code);
 
 
-
-
-
-
-
 // if type of card and algorithm are the same return value//
 // if they are different return invalid //
 
 
 }
 
-
-
-// function to indicate if card is Visa, MCard, Amex or Invalid //
+// algorithm //
 
 
 // function prompts user for card number //
