@@ -31,7 +31,6 @@ int main(void)
 
 int check_algorithm(long card_num, int num_len)
 {
-    int last_digit;
 
     // initialise array length of card number //
     char card_array[num_len];
@@ -54,28 +53,7 @@ int check_algorithm(long card_num, int num_len)
     }
     first_array[_1array_length] = '\0';  // Add the null terminator
 
-
-    char str[] = "12345";
-for (int i = 0; i < strlen(str); i++) {
-    char part = str[i];
-    // Process each part as needed
-}
-
-    char first_digits[100] = "";
-    char digit[2];
-
-    for (long i = 10; i < ; pow(i,100))
-
-
-    int _1 = ((number / 10) % 10)*2
-    int _1a = (number / 100) % 10
-    int _2 = ((number / 1000) % 10)*2
-    int _2a = (number / 10000) % 10)
-
-    if (last_digit = 0) {
-        return 1;
     }
-}
 
 // function prompts user for card number //
 long get_card_number(long *number)
