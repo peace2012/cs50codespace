@@ -1,16 +1,28 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
-    char result[100] = ""; // Ensure the array is large enough to hold the final string
-    char digit[2]; // Temporary string to hold each digit
+int check_algorithm(long card_num, int num_len)
+{
+    // initialise array length of card number
+    char card_array[num_len + 1];
 
-    // Example digits to concatenate
-    for (int i = 1; i <= 3; i++) {
-        sprintf(digit, "%i", i); // Convert digit to string
-        strcat(result, digit); // Concatenate to result
+    // convert integers to string and place in array
+    sprintf(card_array, "%li", card_num);
+
+    // calculate length of new array
+    int _1array_length = ( strlen(card_array) / 2 ) + 1;
+
+    // initialize new array
+    char first_array[_1array_length];
+
+    // place every other char from old array into new array
+    int j = 0;
+    for (int i = 1; i < strlen(card_array); i += 2)
+    {
+    first_array[j] = card_array[i];
+    j++;
     }
-
-    printf("Result: %s\n", result);
-    return 0;
+    // Add the null terminator
+    first_array[j] = '\0';
+    // You can now use first_array as needed
 }

@@ -3,9 +3,13 @@
 #include <math.h>
 
 long get_card_number(long *number);
+
+int check_algorithm(long card_num, int num_len)
+
 int count_number_length(long number);
 int first_two_digits (long number, int card_number_length);
 int type_of_card(long card_number);
+
 
 int main(void)
 {
@@ -16,7 +20,7 @@ int main(void)
 
     // check card type using length and first two digits //
     int card_type_code = type_of_card(card_number);
-    printf("%i",card_type_code);
+    printf("%i\n",card_type_code);
 
 
 // if type of card and algorithm are the same return value//
@@ -25,41 +29,41 @@ int main(void)
 
 }
 
+// function prompts user for card number
+long get_card_number(long *card_num)
+{
+*card_num = get_long("Number: ");
+return *card_num;
+}
+
 // algorithm //
 
 // function to take every other digit and multiply by 2 //
 
 int check_algorithm(long card_num, int num_len)
 {
+    // initialise array length of card number
+    char card_array[num_len + 1];
 
-    // initialise array length of card number //
-    char card_array[num_len];
+    // convert integers to string and place in array
+    sprintf(card_array, "%li", card_num);
 
-    // convert integers to string and place in array //
-    sprintf(card_array, "%i", card_num);
+    // calculate length of new array
+    int _1array_length = ( strlen(card_array) / 2 ) + 1;
 
-    // calculate length of new array //
-    int _1array_length = ( strlen(card_num_array) / 2 ) + 1;
-
-    // initialize new array //
+    // initialize new array
     char first_array[_1array_length];
 
-    // place every other char from old array into new array //
-    for (int i = 1; i < strlen(card_num_array); i + 2)
-    {
+    // place every other char from old array into new array
     int j = 0;
-    first_array[j] = card_num_array[i];
+    for (int i = 1; i < strlen(card_array); i += 2)
+    {
+    first_array[j] = card_array[i];
     j++;
     }
-    first_array[_1array_length] = '\0';  // Add the null terminator
-
-    }
-
-// function prompts user for card number //
-long get_card_number(long *number)
-{
-*number = get_long("Number: ");
-return *number;
+    // Add the null terminator
+    first_array[j] = '\0';
+    // You can now use first_array as needed
 }
 
 // count the number of digits in the cart number //
