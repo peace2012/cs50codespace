@@ -31,16 +31,16 @@ if (first_array !=NULL) {
     {
         free(first_array);
 
-        int _1_total = 0;
+        int sum_of_digits = 0;
 
         for (int i = 0; i < first_array_length; i++)
             {
                 if ((first_integer_array[i] * 2) < 10)
                 {
-                    _1_total = _1_total + (first_integer_array[i] * 2);
+                    sum_of_digits = sum_of_digits + (first_integer_array[i] * 2);
                 } else
                 {
-                    _1_total = _1_total + ((first_integer_array[i] * 2) %10) + ((first_integer_array[i] * 2) / 10);
+                    sum_of_digits = sum_of_digits + ((first_integer_array[i] * 2) %10) + ((first_integer_array[i] * 2) / 10);
                 }
             }
          free(first_integer_array);
