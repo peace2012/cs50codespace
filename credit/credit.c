@@ -45,6 +45,11 @@ return *card_num;
 
 void create_array(int array_type,long card_num, int num_len)
 {
+    // Define arrays
+    char first_array[num_len + 1];
+    char second_array[num_len + 1];
+    char *ARRAY_NAME;
+
     switch (array_type) {
         case 0:
         const int ARRAY_NAME = first_array;
