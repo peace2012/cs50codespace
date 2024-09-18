@@ -2,14 +2,23 @@
 #include <stdio.h>
 #include <math.h>
 
-int count_number_length(long number)
-int first_two_digits (long number, int card_number_length)
+long get_card_number(long *number);
+int count_number_length(long number);
+int first_two_digits (long number, int card_number_length);
+int type_of_card(long card_number);
 
 int main(void)
 {
- long card_number;
+    long card_number;
+
     // take input from user //
     get_card_number(&card_number);
+
+    // check card type using length and first two digits //
+    int card_type_code = type_of_card(card_number);
+    printf("%i",card_type_code);
+
+
 
 
 
@@ -52,14 +61,14 @@ int first_two_digits (long number, int card_number_length)
     return first_two_digits = number / pow(10, card_number_length-2);
 }
 
-string type_of_card(long card_number)
+int type_of_card(long card_number)
 {
 int card_length = count_number_length(card_number);
 int first_two_digits = first_two_digits(card_number, card_length);
 
 if ( card_length == 15 && first_two_digits == 37 )
 {
-    return "AMEX";
+    return 1;
 }
 else if ( card_length == 16 )
 {
@@ -69,15 +78,15 @@ else if ( card_length == 16 )
         case 55:
         case 51:
         case 52:
-        return "MCARD";
+        return 2;
         break;
         case 41:
         case 40:
         case 49:
-        return "VISA";
+        return 3;
         break;
         default:
-        return "INVALID";
+        return 4;
     }
-} else return "INVALID";
+} else return 4;
 }
