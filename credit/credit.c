@@ -6,21 +6,23 @@ long get_card_number(long *number);
 
 int check_algorithm(long card_num, int num_len)
 
-int count_number_length(long number);
+int count_number_length(long card_num);
 int first_two_digits (long number, int card_number_length);
 int type_of_card(long card_number);
 
 
 int main(void)
 {
-    long card_number;
+    long card_number = get_card_number(&card_number);
 
-    // take input from user //
-    get_card_number(&card_number);
+    int card_number_length = count_number_length(card_number);
+
+     check_algorithm(card_number, card_number_length)
 
     // check card type using length and first two digits //
-    int card_type_code = type_of_card(card_number);
-    printf("%i\n",card_type_code);
+
+    // int card_type_code = type_of_card(card_number);
+    // printf("%i\n",card_type_code);
 
 
 // if type of card and algorithm are the same return value//
@@ -40,7 +42,7 @@ return *card_num;
 
 // function to take every other digit and multiply by 2 //
 
-int check_algorithm(long card_num, int num_len)
+char check_algorithm(long card_num, int num_len)
 {
     // initialise array length of card number
     char card_array[num_len + 1];
@@ -64,15 +66,16 @@ int check_algorithm(long card_num, int num_len)
     // Add the null terminator
     first_array[j] = '\0';
     // You can now use first_array as needed
+    printf
 }
 
 // count the number of digits in the cart number //
-int count_number_length(long number)
+int count_number_length(long card_num)
 {
     int card_number_length = 0;
-    while (number > 0)
+    while (card_num > 0)
     {
-        number = number / 10;
+        card_num = card_num / 10;
         card_number_length++;
     }
 return card_number_length;
