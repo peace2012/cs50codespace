@@ -35,6 +35,7 @@ int check_algorithm(long number)
 
     int product
 
+
     int _1 = ((number / 10) % 10)*2
     int _1a = (number / 100) % 10
     int _2 = ((number / 1000) % 10)*2
