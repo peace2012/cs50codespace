@@ -44,7 +44,6 @@ if (first_array !=NULL) {
                 }
             }
          free(first_integer_array);
-         printf("%i\n", _1_total);
     }
 }
     // take each digit in the array, multiply by 2 and put it back in the array
@@ -54,8 +53,21 @@ if (first_array !=NULL) {
     char *second_array = create_array(1, card_number, card_number_length);
     if (second_array !=NULL)
     {
-        printf("%s\n", second_array);
+        int second_array_length = strlen(second_array);
+
+        int *second_integer_array = string_to_digits(second_array);
+
+        if (second_integer_array !=NULL)
+    {
         free(second_array);
+
+        for (int i = 0; i < second_array_length; i++)
+            {
+                sum_of_digits = sum_of_digits + second_integer_array[i];
+            }
+         free(second_integer_array);
+         printf("%i\n", sum_of_digits);
+    }
     }
 
     // extract each digit in the array
