@@ -35,15 +35,16 @@ number = get_long("Number: ");
 // isolate first two digits of the card number //
 
 // count the number of digits in the cart number //
-int count_number_length(number)
+int count_number_length(long number)
 {
     // initialize counter to 0 //
-    int counter = 0
+    int counter = 0;
 
     // loop to divide number by 10 until 0 //
-    for (number; number > 0; number / 10)
+    while (number > 0)
     {
-            // increment the county in each iteraction //
+        number = number / 10;
+        // increment the county in each iteraction //
         counter++;
     }
 return counter
