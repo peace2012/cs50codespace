@@ -22,6 +22,7 @@ int main(void)
 
     char *first_array = create_array(0, card_number, card_number_length);
 
+if (first_array !=NULL) {
     int first_array_length = strlen(*first-array);
 
     int *first_integer_array = string_to_digits(*first_array);
@@ -30,15 +31,15 @@ int main(void)
     {
         free(first_array);
 
-        for (int i = 0; i < array_length; i++)
+        for (int i = 0; i < first_array_length; i++)
             {
                 first_integer_array[i] = first_integer_array[i] * 2;
+                
             }
-
 
          free(first_integer_array);
     }
-
+}
     // take each digit in the array, multiply by 2 and put it back in the array
 
     // extract it again and then add all numbers in the array
