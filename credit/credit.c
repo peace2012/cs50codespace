@@ -51,7 +51,7 @@ int count_number_length(long number)
         number = number / 10;
         card_number_length++;
     }
-return card_number_length
+return card_number_length;
 }
 
 // isolate first two digits of the card number //
