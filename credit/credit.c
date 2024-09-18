@@ -23,8 +23,11 @@ int main(void)
 
     if (card_number_length == 15 || 16)
     {
+
+        // input function for sum of digits here
+
         if (sum_of_digits % 10 == 0) {
-            
+            type_of_card(card_number)
         }
     }
     else
@@ -184,13 +187,14 @@ int type_of_card(long card_number)
     }
     else if (card_length == 16)
     {
+        
         switch (two_digits)
         {
             case 22:
             case 55:
             case 51:
             case 52:
-                return 2;
+                return "MASTERCARD";
                 break;
             case 41:
             case 40:
