@@ -16,7 +16,7 @@ int main(void)
 
 
 
-// function indicate if card is Visa, MCard, Amex or Invalid //
+// function to indicate if card is Visa, MCard, Amex or Invalid //
 int type_of_card()
 {
 // starts with correct characters //
