@@ -52,7 +52,7 @@ int check_algorithm(long card_num, int num_len)
     first_array[j] = card_num_array[i];
     j++;
     }
-    first_array[strlen(str)] = '\0';  // Add the null terminator
+    first_array[_1array_length] = '\0';  // Add the null terminator
 
 
 
