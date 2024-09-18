@@ -35,7 +35,7 @@ int main(void)
 
         if (sum_of_digits % 10 == 0) {
             type_of_card(card_number);
-            printf("%c\n", card_type);
+            printf("%s\n", card_type);
         }
         else
         {
