@@ -7,6 +7,7 @@
 long get_card_number(long *number);
 
 char* create_array(int array_type,long card_num, int num_len);
+int* string_to_digits(char input_array);
 
 int count_number_length(long card_num);
 int first_two_digits (long number, int card_number_length);
@@ -20,10 +21,10 @@ int main(void)
     int card_number_length = count_number_length(card_number);
 
     char *first_array = create_array(0, card_number, card_number_length);
+    int *first_integer_array = string_to_digits(first_array);
     if (first_array !=NULL)
     {
-        
-        printf("%s\n", first_array);
+        printf("%i\n", first_array);
         free(first_array);
     }
 
