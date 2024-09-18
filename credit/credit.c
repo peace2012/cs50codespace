@@ -22,6 +22,7 @@ int main(void)
     char *first_array = create_array(0, card_number, card_number_length);
     if (first_array !=NULL)
     {
+        
         printf("%s\n", first_array);
         free(first_array);
     }
@@ -88,14 +89,22 @@ char* create_array(int array_type,long card_num, int num_len)
     return output_array;
 }
 
-int string_to_digits(char input_array)
+int* string_to_digits(char input_array)
 {
+
+        int *output_array = malloc((array_length) * sizeof(char));
+    if (output_array == NULL)
+    {
+        // Handle memory allocation failure
+        return NULL;
+    }
     int array_length = sizeof(input_array) / sizeof(input_array[0]);
     int output_array[];
     for (int i = 0; i < array_length; i++)
     {
         output_array[i] = input_array[i];
     }
+    output_array[i] = '\0';
     return output_array;
 }
 
