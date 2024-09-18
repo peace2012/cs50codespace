@@ -45,24 +45,7 @@ return *card_num;
 
 void create_array(int array_type,long card_num, int num_len)
 {
-    // Define arrays
-    char first_array[num_len + 1];
-    char second_array[num_len + 1];
-    char *ARRAY_NAME;
-
-    switch (array_type) {
-        case 0:
-        const int ARRAY_NAME = first_array;
-        int i = 0;
-        break;
-        case 1:
-        const int ARRAY_NAME = first_array;
-        int i = 1;
-        break;
-        default:
-    }
-
-    // initialise array length of card number
+ // initialise array length of card number
     char card_array[num_len + 1];
 
     // convert integers to string and place in array
@@ -71,8 +54,22 @@ void create_array(int array_type,long card_num, int num_len)
     // calculate length of new array
     int new_array_length = ( strlen(card_array) / 2 ) + 1;
 
-    // initialize new array
-    char ARRAY_NAME[new_array_length];
+    // Define arrays
+    char first_array[new_array_length];
+    char second_array[new_array_length];
+    char *ARRAY_NAME;
+
+    // Choose array based on array_type
+    switch (array_type) {
+        case 0:
+            ARRAY_NAME = first_array;
+            break;
+        case 1:
+            ARRAY_NAME = second_array;
+            break;
+        default:
+            return; // Handle invalid array_type
+    }
 
     // place every other char from old array into new array
     int j = 0;
