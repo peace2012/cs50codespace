@@ -36,6 +36,17 @@ int check_algorithm(long card_num, int num_length)
     char card_num_array[16];
     sprintf(card_num_array, "%i", card_num);
 
+    char str[] = "example";
+char new_array[strlen(str) + 1];  // +1 for the null terminator
+
+for (int i = 0; i < strlen(str); i++) {
+    new_array[i] = str[i];
+}
+new_array[strlen(str)] = '\0';  // Add the null terminator
+
+
+
+
     char str[] = "12345";
 for (int i = 0; i < strlen(str); i++) {
     char part = str[i];
