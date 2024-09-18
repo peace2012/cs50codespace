@@ -43,7 +43,7 @@ return *card_num;
 
 // function to take every other digit and multiply by 2 //
 
-void check_algorithm(long card_num, int num_len)
+void create_array(,long card_num, int num_len)
 {
     // initialise array length of card number
     char card_array[num_len + 1];
