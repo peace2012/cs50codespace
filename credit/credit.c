@@ -6,10 +6,14 @@
 
 long get_card_number(long *number);
 
+int count_number_length(long card_num);
+
+void calculate_digits(long card_num, int num_len);
+
 char *create_array(int array_type, long card_num, int num_len);
 int *string_to_digits(char *input_array);
 
-int count_number_length(long card_num);
+
 int first_two_digits(long number, int card_number_length);
 void type_of_card(long card_number);
 
@@ -17,7 +21,7 @@ int main(void)
 {
     int sum_of_digits = 0;
 
-    char card_type;
+    char card_type = '\0';
 
     long card_number = get_card_number(&card_number);
 
@@ -26,7 +30,7 @@ int main(void)
     if (card_number_length == 15 || card_number_length == 16)
     {
 
-        // input function for sum of digits here
+        calculate_digits(card_number, card_number_length);
 
         if (sum_of_digits % 10 == 0) {
             type_of_card(card_number);
