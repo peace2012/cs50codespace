@@ -25,19 +25,26 @@ int main(void)
 if (first_array !=NULL) {
     int first_array_length = strlen(*first-array);
 
-    int *first_integer_array = string_to_digits(*first_array);
+    int *first_integer_array = string_to_digits(first_array);
 
     if (first_integer_array !=NULL)
     {
         free(first_array);
 
+        int _1_total = 0;
+
         for (int i = 0; i < first_array_length; i++)
             {
-                first_integer_array[i] = first_integer_array[i] * 2;
-                
+                if ((first_integer_array[i] * 2) < 10)
+                {
+                    _1_total = _1_total + (first_integer_array[i] * 2);
+                } else
+                {
+                    _1_total = _1_total + ((first_integer_array[i] * 2) %10) + ((first_integer_array[i] * 2) / 10);
+                }
             }
-
          free(first_integer_array);
+         printf("%i\n", _1_total);
     }
 }
     // take each digit in the array, multiply by 2 and put it back in the array
