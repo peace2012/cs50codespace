@@ -55,8 +55,6 @@ int check_algorithm(long card_num, int num_len)
     first_array[_1array_length] = '\0';  // Add the null terminator
 
 
-
-
     char str[] = "12345";
 for (int i = 0; i < strlen(str); i++) {
     char part = str[i];
