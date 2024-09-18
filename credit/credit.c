@@ -68,7 +68,6 @@ if (first_array !=NULL) {
                 sum_of_digits = sum_of_digits + second_integer_array[i];
             }
          free(second_integer_array);
-         printf("%i\n", sum_of_digits);
     }
     }
 
@@ -79,6 +78,7 @@ if (sum_of_digits % 10 == 0)
 else
 {
     printf("invalid\n");
+}
 }
 
 // function prompts user for card number
