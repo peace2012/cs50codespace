@@ -11,11 +11,12 @@ int *string_to_digits(char *input_array);
 
 int count_number_length(long card_num);
 int first_two_digits(long number, int card_number_length);
-int type_of_card(long card_number);
+void type_of_card(long card_number);
 
 int main(void)
 {
     int sum_of_digits = 0;
+    char card_type;
 
     long card_number = get_card_number(&card_number);
 
@@ -176,16 +177,14 @@ int first_two_digits(long number, int card_number_length)
     return first_two_digits = number / pow(10, card_number_length - 2);
 }
 
-int type_of_card(long card_number)
+void type_of_card(long card_number)
 {
     int card_length = count_number_length(card_number);
     int two_digits = first_two_digits(card_number, card_length);
-    char response;
 
     if (card_length == 15 && two_digits == 37)
     {
-        response = "AMEX\n";
-        return response;
+        card_type = "AMEX\n";
     }
     else if (card_length == 16)
     {
@@ -196,23 +195,19 @@ int type_of_card(long card_number)
             case 55:
             case 51:
             case 52:
-                response = "MASTERCARD\n";
-                return response;
+                card_type = "MASTERCARD\n";
                 break;
             case 41:
             case 40:
             case 49:
-                response = "VISA\n";
-                return response;
+                card_type = "VISA\n";
                 break;
             default:
-                response = "INVALID\n";
-                return response;
+                card_type = "INVALID\n";
         }
     }
     else
-        response = "INVALID\n";
-        return response;
+        card_type = "INVALID\n";
 }
 
 // // Define arrays
