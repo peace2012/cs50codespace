@@ -35,7 +35,7 @@ number = get_long("Number: ");
 // isolate first two digits of the card number //
 int first_two_digits (long number, int card_number_length)
 {
-    return int first_two digits = number / card_number_length;
+    return int first_two digits = number / ((card_number_length-2)*10);
 }
 
 // count the number of digits in the cart number //
