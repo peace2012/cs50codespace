@@ -66,23 +66,22 @@ int calculate_digits(long card_num, int num_len)
     int result = process_array(first_array);
 
     char *second_array = create_array(1, card_num, num_len);
-    if (second_array != NULL)
-    {
 
-        int second_array_length = strlen(second_array);
+    int final_total = process_array(second_array, result);
 
-        int *second_integer_array = string_to_digits(second_array);
-        free(second_array);
-        if (second_integer_array != NULL)
-        {
+        // int second_array_length = strlen(second_array);
 
-            for (int i = 0; i < second_array_length; i++)
-            {
-                result = result + second_integer_array[i];
-            }
-            free(second_integer_array);
-        }
-    }
+        // int *second_integer_array = string_to_digits(second_array);
+        // free(second_array);
+        // if (second_integer_array != NULL)
+        // {
+
+        //     for (int i = 0; i < second_array_length; i++)
+        //     {
+        //         result = result + second_integer_array[i];
+        //     }
+        //     free(second_integer_array);
+        // }
     return result;
 }
 
@@ -255,7 +254,7 @@ int process_array1(const char *array)
     return output;
 }
 
-int process_array2(const char *array)
+int process_array2(const char *array, int output)
 {
     if (array == NULL)
     {
@@ -264,7 +263,6 @@ int process_array2(const char *array)
 
     int length = strlen(array);
     int *integer_array = string_to_digits(array);
-    int output = 0;
 
     if (integer_array != NULL)
     {
@@ -275,5 +273,5 @@ int process_array2(const char *array)
         free(integer_array);
     }
 
-    return output;
+    return result;
 }
