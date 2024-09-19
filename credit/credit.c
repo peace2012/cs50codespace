@@ -211,6 +211,7 @@ const char *type_of_card(long card_number)
 
     int card_length = count_number_length(card_number);
     int card_digits = first_two_digits(card_number, card_length);
+    printf("%i",card_digits);
     bool is_valid = is_valid_length(card_length);
 
     if (is_valid == true)
