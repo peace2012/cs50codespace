@@ -25,8 +25,9 @@ bool is_valid_length(int num_len);
 int first_two_digits(long number, int card_number_length);
 const char *type_of_card(long card_number);
 bool check_card_type(int two_digits, const int *specs_array, int array_length);
-int process_array1(const char *array);
-int process_array2(const char *array, int result);
+// int process_array1(const char *array);
+// int process_array2(const char *array, int result);
+int process_array(const char *array, bool double_values);
 
 int main(void)
 {
@@ -63,27 +64,15 @@ int calculate_digits(long card_num, int num_len)
 
     char *first_array = create_array(2, card_num, num_len);
 
-    int result = process_array1(first_array);
+    int first_total = process_array(first_array, true);
     free(first_array);
 
     char *second_array = create_array(1, card_num, num_len);
 
-    int final_total = process_array2(second_array, result);
+    int second_total = process_array(second_array, false);
     free(second_array);
-    // int second_array_length = strlen(second_array);
 
-    // int *second_integer_array = string_to_digits(second_array);
-    // free(second_array);
-    // if (second_integer_array != NULL)
-    // {
-
-    //     for (int i = 0; i < second_array_length; i++)
-    //     {
-    //         result = result + second_integer_array[i];
-    //     }
-    //     free(second_integer_array);
-    // }
-    return final_total;
+    return first_total + second_total;
 }
 
 // function prompts user for card number
@@ -224,58 +213,58 @@ bool check_card_type(int two_digits, const int *specs_array, int array_length)
     return false;
 }
 
-int process_array1(const char *array)
-{
-    if (array == NULL)
-    {
-        return 0;
-    }
+// int process_array1(const char *array)
+// {
+//     if (array == NULL)
+//     {
+//         return 0;
+//     }
 
-    int length = strlen(array);
-    int *integer_array = string_to_digits(array);
-    int output = 0;
+//     int length = strlen(array);
+//     int *integer_array = string_to_digits(array);
+//     int output = 0;
 
-    if (integer_array != NULL)
-    {
-        for (int i = 0; i < length; i++)
-        {
-            int doubled = integer_array[i] * 2;
-            if (doubled < 10)
-            {
-                output += doubled;
-            }
-            else
-            {
-                output += (doubled % 10) + (doubled / 10);
-            }
-        }
-        free(integer_array);
-    }
+//     if (integer_array != NULL)
+//     {
+//         for (int i = 0; i < length; i++)
+//         {
+//             int doubled = integer_array[i] * 2;
+//             if (doubled < 10)
+//             {
+//                 output += doubled;
+//             }
+//             else
+//             {
+//                 output += (doubled % 10) + (doubled / 10);
+//             }
+//         }
+//         free(integer_array);
+//     }
 
-    return output;
-}
+//     return output;
+// }
 
-int process_array2(const char *array, int output)
-{
-    if (array == NULL)
-    {
-        return 0;
-    }
+// int process_array2(const char *array, int output)
+// {
+//     if (array == NULL)
+//     {
+//         return 0;
+//     }
 
-    int length = strlen(array);
-    int *integer_array = string_to_digits(array);
+//     int length = strlen(array);
+//     int *integer_array = string_to_digits(array);
 
-    if (integer_array != NULL)
-    {
-        for (int i = 0; i < length; i++)
-        {
-            output += integer_array[i];
-        }
-        free(integer_array);
-    }
+//     if (integer_array != NULL)
+//     {
+//         for (int i = 0; i < length; i++)
+//         {
+//             output += integer_array[i];
+//         }
+//         free(integer_array);
+//     }
 
-    return output;
-}
+//     return output;
+// }
 
 int process_array(const char *array, bool double_values)
 {
