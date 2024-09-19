@@ -207,7 +207,7 @@ const char *type_of_card(long card_number)
 
     const int amex_specs[] = {37};
     const int mcard_specs[] = {22,55,51,52};
-    const int visa_specs[] = {40,41,49};
+    const int visa_specs[] = {40,42,41,49};
 
     int card_length = count_number_length(card_number);
     int card_digits = first_two_digits(card_number, card_length);
