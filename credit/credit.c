@@ -229,25 +229,20 @@ const char *type_of_card(long card_number)
         }
 
     const int mcard_specs_length = sizeof(specs.mcard_specs) / sizeof(specs.mcard_specs[0]);
-
-    for (int i = 0; i < mcard_specs_length; i++)
-    {
-        if (card_digits == specs.mcard_specs[i])
+    bool is_mcard = check_card_type(card_digits, specs.mcard_specs, mcard_specs_length);
+    if (is_mcard == true)
         {
             return "MASTERCARD";
         }
-    }
 
     const int visa_specs_length = sizeof(specs.visa_specs) / sizeof(specs.visa_specs[0]);
 
-    for (int j = 0; j < visa_specs_length; j++)
-    {
-        if (card_digits == specs.visa_specs[j])
+    bool is_visa = check_card_type(card_digits, specs.visa_specs, visa_specs_length);
+    if (is_visa == true)
         {
             return "VISA";
         }
-    }
-
+        
     return "INVALID card type";
 }
 
