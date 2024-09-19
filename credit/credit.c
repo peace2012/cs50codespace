@@ -201,7 +201,6 @@ const char *type_of_card(long card_number)
     }
     else if (card_length == MASTERCARD_VISA_LENGTH)
     {
-
         const int mcard_specs_length = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
 
         for (int i = 0; i < mcard_specs_length; i++)
@@ -210,19 +209,38 @@ const char *type_of_card(long card_number)
             {
                 return "MASTERCARD";
             }
+            else if (card_digits != mcard_specs[i])
+            {
+                const int visa_specs_length = sizeof(visa_specs) / sizeof(visa_specs[0]);
+
+                for (int j = 0; j < visa_specs_length; j++)
+                {
+                    if (card_digits == visa_specs[j])
+                    {
+                        return "VISA";
+                    }
+                    else
+                    {
+                        return "INVALID";
+                    }
+                }
+            }
             else
+            {
+                return "Error.";
+            }
         }
 
-        switch (card_digits)
-        {
-            case 41:
-            case 40:
-            case 49:
-                return "VISA";
-                break;
-            default:
-                return "INVALID";
-        }
+        // switch (card_digits)
+        // {
+        //     case 41:
+        //     case 40:
+        //     case 49:
+        //         return "VISA";
+        //         break;
+        //     default:
+        //         return "INVALID";
+        // }
     }
     else
         return "INVALID";
