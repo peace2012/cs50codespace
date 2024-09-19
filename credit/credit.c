@@ -25,6 +25,7 @@ bool is_valid_length(int num_len);
 int first_two_digits(long number, int card_number_length);
 const char *type_of_card(long card_number);
 bool check_card_type(int two_digits, const int *specs_array, int array_length);
+int process_array(const char *array);
 
 int main(void)
 {
@@ -59,36 +60,38 @@ int main(void)
 int calculate_digits(long card_num, int num_len)
 {
 
-    int output = 0;
+    // int output = 0;
 
     char *first_array = create_array(2, card_num, num_len);
 
-    if (first_array != NULL)
-    {
-        int first_array_length = strlen(first_array);
+    int result = process_array(first_array);
 
-        int *first_integer_array = string_to_digits(first_array);
+    // if (first_array != NULL)
+    // {
+    //     int first_array_length = strlen(first_array);
 
-        free(first_array);
+    //     int *first_integer_array = string_to_digits(first_array);
 
-        if (first_integer_array != NULL)
-        {
+    //     free(first_array);
 
-            for (int i = 0; i < first_array_length; i++)
-            {
-                if ((first_integer_array[i] * 2) < 10)
-                {
-                    output = output + (first_integer_array[i] * 2);
-                }
-                else
-                {
-                    output = output + ((first_integer_array[i] * 2) % 10) +
-                             ((first_integer_array[i] * 2) / 10);
-                }
-            }
-            free(first_integer_array);
-        }
-    }
+    //     if (first_integer_array != NULL)
+    //     {
+
+    //         for (int i = 0; i < first_array_length; i++)
+    //         {
+    //             if ((first_integer_array[i] * 2) < 10)
+    //             {
+    //                 output = output + (first_integer_array[i] * 2);
+    //             }
+    //             else
+    //             {
+    //                 output = output + ((first_integer_array[i] * 2) % 10) +
+    //                          ((first_integer_array[i] * 2) / 10);
+    //             }
+    //         }
+    //         free(first_integer_array);
+    //     }
+    // }
 
     char *second_array = create_array(1, card_num, num_len);
     if (second_array != NULL)
@@ -103,12 +106,12 @@ int calculate_digits(long card_num, int num_len)
 
             for (int i = 0; i < second_array_length; i++)
             {
-                output = output + second_integer_array[i];
+                result = result + second_integer_array[i];
             }
             free(second_integer_array);
         }
     }
-    return output;
+    return result;
 }
 
 // function prompts user for card number
