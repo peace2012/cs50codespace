@@ -21,6 +21,8 @@ int calculate_digits(long card_num, int num_len);
 char *create_array(int array_type, long card_num, int num_len);
 int *string_to_digits(char *input_array);
 
+bool is_valid_length(int num_len);
+
 int first_two_digits(long number, int card_number_length);
 const char *type_of_card(long card_number);
 
@@ -31,12 +33,15 @@ int main(void)
 
     long card_number = get_card_number(&card_number);
 
-    int card_number_length = count_number_length(card_number);
+    int card_length = count_number_length(card_number);
 
-    if (card_number_length == 15 || card_number_length == 16)
+    bool is_valid = is_valid_length(card_length);
+
+    if (is_valid == true)
+
     {
 
-        int sum_of_digits = calculate_digits(card_number, card_number_length);
+        int sum_of_digits = calculate_digits(card_number, card_length);
 
         if (sum_of_digits % 10 == 0)
         {
@@ -211,11 +216,6 @@ const char *type_of_card(long card_number)
 
     int card_length = count_number_length(card_number);
     int card_digits = first_two_digits(card_number, card_length);
-    printf("%i",card_digits);
-    bool is_valid = is_valid_length(card_length);
-
-    if (is_valid == true)
-    {
 
         const int amex_specs_length = sizeof(amex_specs) / sizeof(amex_specs[0]);
 
