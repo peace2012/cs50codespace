@@ -4,12 +4,14 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Amex card number specifications
 #define AMEX_LENGTH 15
 #define AMEX_FIRST_2 37
 
+// Mastercard and Visa card number specifications
 #define MASTERCARD_VISA_LENGTH 16
-#define AMEX_FIRST_2
-
+const int mastercard_first_2[] = {22,55,51,52};
+const int visa_first_2[] = {40,41,49};
 
 long get_card_number(long *number);
 
