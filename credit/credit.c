@@ -276,3 +276,35 @@ int process_array2(const char *array, int output)
 
     return output;
 }
+
+int process_array(const char *array, bool double_values)
+{
+    if (array == NULL)
+    {
+        return 0;
+    }
+
+    int length = strlen(array);
+    int *integer_array = string_to_digits(array);
+    int output = 0;
+
+    if (integer_array != NULL)
+    {
+        for (int i = 0; i < length; i++)
+        {
+            int value = integer_array[i];
+            if (double_values)
+            {
+                value *= 2;
+                if (value >= 10)
+                {
+                    value = (value % 10) + (value / 10);
+                }
+            }
+            output += value;
+        }
+        free(integer_array);
+    }
+
+    return output;
+}
