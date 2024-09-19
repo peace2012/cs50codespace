@@ -19,7 +19,7 @@ bool is_valid_length(int num_len);
 int first_two_digits(long number, int card_number_length);
 const char *type_of_card(long card_number);
 
-// char card_type[12];
+int sum_of_digits = 0;
 
 int main(void)
 {
@@ -32,8 +32,7 @@ int main(void)
 
     if (is_valid == true)
     {
-
-        int sum_of_digits = calculate_digits(card_number, card_length);
+        sum_of_digits = calculate_digits(card_number, card_length);
         printf("%i\n", card_length);
         printf("%i\n", sum_of_digits);
 
@@ -57,8 +56,6 @@ int main(void)
 
 int calculate_digits(long card_num, int num_len)
 {
-    int sum_of_digits;
-
     char *first_array = create_array(2, card_num, num_len);
 
     if (first_array != NULL)
