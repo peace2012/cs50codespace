@@ -120,12 +120,9 @@ int calculate_digits(long card_num, int num_len)
 long get_card_number(long *card_num)
 {
     *card_num = get_long("Number: ");
-if (scanf("%li", card_num) != 1)
-{
-    fprintf(stderr, "Invalid input: not a number\n");
-    return 1; // Exit the function or program
-}
+
     return *card_num;
+
 }
 
 // function to create an array using card number
