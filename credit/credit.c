@@ -188,8 +188,9 @@ const char *type_of_card(long card_number)
 {
     char output[12];
 
+    const int amex_specs[] = {37};
     const int mcard_specs[] = {22,55,51,52};
-    const int visa_first_2[] = {40,41,49};
+    const int visa_specs[] = {40,41,49};
 
     int card_length = count_number_length(card_number);
     int card_digits = first_two_digits(card_number, card_length);
@@ -213,12 +214,6 @@ const char *type_of_card(long card_number)
 
         switch (card_digits)
         {
-            // case 22:
-            // case 55:
-            // case 51:
-            // case 52:
-            //     return "MASTERCARD";
-            //     break;
             case 41:
             case 40:
             case 49:
@@ -231,3 +226,14 @@ const char *type_of_card(long card_number)
     else
         return "INVALID";
 }
+
+
+const int mcard_specs_length = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
+
+        for (int i = 0; i < mcard_specs_length; i++)
+        {
+            if (card_digits == mcard_specs[i])
+            {
+                return "MASTERCARD";
+            }
+        }
