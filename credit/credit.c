@@ -226,17 +226,6 @@ const char *type_of_card(long card_number)
                 }
             }
         }
-
-        // switch (card_digits)
-        // {
-        //     case 41:
-        //     case 40:
-        //     case 49:
-        //         return "VISA";
-        //         break;
-        //     default:
-        //         return "INVALID";
-        // }
     }
     else
         return "INVALID";
