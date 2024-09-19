@@ -13,13 +13,12 @@ void calculate_digits(long card_num, int num_len);
 char *create_array(int array_type, long card_num, int num_len);
 int *string_to_digits(char *input_array);
 
-
 int first_two_digits(long number, int card_number_length);
 void type_of_card(long card_number);
 
-    int sum_of_digits = 0;
+int sum_of_digits = 0;
 
-    char card_type[12];
+char card_type[12];
 
 int main(void)
 {
@@ -33,7 +32,8 @@ int main(void)
 
         calculate_digits(card_number, card_number_length);
 
-        if (sum_of_digits % 10 == 0) {
+        if (sum_of_digits % 10 == 0)
+        {
             type_of_card(card_number);
             printf("%s\n", card_type);
         }
@@ -96,7 +96,6 @@ void calculate_digits(long card_num, int num_len)
             free(second_integer_array);
         }
     }
-
 }
 
 // function prompts user for card number
@@ -105,7 +104,6 @@ long get_card_number(long *card_num)
     *card_num = get_long("Number: ");
     return *card_num;
 }
-
 
 // function to create an array using card number
 char *create_array(int array_type, long card_num, int num_len)
@@ -130,7 +128,7 @@ char *create_array(int array_type, long card_num, int num_len)
 
     // place every other char from old array into new array
     int j = 0;
-    for (int i = strlen(card_array) - array_type; i >=0 ; i -= 2)
+    for (int i = strlen(card_array) - array_type; i >= 0; i -= 2)
     {
         output_array[j] = card_array[i];
         j++;
@@ -212,18 +210,3 @@ void type_of_card(long card_number)
     else
         strcpy(card_type, "INVALID");
 }
-
-// // Define arrays
-// char first_array[new_array_length];
-// char second_array[new_array_length];
-// char *ARRAY_NAME;
-
-// // Choose array based on array_type
-// switch (array_type) {
-//     case 0:
-//         ARRAY_NAME = first_array;
-//         break;
-//     case 1:
-//         ARRAY_NAME = second_array;
-//         break;
-// }
