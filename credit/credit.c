@@ -130,7 +130,7 @@ char *create_array(int array_type, long card_num, int num_len)
     char *output_array = malloc(output_array_length * sizeof(char));
     if (output_array == NULL)
     {
-        printf("Cannot allocat memory.")
+        printf("Cannot allocat memory.");
         return NULL;
     }
 
@@ -154,7 +154,7 @@ int *string_to_digits(char *input_array)
     int *output_array = malloc(array_length * sizeof(int));
     if (output_array == NULL)
     {
-        printf("Cannot allocat memory.")
+        printf("Cannot allocat memory.");
         return NULL;
     }
 
@@ -201,11 +201,11 @@ const char *type_of_card(long card_number)
     else if (card_length == MASTERCARD_VISA_LENGTH)
     {
 
-        const int mastercard_digits = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
+        const int mcard_specs_length = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
 
-        for (int i = 0; i < mastercard_digits; i++)
+        for (int i = 0; i < mcard_specs_length; i++)
         {
-            if (card_digits == mastercard_digits[i])
+            if (card_digits == mcard_specs[i])
             {
                 return "MASTERCARD";
             }
