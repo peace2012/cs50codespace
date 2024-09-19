@@ -188,7 +188,7 @@ const char *type_of_card(long card_number)
 {
     char output[12];
 
-    const int mastercard_first_2[] = {22,55,51,52};
+    const int mcard_specs[] = {22,55,51,52};
     const int visa_first_2[] = {40,41,49};
 
     int card_length = count_number_length(card_number);
@@ -201,7 +201,7 @@ const char *type_of_card(long card_number)
     else if (card_length == MASTERCARD_VISA_LENGTH)
     {
 
-        const int mastercard_digits = sizeof(mastercard_first2) / sizeof(mastercard_first2[0]);
+        const int mastercard_digits = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
 
         for (int i = 0; i < mastercard_digits; i++)
         {
