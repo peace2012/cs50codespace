@@ -1,6 +1,5 @@
 // credit.c
 #include <stdio.h>
-#include <stdbool.h>
 #include "card_validation.h"
 #include "card_specs.h"
 

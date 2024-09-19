@@ -2,7 +2,6 @@
 #include "card_validation.h"
 #include "card_specs.h"
 
-#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 #include <cs50.h>
