@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define AMEX_LENGTH 15
+
 long get_card_number(long *number);
 
 int count_number_length(long card_num);
@@ -123,7 +125,7 @@ char *create_array(int array_type, long card_num, int num_len)
     char *output_array = malloc(output_array_length * sizeof(char));
     if (output_array == NULL)
     {
-        // Handle memory allocation failure
+        printf("Cannot allocat memory.")
         return NULL;
     }
 
@@ -147,7 +149,7 @@ int *string_to_digits(char *input_array)
     int *output_array = malloc(array_length * sizeof(int));
     if (output_array == NULL)
     {
-        printf("Failed to allocate memory)
+        printf("Cannot allocat memory.")
         return NULL;
     }
 
