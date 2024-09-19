@@ -209,6 +209,7 @@ const char *type_of_card(long card_number)
             {
                 return "MASTERCARD";
             }
+        }
 
         const int visa_specs_length = sizeof(visa_specs) / sizeof(visa_specs[0]);
 
