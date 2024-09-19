@@ -132,7 +132,7 @@ char *create_array(int array_type, long card_num, int num_len)
     char *output_array = malloc(output_array_length * sizeof(char));
     if (output_array == NULL)
     {
-        printf("Cannot allocat memory.");
+        printf("Cannot allocate memory.");
         return NULL;
     }
 
