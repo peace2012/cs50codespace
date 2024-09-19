@@ -131,7 +131,7 @@ char *create_array(int array_type, long card_num, int num_len)
 
     // place every other char from old array into new array
     int j = 0;
-    for (int i = array_type; i < strlen(card_array); i += 2)
+    for (int i = strlen(card_array) - array_type; i >=0 ; i -= 2)
     {
         output_array[j] = card_array[i];
         j++;
