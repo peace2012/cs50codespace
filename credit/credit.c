@@ -210,6 +210,7 @@ const char *type_of_card(long card_number)
             {
                 return "MASTERCARD";
             }
+            else
         }
 
         switch (card_digits)
@@ -226,14 +227,3 @@ const char *type_of_card(long card_number)
     else
         return "INVALID";
 }
-
-
-const int mcard_specs_length = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
-
-        for (int i = 0; i < mcard_specs_length; i++)
-        {
-            if (card_digits == mcard_specs[i])
-            {
-                return "MASTERCARD";
-            }
-        }
