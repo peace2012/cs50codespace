@@ -174,29 +174,51 @@ const char *type_of_card(long card_number)
     int card_length = count_number_length(card_number);
     int card_digits = first_two_digits(card_number, card_length);
 
-    const int amex_specs_length = sizeof(specs.amex_specs) / sizeof(specs.amex_specs[0]);
-    bool is_amex = check_card_type(card_digits, specs.amex_specs, amex_specs_length);
-    if (is_amex == true)
+    typedef struct {
+    const char *name;
+    const int *specs;
+    int specs_length;
+} CardType;
+
+CardType card_types[] = {
+    {"AMEX", specs.amex_specs, sizeof(specs.amex_specs) / sizeof(specs.amex_specs[0])},
+    {"MASTERCARD", specs.mcard_specs, sizeof(specs.mcard_specs) / sizeof(specs.mcard_specs[0])},
+    {"VISA", specs.visa_specs, sizeof(specs.visa_specs) / sizeof(specs.visa_specs[0])}
+};
+
+for (int i = 0; i < sizeof(card_types) / sizeof(card_types[0]); i++)
+{
+    if (check_card_type(card_digits, card_types[i].specs, card_types[i].specs_length))
     {
-        return "AMEX";
+        return card_types[i].name;
     }
+}
 
-    const int mcard_specs_length = sizeof(specs.mcard_specs) / sizeof(specs.mcard_specs[0]);
-    bool is_mcard = check_card_type(card_digits, specs.mcard_specs, mcard_specs_length);
-    if (is_mcard == true)
-    {
-        return "MASTERCARD";
-    }
+return "INVALID";
 
-    const int visa_specs_length = sizeof(specs.visa_specs) / sizeof(specs.visa_specs[0]);
+    // const int amex_specs_length = sizeof(specs.amex_specs) / sizeof(specs.amex_specs[0]);
+    // bool is_amex = check_card_type(card_digits, specs.amex_specs, amex_specs_length);
+    // if (is_amex == true)
+    // {
+    //     return "AMEX";
+    // }
 
-    bool is_visa = check_card_type(card_digits, specs.visa_specs, visa_specs_length);
-    if (is_visa == true)
-    {
-        return "VISA";
-    }
+    // const int mcard_specs_length = sizeof(specs.mcard_specs) / sizeof(specs.mcard_specs[0]);
+    // bool is_mcard = check_card_type(card_digits, specs.mcard_specs, mcard_specs_length);
+    // if (is_mcard == true)
+    // {
+    //     return "MASTERCARD";
+    // }
 
-    return "INVALID";
+    // const int visa_specs_length = sizeof(specs.visa_specs) / sizeof(specs.visa_specs[0]);
+
+    // bool is_visa = check_card_type(card_digits, specs.visa_specs, visa_specs_length);
+    // if (is_visa == true)
+    // {
+    //     return "VISA";
+    // }
+
+    // return "INVALID";
 }
 
 bool check_card_type(int two_digits, const int *specs_array, int array_length)
