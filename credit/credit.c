@@ -34,7 +34,7 @@ bool is_valid_length(int num_len);
 int first_two_digits(long number, int card_number_length);
 const char *type_of_card(long card_number);
 
-bool check_card_type(int two_digits, const int *specs, int array_length);
+bool check_card_type(int two_digits, const int *specs_array, int array_length);
 
 int main(void)
 {
@@ -251,11 +251,11 @@ const char *type_of_card(long card_number)
     return "INVALID card type";
 }
 
-bool check_card_type(int two_digits, const int *specs, int array_length)
+bool check_card_type(int two_digits, const int *specs_array, int array_length)
 {
     for (int i = 0; i < array_length; i++)
     {
-        if (two_digits == specs[i])
+        if (two_digits == specs_array[i])
         {
             return true;
         }
