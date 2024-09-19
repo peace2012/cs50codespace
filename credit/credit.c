@@ -33,7 +33,7 @@ int main(void)
         if (sum_of_digits % 10 == 0)
         {
             char card_type[12];
-            card_type = type_of_card(card_number);
+            strcpy(card_type, type_of_card(card_number));
             printf("%s\n", card_type);
         }
         else
