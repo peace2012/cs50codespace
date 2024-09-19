@@ -248,10 +248,4 @@ const char *type_of_card(long card_number)
         }
 
         return "INVALID";
-    }
-    else
-    {
-        return "INVALID";
-    }
-
 }
