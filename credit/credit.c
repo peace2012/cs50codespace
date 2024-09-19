@@ -63,12 +63,13 @@ int calculate_digits(long card_num, int num_len)
 
     char *first_array = create_array(2, card_num, num_len);
 
-    int result = process_array(first_array);
+    int result = process_array1(first_array);
+    free(first_array);
 
     char *second_array = create_array(1, card_num, num_len);
 
-    int final_total = process_array(second_array, result);
-
+    int final_total = process_array2(second_array, result);
+    free(second_array);
         // int second_array_length = strlen(second_array);
 
         // int *second_integer_array = string_to_digits(second_array);
@@ -82,7 +83,7 @@ int calculate_digits(long card_num, int num_len)
         //     }
         //     free(second_integer_array);
         // }
-    return result;
+    return final_total;
 }
 
 // function prompts user for card number
