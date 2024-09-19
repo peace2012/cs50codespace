@@ -158,9 +158,7 @@ int *string_to_digits(char *input_array)
     return output_array;
 }
 
-// function to multiply each digit by 2
-
-// count the number of digits in the cart number //
+// count the number of digits in the card number //
 int count_number_length(long card_num)
 {
     int card_number_length = 0;
