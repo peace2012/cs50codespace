@@ -2,17 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "card_validation.h"
-
-typedef struct
-{
-    const int valid_lengths[3];
-    const int amex_specs[1];
-    const int mcard_specs[4];
-    const int visa_specs[4];
-} CardSpecs;
-
-// valid card specifications according to structure
-CardSpecs specs = {{13, 15, 16}, {37}, {22, 55, 51, 52}, {40, 42, 41, 49}};
+#include "card_specs.h"
 
 int main(void)
 {
