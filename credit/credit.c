@@ -90,6 +90,8 @@ int calculate_digits(long card_num, int num_len)
     char *second_array = create_array(1, card_num, num_len);
     if (second_array != NULL)
     {
+        printf
+
         int second_array_length = strlen(second_array);
 
         int *second_integer_array = string_to_digits(second_array);
