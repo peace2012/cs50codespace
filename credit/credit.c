@@ -38,7 +38,6 @@ int main(void)
     bool is_valid = is_valid_length(card_length);
 
     if (is_valid == true)
-
     {
 
         int sum_of_digits = calculate_digits(card_number, card_length);
@@ -50,13 +49,15 @@ int main(void)
         }
         else
         {
-            printf("INVALID\n");
+            printf("INVALID agorithm\n");
         }
     }
+
     else
     {
-        printf("INVALID\n");
+        printf("INVALID length\n");
     }
+
 }
 
 int calculate_digits(long card_num, int num_len)
