@@ -34,6 +34,7 @@ int main(void)
     {
 
         int sum_of_digits = calculate_digits(card_number, card_length);
+        printf("%i\n", card_length);
         printf("%i\n", sum_of_digits);
 
         if (sum_of_digits % 10 == 0)
