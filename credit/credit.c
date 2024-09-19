@@ -202,6 +202,7 @@ bool is_valid_length(int num_len)
                 return false;
             }
         }
+        return false;
 }
 
 const char *type_of_card(long card_number)
