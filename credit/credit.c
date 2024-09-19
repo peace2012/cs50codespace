@@ -209,7 +209,7 @@ const char *type_of_card(long card_number)
             {
                 return "MASTERCARD";
             }
-            else if (card_digits != mcard_specs[i])
+            else
             {
                 const int visa_specs_length = sizeof(visa_specs) / sizeof(visa_specs[0]);
 
@@ -224,10 +224,6 @@ const char *type_of_card(long card_number)
                         return "INVALID";
                     }
                 }
-            }
-            else
-            {
-                return "Error.";
             }
         }
 
