@@ -26,7 +26,7 @@ int first_two_digits(long number, int card_number_length);
 const char *type_of_card(long card_number);
 bool check_card_type(int two_digits, const int *specs_array, int array_length);
 int process_array1(const char *array);
-int process_array2(const char *array);
+int process_array2(const char *array, int result);
 
 int main(void)
 {
@@ -70,19 +70,19 @@ int calculate_digits(long card_num, int num_len)
 
     int final_total = process_array2(second_array, result);
     free(second_array);
-        // int second_array_length = strlen(second_array);
+    // int second_array_length = strlen(second_array);
 
-        // int *second_integer_array = string_to_digits(second_array);
-        // free(second_array);
-        // if (second_integer_array != NULL)
-        // {
+    // int *second_integer_array = string_to_digits(second_array);
+    // free(second_array);
+    // if (second_integer_array != NULL)
+    // {
 
-        //     for (int i = 0; i < second_array_length; i++)
-        //     {
-        //         result = result + second_integer_array[i];
-        //     }
-        //     free(second_integer_array);
-        // }
+    //     for (int i = 0; i < second_array_length; i++)
+    //     {
+    //         result = result + second_integer_array[i];
+    //     }
+    //     free(second_integer_array);
+    // }
     return final_total;
 }
 
@@ -274,5 +274,5 @@ int process_array2(const char *array, int output)
         free(integer_array);
     }
 
-    return result;
+    return output;
 }
