@@ -1,6 +1,13 @@
 #ifndef CARD_VALIDATION_H
 #define CARD_VALIDATION_H
 
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include <cs50.h>
+#include <math.h>
+#include <stdio.h>
+
 long get_card_number(long *number);
 int count_number_length(long card_num);
 int calculate_digits(long card_num, int num_len);

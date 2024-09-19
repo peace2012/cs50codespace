@@ -1,10 +1,12 @@
 //card_validation.c
 #include "card_validation.h"
+
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 #include <cs50.h>
 #include <math.h>
+#include <stdio.h>
 
 int calculate_digits(long card_num, int num_len)
 {
