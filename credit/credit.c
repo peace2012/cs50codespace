@@ -214,13 +214,18 @@ const char *type_of_card(long card_number)
     bool is_valid = is_valid_length(card_length);
 
     if (is_valid == true)
-
-    // if (card_length == AMEX_LENGTH && card_digits == AMEX_FIRST_2)
-    // {
-    //     return "AMEX";
-    // }
-    // else if (card_length == MASTERCARD_VISA_LENGTH)
     {
+
+        const int amex_specs_length = sizeof(amex_specs) / sizeof(amex_specs[0]);
+
+        for (int i = 0; i < amex_specs_length; i++)
+        {
+            if (card_digits == amex_specs[i])
+            {
+                return "AMEX";
+            }
+        }
+
         const int mcard_specs_length = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
 
         for (int i = 0; i < mcard_specs_length; i++)
@@ -240,6 +245,7 @@ const char *type_of_card(long card_number)
             return "VISA";
             }
         }
+
         return "INVALID";
     }
     else
