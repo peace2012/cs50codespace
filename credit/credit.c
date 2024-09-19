@@ -19,8 +19,6 @@ bool is_valid_length(int num_len);
 int first_two_digits(long number, int card_number_length);
 const char *type_of_card(long card_number);
 
-
-
 int main(void)
 {
 
