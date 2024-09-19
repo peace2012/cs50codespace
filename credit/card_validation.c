@@ -5,7 +5,6 @@
 #include <string.h>
 #include <cs50.h>
 #include <math.h>
-#include <stdbool.h>
 
 int calculate_digits(long card_num, int num_len)
 {
