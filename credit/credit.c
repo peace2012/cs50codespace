@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 // Amex card number specifications
 #define AMEX_LENGTH 15
@@ -184,6 +185,25 @@ int first_two_digits(long number, int card_number_length)
     return first_two_digits = number / pow(10, card_number_length - 2);
 }
 
+bool is_valid_length(int num_len)
+{
+    const int valid_lengths[] = {13, 15, 16};
+
+    const int valid_lengths_length = sizeof(valid_lengths) / sizeof(valid_lengths[0]);
+
+    for (int i = 0; i < valid_lengths_length; i++)
+    {
+        if (num_len == valid_lengths[i])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+}
+
 const char *type_of_card(long card_number)
 {
     char output[12];
@@ -194,12 +214,15 @@ const char *type_of_card(long card_number)
 
     int card_length = count_number_length(card_number);
     int card_digits = first_two_digits(card_number, card_length);
+    bool is_valid = is_valid_length(card_length);
 
-    if (card_length == AMEX_LENGTH && card_digits == AMEX_FIRST_2)
-    {
-        return "AMEX";
-    }
-    else if (card_length == MASTERCARD_VISA_LENGTH)
+    if (is_valid == true)
+
+    // if (card_length == AMEX_LENGTH && card_digits == AMEX_FIRST_2)
+    // {
+    //     return "AMEX";
+    // }
+    // else if (card_length == MASTERCARD_VISA_LENGTH)
     {
         const int mcard_specs_length = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
 
