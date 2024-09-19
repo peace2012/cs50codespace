@@ -5,13 +5,6 @@
 #include <string.h>
 #include <stdbool.h>
 
-// Amex card number specifications
-#define AMEX_LENGTH 15
-#define AMEX_FIRST_2 37
-
-// Mastercard and Visa card number specifications
-#define MASTERCARD_VISA_LENGTH 16
-
 long get_card_number(long *number);
 
 int count_number_length(long card_num);
