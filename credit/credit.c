@@ -200,11 +200,11 @@ int first_two_digits(long number, int card_number_length)
 bool is_valid_length(int num_len)
 {
 
-    const int valid_lengths_length = sizeof(valid_lengths) / sizeof(valid_lengths[0]);
+    const int valid_lengths_length = sizeof(specs.valid_lengths) / sizeof(specs.valid_lengths[0]);
 
     for (int i = 0; i < valid_lengths_length; i++)
     {
-        if (num_len == valid_lengths[i])
+        if (num_len == specs.valid_lengths[i])
         {
             return true;
         }
@@ -219,31 +219,31 @@ const char *type_of_card(long card_number)
     int card_length = count_number_length(card_number);
     int card_digits = first_two_digits(card_number, card_length);
 
-    const int amex_specs_length = sizeof(amex_specs) / sizeof(amex_specs[0]);
+    const int amex_specs_length = sizeof(specs.amex_specs) / sizeof(specs.amex_specs[0]);
 
     for (int i = 0; i < amex_specs_length; i++)
     {
-        if (card_digits == amex_specs[i])
+        if (card_digits == specs.amex_specs[i])
         {
             return "AMEX";
         }
     }
 
-    const int mcard_specs_length = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
+    const int mcard_specs_length = sizeof(specs.mcard_specs) / sizeof(specs.mcard_specs[0]);
 
     for (int i = 0; i < mcard_specs_length; i++)
     {
-        if (card_digits == mcard_specs[i])
+        if (card_digits == specs.mcard_specs[i])
         {
             return "MASTERCARD";
         }
     }
 
-    const int visa_specs_length = sizeof(visa_specs) / sizeof(visa_specs[0]);
+    const int visa_specs_length = sizeof(specs.visa_specs) / sizeof(specs.visa_specs[0]);
 
     for (int j = 0; j < visa_specs_length; j++)
     {
-        if (card_digits == visa_specs[j])
+        if (card_digits == specs.visa_specs[j])
         {
             return "VISA";
         }
