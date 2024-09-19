@@ -2,7 +2,8 @@
 #ifndef CARD_SPECS_H
 #define CARD_SPECS_H
 
-typedef struct {
+typedef struct
+{
     const int valid_lengths[3];
     const int amex_specs[1];
     const int mcard_specs[4];

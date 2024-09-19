@@ -1,7 +1,7 @@
 // credit.c
-#include <stdio.h>
-#include "card_validation.h"
 #include "card_specs.h"
+#include "card_validation.h"
+#include <stdio.h>
 
 int main(void)
 {
