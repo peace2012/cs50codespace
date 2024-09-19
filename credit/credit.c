@@ -209,24 +209,21 @@ const char *type_of_card(long card_number)
             {
                 return "MASTERCARD";
             }
-            else
-            {
-                const int visa_specs_length = sizeof(visa_specs) / sizeof(visa_specs[0]);
 
-                for (int j = 0; j < visa_specs_length; j++)
-                {
-                    if (card_digits == visa_specs[j])
-                    {
-                        return "VISA";
-                    }
-                    else
-                    {
-                        return "INVALID";
-                    }
-                }
+        const int visa_specs_length = sizeof(visa_specs) / sizeof(visa_specs[0]);
+
+        for (int j = 0; j < visa_specs_length; j++)
+        {
+            if (card_digits == visa_specs[j])
+            {
+            return "VISA";
             }
         }
+        return "INVALID";
     }
     else
+    {
         return "INVALID";
+    }
+
 }
