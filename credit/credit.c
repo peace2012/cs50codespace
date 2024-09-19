@@ -14,7 +14,7 @@ char *create_array(int array_type, long card_num, int num_len);
 int *string_to_digits(char *input_array);
 
 int first_two_digits(long number, int card_number_length);
-char type_of_card(long card_number);
+const char *type_of_card(long card_number);
 
 // char card_type[12];
 
@@ -180,7 +180,7 @@ int first_two_digits(long number, int card_number_length)
     return first_two_digits = number / pow(10, card_number_length - 2);
 }
 
-char type_of_card(long card_number)
+const char *type_of_card(long card_number)
 {
     char output[12];
 
@@ -189,7 +189,7 @@ char type_of_card(long card_number)
 
     if (card_length == 15 && two_digits == 37)
     {
-        strcpy(output, "AMEX");
+        return "AMEX";
     }
     else if (card_length == 16)
     {
@@ -200,18 +200,17 @@ char type_of_card(long card_number)
             case 55:
             case 51:
             case 52:
-                strcpy(output, "MASTERCARD");
+                return "MASTERCARD";
                 break;
             case 41:
             case 40:
             case 49:
-                strcpy(output, "VISA");
+                return "VISA";
                 break;
             default:
-                strcpy(output, "INVALID");
+                return "INVALID";
         }
     }
     else
-        strcpy(output, "INVALID");
-    return output;
+        return "INVALID";
 }
