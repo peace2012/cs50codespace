@@ -115,7 +115,7 @@ int calculate_digits(long card_num, int num_len)
 // function prompts user for card number
 long get_card_number(long *card_num)
 {
-        *card_num = get_long("Number: ");
+    *card_num = get_long("Number: ");
     return *card_num;
 }
 
@@ -136,8 +136,8 @@ char *create_array(int array_type, long card_num, int num_len)
     char *output_array = malloc(output_array_length * sizeof(char));
     if (output_array == NULL)
     {
-        printf("Cannot allocate memory.");
-        return NULL;
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(1); // Exit the program
     }
 
     // place every other char from old array into new array
@@ -160,8 +160,8 @@ int *string_to_digits(char *input_array)
     int *output_array = malloc(array_length * sizeof(int));
     if (output_array == NULL)
     {
-        printf("Cannot allocate memory.");
-        return NULL;
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(1); // Exit the program
     }
 
     for (int i = 0; i < array_length; i++)
