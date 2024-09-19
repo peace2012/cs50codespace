@@ -79,8 +79,9 @@ int calculate_digits(long card_num, int num_len)
                     sum_of_digits = sum_of_digits + ((first_integer_array[i] * 2) % 10) +
                                     ((first_integer_array[i] * 2) / 10);
                 }
-                // printf("%i",sum_of_digits);
+
             }
+            printf("%i",sum_of_digits);
             printf("\n");
             free(first_integer_array);
         }
