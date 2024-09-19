@@ -31,8 +31,6 @@ int main(void)
     if (is_valid == true)
     {
         int sum_of_digits = calculate_digits(card_number, card_length);
-        printf("%i\n", card_length);
-        printf("%i\n", sum_of_digits);
 
         if (sum_of_digits % 10 == 0)
         {
@@ -82,8 +80,6 @@ int calculate_digits(long card_num, int num_len)
                 }
 
             }
-            printf("%i",output);
-            printf("\n");
             free(first_integer_array);
         }
     }
