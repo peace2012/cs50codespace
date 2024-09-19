@@ -200,6 +200,8 @@ const char *type_of_card(long card_number)
     else if (card_length == MASTERCARD_VISA_LENGTH)
     {
 
+        const int 
+
         switch (two_digits)
         {
             case 22:
