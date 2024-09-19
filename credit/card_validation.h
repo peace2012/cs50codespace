@@ -1,0 +1,2 @@
+#ifndef CARD_VALIDATION_H
+#define CARD_VALIDATION_H
