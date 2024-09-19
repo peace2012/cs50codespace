@@ -115,11 +115,7 @@ int calculate_digits(long card_num, int num_len)
 // function prompts user for card number
 long get_card_number(long *card_num)
 {
-    do
-    {
         *card_num = get_long("Number: ");
-    }
-    while 
     return *card_num;
 }
 
