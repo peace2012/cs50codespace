@@ -10,8 +10,6 @@
 
 // Mastercard and Visa card number specifications
 #define MASTERCARD_VISA_LENGTH 16
-const int mastercard_first_2[] = {22,55,51,52};
-const int visa_first_2[] = {40,41,49};
 
 long get_card_number(long *number);
 
@@ -190,26 +188,37 @@ const char *type_of_card(long card_number)
 {
     char output[12];
 
-    int card_length = count_number_length(card_number);
-    int two_digits = first_two_digits(card_number, card_length);
+    const int mastercard_first_2[] = {22,55,51,52};
+    const int visa_first_2[] = {40,41,49};
 
-    if (card_length == AMEX_LENGTH && two_digits == AMEX_FIRST_2)
+    int card_length = count_number_length(card_number);
+    int card_digits = first_two_digits(card_number, card_length);
+
+    if (card_length == AMEX_LENGTH && card_digits == AMEX_FIRST_2)
     {
         return "AMEX";
     }
     else if (card_length == MASTERCARD_VISA_LENGTH)
     {
 
-        const int 
+        const int mastercard_digits = sizeof(mastercard_first2) / sizeof(mastercard_first2[0]);
 
-        switch (two_digits)
+        for (int i = 0; i < mastercard_digits; i++)
         {
-            case 22:
-            case 55:
-            case 51:
-            case 52:
+            if (card_digits == mastercard_digits[i])
+            {
                 return "MASTERCARD";
-                break;
+            }
+        }
+
+        switch (card_digits)
+        {
+            // case 22:
+            // case 55:
+            // case 51:
+            // case 52:
+            //     return "MASTERCARD";
+            //     break;
             case 41:
             case 40:
             case 49:
