@@ -157,14 +157,16 @@ int *string_to_digits(char *input_array)
     int *output_array = malloc(array_length * sizeof(int));
     if (output_array == NULL)
     {
-        printf("Cannot allocat memory.");
+        printf("Cannot allocate memory.");
         return NULL;
     }
 
     for (int i = 0; i < array_length; i++)
     {
         output_array[i] = input_array[i] - '0';
+        printf("%i", output_array[i]);
     }
+    printf("\n");
     return output_array;
 }
 
