@@ -8,17 +8,15 @@ long get_card_number(long *number);
 
 int count_number_length(long card_num);
 
-void calculate_digits(long card_num, int num_len);
+int calculate_digits(long card_num, int num_len);
 
 char *create_array(int array_type, long card_num, int num_len);
 int *string_to_digits(char *input_array);
 
 int first_two_digits(long number, int card_number_length);
-void type_of_card(long card_number);
+char type_of_card(long card_number);
 
-// int sum_of_digits = 0;
-
-char card_type[12];
+// char card_type[12];
 
 int main(void)
 {
@@ -34,7 +32,7 @@ int main(void)
 
         if (sum_of_digits % 10 == 0)
         {
-            type_of_card(card_number);
+            char card_type[12] = type_of_card(card_number);
             printf("%s\n", card_type);
         }
         else
@@ -48,8 +46,10 @@ int main(void)
     }
 }
 
-void calculate_digits(long card_num, int num_len)
+int calculate_digits(long card_num, int num_len)
 {
+    int total;
+
     char *first_array = create_array(2, card_num, num_len);
 
     if (first_array != NULL)
@@ -66,11 +66,11 @@ void calculate_digits(long card_num, int num_len)
             {
                 if ((first_integer_array[i] * 2) < 10)
                 {
-                    sum_of_digits = sum_of_digits + (first_integer_array[i] * 2);
+                    total = total + (first_integer_array[i] * 2);
                 }
                 else
                 {
-                    sum_of_digits = sum_of_digits + ((first_integer_array[i] * 2) % 10) +
+                    total = total + ((first_integer_array[i] * 2) % 10) +
                                     ((first_integer_array[i] * 2) / 10);
                 }
             }
@@ -91,11 +91,12 @@ void calculate_digits(long card_num, int num_len)
 
             for (int i = 0; i < second_array_length; i++)
             {
-                sum_of_digits = sum_of_digits + second_integer_array[i];
+                total = total + second_integer_array[i];
             }
             free(second_integer_array);
         }
     }
+    return total;
 }
 
 // function prompts user for card number
@@ -178,14 +179,16 @@ int first_two_digits(long number, int card_number_length)
     return first_two_digits = number / pow(10, card_number_length - 2);
 }
 
-void type_of_card(long card_number)
+char type_of_card(long card_number)
 {
+    char output[12];
+
     int card_length = count_number_length(card_number);
     int two_digits = first_two_digits(card_number, card_length);
 
     if (card_length == 15 && two_digits == 37)
     {
-        strcpy(card_type, "AMEX");
+        strcpy(output, "AMEX");
     }
     else if (card_length == 16)
     {
@@ -196,17 +199,18 @@ void type_of_card(long card_number)
             case 55:
             case 51:
             case 52:
-                strcpy(card_type, "MASTERCARD");
+                strcpy(output, "MASTERCARD");
                 break;
             case 41:
             case 40:
             case 49:
-                strcpy(card_type, "VISA");
+                strcpy(output, "VISA");
                 break;
             default:
-                strcpy(card_type, "INVALID");
+                strcpy(output, "INVALID");
         }
     }
     else
-        strcpy(card_type, "INVALID");
+        strcpy(output, "INVALID");
+    return output;
 }
