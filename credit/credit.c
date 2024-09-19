@@ -20,7 +20,7 @@ long get_card_number(long *number);
 int count_number_length(long card_num);
 int calculate_digits(long card_num, int num_len);
 char *create_array(int array_type, long card_num, int num_len);
-int *string_to_digits(char *input_array);
+int *string_to_digits(const char *input_array);
 bool is_valid_length(int num_len);
 int first_two_digits(long number, int card_number_length);
 const char *type_of_card(long card_number);
@@ -157,7 +157,7 @@ char *create_array(int array_type, long card_num, int num_len)
 }
 
 // function to change string to digits
-int *string_to_digits(char *input_array)
+int *string_to_digits(const char *input_array)
 {
     int array_length = strlen(input_array);
     int *output_array = malloc(array_length * sizeof(int));
