@@ -13,12 +13,7 @@ typedef struct
     const int visa_specs[4];
 } CardSpecs;
 
-CardSpecs specs = {
-        {13, 15, 16},
-        {37},
-        {22, 55, 51, 52},
-        {40, 42, 41, 49}
-    };
+CardSpecs specs = {{13, 15, 16}, {37}, {22, 55, 51, 52}, {40, 42, 41, 49}};
 
 long get_card_number(long *number);
 
@@ -224,24 +219,24 @@ const char *type_of_card(long card_number)
     const int amex_specs_length = sizeof(specs.amex_specs) / sizeof(specs.amex_specs[0]);
     bool is_amex = check_card_type(card_digits, specs.amex_specs, amex_specs_length);
     if (is_amex == true)
-        {
-            return "AMEX";
-        }
+    {
+        return "AMEX";
+    }
 
     const int mcard_specs_length = sizeof(specs.mcard_specs) / sizeof(specs.mcard_specs[0]);
     bool is_mcard = check_card_type(card_digits, specs.mcard_specs, mcard_specs_length);
     if (is_mcard == true)
-        {
-            return "MASTERCARD";
-        }
+    {
+        return "MASTERCARD";
+    }
 
     const int visa_specs_length = sizeof(specs.visa_specs) / sizeof(specs.visa_specs[0]);
 
     bool is_visa = check_card_type(card_digits, specs.visa_specs, visa_specs_length);
     if (is_visa == true)
-        {
-            return "VISA";
-        }
+    {
+        return "VISA";
+    }
 
     return "INVALID";
 }
