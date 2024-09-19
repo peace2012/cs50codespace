@@ -56,13 +56,13 @@ int main(void)
         }
         else
         {
-            printf("INVALID agorithm\n");
+            printf("INVALID\n");
         }
     }
 
     else
     {
-        printf("INVALID length\n");
+        printf("INVALID\n");
     }
 }
 
@@ -242,8 +242,8 @@ const char *type_of_card(long card_number)
         {
             return "VISA";
         }
-        
-    return "INVALID card type";
+
+    return "INVALID";
 }
 
 bool check_card_type(int two_digits, const int *specs_array, int array_length)
