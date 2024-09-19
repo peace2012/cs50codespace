@@ -24,8 +24,6 @@ const char *type_of_card(long card_number);
 int main(void)
 {
 
-    int sum_of_digits = 0;
-
     long card_number = get_card_number(&card_number);
 
     int card_length = count_number_length(card_number);
@@ -34,7 +32,7 @@ int main(void)
 
     if (is_valid == true)
     {
-        sum_of_digits = calculate_digits(card_number, card_length);
+        int sum_of_digits = calculate_digits(card_number, card_length);
         printf("%i\n", card_length);
         printf("%i\n", sum_of_digits);
 
