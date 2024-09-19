@@ -57,7 +57,7 @@ int main(void)
 
 int calculate_digits(long card_num, int num_len)
 {
-    int total;
+    int sum_of_digits;
 
     char *first_array = create_array(2, card_num, num_len);
 
@@ -75,11 +75,11 @@ int calculate_digits(long card_num, int num_len)
             {
                 if ((first_integer_array[i] * 2) < 10)
                 {
-                    total = total + (first_integer_array[i] * 2);
+                    sum_of_digits = sum_of_digits + (first_integer_array[i] * 2);
                 }
                 else
                 {
-                    total = total + ((first_integer_array[i] * 2) % 10) +
+                    sum_of_digits = sum_of_digits + ((first_integer_array[i] * 2) % 10) +
                                     ((first_integer_array[i] * 2) / 10);
                 }
             }
@@ -100,12 +100,12 @@ int calculate_digits(long card_num, int num_len)
 
             for (int i = 0; i < second_array_length; i++)
             {
-                total = total + second_integer_array[i];
+                sum_of_digits = sum_of_digits + second_integer_array[i];
             }
             free(second_integer_array);
         }
     }
-    return total;
+    return sum_of_digits;
 }
 
 // function prompts user for card number
