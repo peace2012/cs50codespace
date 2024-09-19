@@ -251,3 +251,17 @@ const char *type_of_card(long card_number)
 
     return "INVALID card type";
 }
+
+bool check_card_type(int two_digits, const int specs)
+{
+const int array_length = sizeof(specs) / sizeof(specs[0]);
+
+    for (int i = 0; i < array_length; i++)
+    {
+        if (two_digits == specs[i])
+        {
+            return true;
+        }
+    }
+    return false;
+}
