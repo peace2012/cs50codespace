@@ -1,5 +1,6 @@
 //card_validation.c
 #include "card_validation.h"
+#include "card_specs.h"
 
 #include <stdbool.h>
 #include <stdlib.h>
