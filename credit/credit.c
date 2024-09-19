@@ -5,6 +5,11 @@
 #include <string.h>
 
 #define AMEX_LENGTH 15
+#define AMEX_FIRST_2 37
+
+#define MASTERCARD_VISA_LENGTH 16
+#define AMEX_FIRST_2
+
 
 long get_card_number(long *number);
 
@@ -186,11 +191,11 @@ const char *type_of_card(long card_number)
     int card_length = count_number_length(card_number);
     int two_digits = first_two_digits(card_number, card_length);
 
-    if (card_length == 15 && two_digits == 37)
+    if (card_length == AMEX_LENGTH && two_digits == AMEX_FIRST_2)
     {
         return "AMEX";
     }
-    else if (card_length == 16)
+    else if (card_length == MASTERCARD_VISA_LENGTH)
     {
 
         switch (two_digits)
