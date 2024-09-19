@@ -249,8 +249,8 @@ bool check_card_type(int two_digits, const int *specs_array, int array_length)
     return false;
 }
 
-        int first_array_length = strlen(first_array);
+        int array_length = strlen(array);
 
-        int *first_integer_array = string_to_digits(first_array);
+        int *integer_array = string_to_digits(array);
 
-        free(first_array);
+        free(array);
