@@ -13,13 +13,12 @@ typedef struct
     const int visa_specs[4];
 } CardSpecs;
 
-// Enter valid card lengths
-const int valid_lengths[] = {13, 15, 16};
-
-// Enter first two digits valid for each card type
-const int amex_specs[] = {37};
-const int mcard_specs[] = {22, 55, 51, 52};
-const int visa_specs[] = {40, 42, 41, 49};
+CardSpecs specs = {
+        {13, 15, 16},
+        {37},
+        {22, 55, 51, 52},
+        {40, 42, 41, 49}
+    };
 
 long get_card_number(long *number);
 
