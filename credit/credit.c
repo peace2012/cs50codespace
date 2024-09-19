@@ -248,3 +248,34 @@ bool check_card_type(int two_digits, const int *specs_array, int array_length)
     }
     return false;
 }
+
+int process_array(const char *array)
+{
+    if (array == NULL)
+    {
+        return 0;
+    }
+
+    int length = strlen(array);
+    int *integer_array = string_to_digits(array);
+    int output = 0;
+
+    if (integer_array != NULL)
+    {
+        for (int i = 0; i < length; i++)
+        {
+            int doubled = integer_array[i] * 2;
+            if (doubled < 10)
+            {
+                output += doubled;
+            }
+            else
+            {
+                output += (doubled % 10) + (doubled / 10);
+            }
+        }
+        free(integer_array);
+    }
+
+    return output;
+}
