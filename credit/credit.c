@@ -60,38 +60,9 @@ int main(void)
 int calculate_digits(long card_num, int num_len)
 {
 
-    // int output = 0;
-
     char *first_array = create_array(2, card_num, num_len);
 
     int result = process_array(first_array);
-
-    // if (first_array != NULL)
-    // {
-    //     int first_array_length = strlen(first_array);
-
-    //     int *first_integer_array = string_to_digits(first_array);
-
-    //     free(first_array);
-
-    //     if (first_integer_array != NULL)
-    //     {
-
-    //         for (int i = 0; i < first_array_length; i++)
-    //         {
-    //             if ((first_integer_array[i] * 2) < 10)
-    //             {
-    //                 output = output + (first_integer_array[i] * 2);
-    //             }
-    //             else
-    //             {
-    //                 output = output + ((first_integer_array[i] * 2) % 10) +
-    //                          ((first_integer_array[i] * 2) / 10);
-    //             }
-    //         }
-    //         free(first_integer_array);
-    //     }
-    // }
 
     char *second_array = create_array(1, card_num, num_len);
     if (second_array != NULL)
