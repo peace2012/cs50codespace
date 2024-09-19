@@ -147,7 +147,7 @@ int *string_to_digits(char *input_array)
     int *output_array = malloc(array_length * sizeof(int));
     if (output_array == NULL)
     {
-        // Handle memory allocation failure
+        printf("Failed to allocate memory)
         return NULL;
     }
 
