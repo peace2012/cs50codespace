@@ -1,9 +1,17 @@
 #include <cs50.h>
 #include <math.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
+
+// Enter valid card lengths
+const int valid_lengths[] = {13, 15, 16};
+
+// Enter first two digits valid for each card type
+const int amex_specs[] = {37};
+const int mcard_specs[] = {22, 55, 51, 52};
+const int visa_specs[] = {40, 42, 41, 49};
 
 long get_card_number(long *number);
 
@@ -47,7 +55,6 @@ int main(void)
     {
         printf("INVALID length\n");
     }
-
 }
 
 int calculate_digits(long card_num, int num_len)
@@ -63,9 +70,10 @@ int calculate_digits(long card_num, int num_len)
 
         int *first_integer_array = string_to_digits(first_array);
 
+        free(first_array);
+
         if (first_integer_array != NULL)
         {
-            free(first_array);
 
             for (int i = 0; i < first_array_length; i++)
             {
@@ -76,9 +84,8 @@ int calculate_digits(long card_num, int num_len)
                 else
                 {
                     output = output + ((first_integer_array[i] * 2) % 10) +
-                                    ((first_integer_array[i] * 2) / 10);
+                             ((first_integer_array[i] * 2) / 10);
                 }
-
             }
             free(first_integer_array);
         }
@@ -91,10 +98,9 @@ int calculate_digits(long card_num, int num_len)
         int second_array_length = strlen(second_array);
 
         int *second_integer_array = string_to_digits(second_array);
-
+        free(second_array);
         if (second_integer_array != NULL)
         {
-            free(second_array);
 
             for (int i = 0; i < second_array_length; i++)
             {
@@ -161,9 +167,7 @@ int *string_to_digits(char *input_array)
     for (int i = 0; i < array_length; i++)
     {
         output_array[i] = input_array[i] - '0';
-        printf("%i", output_array[i]);
     }
-    printf("\n");
     return output_array;
 }
 
@@ -188,16 +192,15 @@ int first_two_digits(long number, int card_number_length)
 
 bool is_valid_length(int num_len)
 {
-    const int valid_lengths[] = {13, 15, 16};
 
     const int valid_lengths_length = sizeof(valid_lengths) / sizeof(valid_lengths[0]);
 
     for (int i = 0; i < valid_lengths_length; i++)
     {
         if (num_len == valid_lengths[i])
-            {
-                return true;
-            }
+        {
+            return true;
+        }
     }
     return false;
 }
@@ -206,42 +209,38 @@ const char *type_of_card(long card_number)
 {
     char output[12];
 
-    const int amex_specs[] = {37};
-    const int mcard_specs[] = {22,55,51,52};
-    const int visa_specs[] = {40,42,41,49};
-
     int card_length = count_number_length(card_number);
     int card_digits = first_two_digits(card_number, card_length);
 
-        const int amex_specs_length = sizeof(amex_specs) / sizeof(amex_specs[0]);
+    const int amex_specs_length = sizeof(amex_specs) / sizeof(amex_specs[0]);
 
-        for (int i = 0; i < amex_specs_length; i++)
+    for (int i = 0; i < amex_specs_length; i++)
+    {
+        if (card_digits == amex_specs[i])
         {
-            if (card_digits == amex_specs[i])
-            {
-                return "AMEX";
-            }
+            return "AMEX";
         }
+    }
 
-        const int mcard_specs_length = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
+    const int mcard_specs_length = sizeof(mcard_specs) / sizeof(mcard_specs[0]);
 
-        for (int i = 0; i < mcard_specs_length; i++)
+    for (int i = 0; i < mcard_specs_length; i++)
+    {
+        if (card_digits == mcard_specs[i])
         {
-            if (card_digits == mcard_specs[i])
-            {
-                return "MASTERCARD";
-            }
+            return "MASTERCARD";
         }
+    }
 
-        const int visa_specs_length = sizeof(visa_specs) / sizeof(visa_specs[0]);
+    const int visa_specs_length = sizeof(visa_specs) / sizeof(visa_specs[0]);
 
-        for (int j = 0; j < visa_specs_length; j++)
+    for (int j = 0; j < visa_specs_length; j++)
+    {
+        if (card_digits == visa_specs[j])
         {
-            if (card_digits == visa_specs[j])
-            {
             return "VISA";
-            }
         }
+    }
 
-        return "INVALID";
+    return "INVALID";
 }
