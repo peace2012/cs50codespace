@@ -34,6 +34,8 @@ bool is_valid_length(int num_len);
 int first_two_digits(long number, int card_number_length);
 const char *type_of_card(long card_number);
 
+bool check_card_type(int two_digits, const int *specs, int array_length);
+
 int main(void)
 {
 
@@ -220,14 +222,11 @@ const char *type_of_card(long card_number)
     int card_digits = first_two_digits(card_number, card_length);
 
     const int amex_specs_length = sizeof(specs.amex_specs) / sizeof(specs.amex_specs[0]);
-
-    for (int i = 0; i < amex_specs_length; i++)
-    {
-        if (card_digits == specs.amex_specs[i])
+    bool is_amex = check_card_type(card_digits, specs.amex_specs, amex_specs_length);
+    if (is_amex == true)
         {
             return "AMEX";
         }
-    }
 
     const int mcard_specs_length = sizeof(specs.mcard_specs) / sizeof(specs.mcard_specs[0]);
 
@@ -252,10 +251,8 @@ const char *type_of_card(long card_number)
     return "INVALID card type";
 }
 
-bool check_card_type(int two_digits, const int *specs)
+bool check_card_type(int two_digits, const int *specs, int array_length)
 {
-const int array_length = sizeof(specs) / sizeof(specs[0]);
-
     for (int i = 0; i < array_length; i++)
     {
         if (two_digits == specs[i])
