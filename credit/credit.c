@@ -120,6 +120,11 @@ int calculate_digits(long card_num, int num_len)
 long get_card_number(long *card_num)
 {
     *card_num = get_long("Number: ");
+    if (input <= 0)
+{
+    fprintf(stderr, "Invalid input: must be a positive number\n");
+    return 1; // Exit the function or program
+}
     return *card_num;
 }
 
