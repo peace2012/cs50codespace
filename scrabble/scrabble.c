@@ -8,7 +8,12 @@ bool is_word(const char *str);
 string to_lowercase (char *str);
 int get_score (const char *str);
 
-const string *scrabble[] = {"aeilnorstu", "dg", "bcmp", "fhvwy", "k", "jx", "qz"]
+typedef struct {
+    char *word;
+    int number;
+} WordNumber;
+
+WordNumber scrabble[] = {{"aeilnorstu", 1}, {"dg", 2}, {"bcmp", 3}, {"fhvwy", 4}, {"k", 5}, {"jx", 8}, {"qz", 10}]
 
 // // variable for number of players
 // const int N = 2;
@@ -63,8 +68,6 @@ string to_lowercase (char *str)
 // string is an array
 // compare each letter to an array of scrabble letters and scores
 // output the integer found
-
-const string *scrabble[] = {"aeilnorstu", 1 "dg", "bcmp", "fhvwy", "k", "jx", "qz"]
 
 int get_score (const char *str, const string)
 {
