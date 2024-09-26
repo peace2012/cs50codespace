@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
+#include <stdlib.h>
 
 string get_word (string player);
 
@@ -23,13 +24,13 @@ int main (void)
 string get_word (string player)
 {
         string word = get_string("%s: ", player);
-        if (word > a && < z)
+        if (word != NULL)
         {
             return word;
         }
         else
         {
-            printf(stderr, "Please enter a word.");
+            fprintf(stderr, "Please enter a word.\n");
             exit(1);
         }
 
