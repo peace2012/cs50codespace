@@ -51,6 +51,6 @@ int get_score (const char *str)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
-        
+        for(int j = 0; scrabble[j] !='\0')
     }
 }
