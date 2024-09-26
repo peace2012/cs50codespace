@@ -24,16 +24,20 @@ int main (void)
 string get_word (string player)
 {
         string word = get_string("%s: ", player);
-        if (word != NULL)
+
+}
+
+bool is_word(const char str)
+{
+        for (int i = 0; str[i] != '\0'; i++)
+        if (!isalpha(str[i]))
         {
-            return word;
+            return false;
         }
         else
         {
-            fprintf(stderr, "Please enter a word.\n");
-            exit(1);
+            return true;
         }
-
 }
 
 // string is an array
