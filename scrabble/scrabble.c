@@ -82,7 +82,7 @@ int get_score (const char *str, WordNumber array[], int length)
             }
         }
     }
-    fprintf(stderr, "Error enter valid word.\n");
+    fprintf(stderr, "Error with calculating your score.")
     exit(1);
 }
 
