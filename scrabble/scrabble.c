@@ -52,12 +52,7 @@ int player_score(string input_name)
 // gets string from player
 string get_input(string input_name)
 {
-    // string word = 0;
-    // do
-    // {
-        string word = get_string("%s: ", input_name);
-    // }
-    // while (is_string(word) == false);
+    string word = get_string("%s: ", input_name);
 
     return word;
 }
