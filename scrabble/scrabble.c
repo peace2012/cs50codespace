@@ -66,11 +66,14 @@ string to_lowercase (char *str)
 // compare each letter to an array of scrabble letters and scores
 // output the integer found
 
-int get_score (const char *str, WordNumber *scrabble)
+int get_score (const char *str, WordNumber *array)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
-        for (int j = 0; scrabble[j])
+        for (int j = 0; array[j] < sizeof(WordNumber); j++)
+        {
+            if (str[i] == array[j].word )
+        }
 
         // look through array word if there's a match return array number
     }
