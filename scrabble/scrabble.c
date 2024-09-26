@@ -59,3 +59,7 @@ int get_score (const char *str)
         }
     }
 }
+
+switch() {
+    case 
+}

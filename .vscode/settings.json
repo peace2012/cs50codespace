@@ -3,6 +3,7 @@
     "files.associations": {
         "stdbool.h": "c",
         "card_specs.h": "c",
-        "card_validation.h": "c"
+        "card_validation.h": "c",
+        "stdlib.h": "c"
     }
 }
