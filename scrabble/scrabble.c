@@ -23,7 +23,7 @@ int main (void)
 string get_word (string player)
 {
         string word = get_string("%s: ", player);
-        if (word == string)
+        if (word > a && < z)
         {
             return word;
         }
