@@ -49,5 +49,8 @@ bool is_word(const char *str)
 
 int get_score (const char *str)
 {
-    
+    for (int i = 0; str[i] != '\0'; i++)
+    {
+        
+    }
 }
