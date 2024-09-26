@@ -23,6 +23,7 @@ int main (void)
 // function uses variable number of players
 // runs a loop to request input word, outputs string
 
+// gets string from player
 string get_word (string player)
 {
         string word = get_string("%s: ", player);
@@ -33,7 +34,7 @@ string get_word (string player)
         return word;
 }
 
-// checks if user input is a 
+// checks user input is valid word
 bool is_word(const char *str)
 {
         for (int i = 0; str[i] != '\0'; i++)
@@ -50,7 +51,7 @@ bool is_word(const char *str)
 // compare each letter to an array of scrabble letters and scores
 // output the integer found
 
-// int compare (char letter)
+// int get_score (const char *str)
 // {
 
 // }
