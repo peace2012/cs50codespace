@@ -1,62 +1,56 @@
-#include <stdio.h>
 #include <cs50.h>
-#include <stdlib.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct {
+typedef struct
+{
     char *word;
     int number;
 } WordNumber;
 
-WordNumber scrabble[] = {{"aeilnorstu", 1}, {"dg", 2}, {"bcmp", 3}, {"fhvwy", 4}, {"k", 5}, {"jx", 8}, {"qz", 10}};
+WordNumber scrabble[] = {{"aeilnorstu", 1}, {"dg", 2}, {"bcmp", 3}, {"fhvwy", 4},
+                         {"k", 5},          {"jx", 8}, {"qz", 10}};
 
-int player_score (string input_name);
-string get_input (string input_name);
+int player_score(string input_name);
+string get_input(string input_name);
 bool is_string(const char *str);
-string to_lowercase (char *str);
-int get_score (const char *str, WordNumber array[], int length);
+string to_lowercase(char *str);
+int get_score(const char *str, WordNumber array[], int length);
 
-int main (void)
+int main(void)
 {
+    // execute function to calculate individual players scores
     int p1_score = player_score("Player 1");
     int p2_score = player_score("Player 2");
 
-    // string player_1_word = get_input("Player 1");
-
-    // player_1_word = to_lowercase(player_1_word);
-
-    // int length = sizeof(scrabble) / sizeof(scrabble[0]);
-
-    // int player_1_score = get_score(player_1_word, scrabble, length);
-
-// logic to compare scores
-if (p1_score < p2_score)
-{
-    printf("Player 2 wins!\n");
-
-    if (p1_score == p2_score)
-{
-    printf("Tie!\n");
-
-    else {
+    // logic to compare scores
+    if (p1_score < p2_score)
+    {
+        printf("Player 2 wins!\n");
+    }
+    else if (p1_score == p2_score)
+    {
+        printf("Tie!\n");
+    }
+    else
+    {
         printf("Player 1 wins!\n");
     }
 }
-}
 
+// calculate individual players scores
+int player_score(string input_name)
+{
+    string word = get_input(input_name);
+    word = to_lowercase(word);
+    int length = sizeof(scrabble) / sizeof(scrabble[0]);
+    int score = get_score(word, scrabble, length);
+    return score;
 }
-
-    int player_score (string input_name)
-    {
-        string word = get_input(input_name);
-        word = to_lowercase(word);
-        int length = sizeof(scrabble) / sizeof(scrabble[0]);
-        int score = get_score(word, scrabble, length);
-        return score;
-    }
 
 // gets string from player
-string get_input (string input_name)
+string get_input(string input_name)
 {
     string word = get_string("%s: ", input_name);
     if (is_string(word) == false)
@@ -81,7 +75,7 @@ bool is_string(const char *str)
 }
 
 // string to lowercase
-string to_lowercase (char *str)
+string to_lowercase(char *str)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
@@ -91,17 +85,18 @@ string to_lowercase (char *str)
 }
 
 // loop through struct find input char in WordNumber array, get letter score, return total score
-int get_score (const char *str, WordNumber array[], int length)
+int get_score(const char *str, WordNumber array[], int length)
 {
     int score = 0;
     for (int i = 0; str[i] != '\0'; i++)
     {
         for (int j = 0; j < length; j++)
         {
-            for (int k = 0; array[j].word[k] != '\0'; k++) {
+            for (int k = 0; array[j].word[k] != '\0'; k++)
+            {
                 if (str[i] == array[j].word[k])
                 {
-                score += array[j].number;
+                    score += array[j].number;
                 }
             }
         }
