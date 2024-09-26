@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <cs50.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 string get_word (string player);
-bool is_word(const char str);
+bool is_word(const char *str);
 
 // // variable for number of players
 // const int N = 2;
@@ -26,13 +27,14 @@ string get_word (string player)
 {
         string word = get_string("%s: ", player);
         if (is_word(word) == false) {
-            fprintf(stderr, "Enter valid word.\n");
+            fprintf(stderr, "Error enter valid word.\n");
             exit(1);
         }
         return word;
 }
 
-bool is_word(const char str)
+// checks if user input is a 
+bool is_word(const char *str)
 {
         for (int i = 0; str[i] != '\0'; i++)
         {
