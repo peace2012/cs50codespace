@@ -5,6 +5,7 @@
 
 string get_word (string player);
 bool is_word(const char *str);
+string to_lowercase (const char *str);
 int get_score (const char *str);
 
 
@@ -16,6 +17,8 @@ int main (void)
 {
     string player_1_word = get_word("Player 1");
 
+    player_1_word = to_lowercase(player_1_word);
+
     int player_1_score = get_score(player_1_word);
 }
 
@@ -25,25 +28,36 @@ int main (void)
 // gets string from player
 string get_word (string player)
 {
-        string word = get_string("%s: ", player);
-        if (is_word(word) == false) {
-            fprintf(stderr, "Error enter valid word.\n");
-            exit(1);
-        }
-        return word;
+    string word = get_string("%s: ", player);
+    if (is_word(word) == false)
+    {
+        fprintf(stderr, "Error enter valid word.\n");
+        exit(1);
+    }
+    return word;
 }
 
 // checks user input is valid word
 bool is_word(const char *str)
 {
-        for (int i = 0; str[i] != '\0'; i++)
-        {
+    for (int i = 0; str[i] != '\0'; i++)
+    {
         if (!isalpha(str[i]))
         {
             return false;
         }
-        }
-            return true;
+    }
+    return true;
+}
+
+// string to lowercase
+string to_lowercase (const char *str)
+{
+    for (int i = 0; str[i] != '\0'; i++)
+    {
+        str[i] = tolower(stri[i]);
+    }
+    return str;
 }
 
 // string is an array
