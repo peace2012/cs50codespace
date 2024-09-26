@@ -13,7 +13,7 @@ WordNumber scrabble[] = {{"aeilnorstu", 1}, {"dg", 2}, {"bcmp", 3}, {"fhvwy", 4}
 string get_word (string player);
 bool is_word(const char *str);
 string to_lowercase (char *str);
-int get_score (const char *str, WordNumber array[]);
+int get_score (const char *str, WordNumber array[], int length);
 
 int main (void)
 {
@@ -21,7 +21,8 @@ int main (void)
 
     player_1_word = to_lowercase(player_1_word);
 
-    int player_1_score = get_score(player_1_word, scrabble);
+    int length = sizeof(scrabble) / sizeof(scrabble[0]);
+    int player_1_score = get_score(player_1_word, scrabble, length);
 }
 
 // function uses variable number of players
@@ -66,11 +67,10 @@ string to_lowercase (char *str)
 // compare each letter to an array of scrabble letters and scores
 // output the integer found
 
-int get_score (const char *str, WordNumber array[])
+int get_score (const char *str, WordNumber array[], int length)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
-        int length = sizeof(array) / sizeof(array[0])
         for (int j = 0; array[j] < length); j++)
         {
             for (int k = 0; array[j].word[k] != '\0'; k++) {
