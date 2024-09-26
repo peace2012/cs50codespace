@@ -64,7 +64,9 @@ string to_lowercase (char *str)
 // compare each letter to an array of scrabble letters and scores
 // output the integer found
 
-int get_score (const char *str)
+const string *scrabble[] = {"aeilnorstu", 1 "dg", "bcmp", "fhvwy", "k", "jx", "qz"]
+
+int get_score (const char *str, const string)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
