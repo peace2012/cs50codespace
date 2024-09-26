@@ -22,7 +22,9 @@ int main (void)
     player_1_word = to_lowercase(player_1_word);
 
     int length = sizeof(scrabble) / sizeof(scrabble[0]);
+
     int player_1_score = get_score(player_1_word, scrabble, length);
+    
     printf("%i\n", player_1_score);
 }
 
