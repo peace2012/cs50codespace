@@ -3,17 +3,17 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-string get_word (string player);
-bool is_word(const char *str);
-string to_lowercase (char *str);
-int get_score (const char *str);
-
 typedef struct {
     char *word;
     int number;
 } WordNumber;
 
-WordNumber scrabble[] = {{"aeilnorstu", 1}, {"dg", 2}, {"bcmp", 3}, {"fhvwy", 4}, {"k", 5}, {"jx", 8}, {"qz", 10}}
+WordNumber scrabble[] = {{"aeilnorstu", 1}, {"dg", 2}, {"bcmp", 3}, {"fhvwy", 4}, {"k", 5}, {"jx", 8}, {"qz", 10}};
+
+string get_word (string player);
+bool is_word(const char *str);
+string to_lowercase (char *str);
+int get_score (const char *str, WordNumber *array);
 
 int main (void)
 {
@@ -21,7 +21,7 @@ int main (void)
 
     player_1_word = to_lowercase(player_1_word);
 
-    int player_1_score = get_score(player_1_word);
+    int player_1_score = get_score(player_1_word, scrabble);
 }
 
 // function uses variable number of players
@@ -72,11 +72,15 @@ int get_score (const char *str, WordNumber *array)
     {
         for (int j = 0; array[j] < sizeof(WordNumber); j++)
         {
-            if (str[i] == array[j].word )
+            for (int k = 0; array[j].word[k] != '\0'; k++) {
+                if (str[i] == array[j].word[k])
+                {
+                return array[j].number;
+                }
+            }
         }
-
-        // look through array word if there's a match return array number
     }
-    return 1;
+    fprintf(stderr, "Error enter valid word.\n");
+    exit(1);
 }
 
