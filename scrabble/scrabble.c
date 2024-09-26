@@ -12,12 +12,8 @@ bool is_word(const char *str);
 int main (void)
 {
     string player_1_word = get_word("Player 1");
-    string player_2_word = get_word("Player 2");
 
-
-    // int player_1_score = 0;
-    // int player_2_score = 0;
-
+    int player_1_score = get_score(player_1_word);
 }
 
 // function uses variable number of players
@@ -51,7 +47,7 @@ bool is_word(const char *str)
 // compare each letter to an array of scrabble letters and scores
 // output the integer found
 
-// int get_score (const char *str)
-// {
-
-// }
+int get_score (const char *str)
+{
+    
+}
