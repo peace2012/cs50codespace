@@ -5,6 +5,7 @@
 
 string get_word (string player);
 bool is_word(const char *str);
+int get_score (const char *str);
 
 // // variable for number of players
 // const int N = 2;
@@ -51,15 +52,9 @@ int get_score (const char *str)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
-        for(int j = 0; scrabble[j] !='\0'; j++)
-        {
-            if str[i] == scrabble[j] {
-                return
+        if (str[i] == 'q', 'Q', 'z', 'Z') {
+                printf("success");
             }
         }
     }
-}
 
-switch() {
-    case 
-}
