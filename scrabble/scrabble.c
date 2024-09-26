@@ -52,12 +52,12 @@ int player_score(string input_name)
 // gets string from player
 string get_input(string input_name)
 {
-    string word = get_string("%s: ", input_name);
-    if (is_string(word) == false)
+    string word;
+    do
     {
-        fprintf(stderr, "Error enter valid word.\n");
-        exit(1);
-    }
+        string word = get_string("%s: ", input_name);
+    } while (is_string(word) == false)
+
     return word;
 }
 
