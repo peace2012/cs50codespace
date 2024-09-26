@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 string get_word (string player);
+bool is_word(const char str);
 
 // // variable for number of players
 // const int N = 2;
@@ -24,20 +25,23 @@ int main (void)
 string get_word (string player)
 {
         string word = get_string("%s: ", player);
-
+        if (is_word(word) == false) {
+            fprintf(stderr, "Enter valid word.\n");
+            exit(1);
+        }
+        return word;
 }
 
 bool is_word(const char str)
 {
         for (int i = 0; str[i] != '\0'; i++)
+        {
         if (!isalpha(str[i]))
         {
             return false;
         }
-        else
-        {
-            return true;
         }
+            return true;
 }
 
 // string is an array
