@@ -5,7 +5,7 @@
 
 string get_word (string player);
 bool is_word(const char *str);
-string to_lowercase (const char *str);
+string to_lowercase (char *str);
 int get_score (const char *str);
 
 
@@ -51,11 +51,11 @@ bool is_word(const char *str)
 }
 
 // string to lowercase
-string to_lowercase (const char *str)
+string to_lowercase (char *str)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
-        str[i] = tolower(stri[i]);
+        str[i] = tolower(str[i]);
     }
     return str;
 }
@@ -68,7 +68,11 @@ int get_score (const char *str)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
-        for (int j = 0; )
+        if (str[i] == 'q' || str[i] == 'z') {
+            return 10;
+        }
+        switch 
     }
+    return 1;
 }
 
