@@ -23,6 +23,7 @@ int main (void)
 
     int length = sizeof(scrabble) / sizeof(scrabble[0]);
     int player_1_score = get_score(player_1_word, scrabble, length);
+    printf("%i\n", player_1_score);
 }
 
 // function uses variable number of players
@@ -71,7 +72,7 @@ int get_score (const char *str, WordNumber array[], int length)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
-        for (int j = 0; array[j] < length); j++)
+        for (int j = 0; j < length; j++)
         {
             for (int k = 0; array[j].word[k] != '\0'; k++) {
                 if (str[i] == array[j].word[k])
