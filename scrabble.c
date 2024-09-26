@@ -16,7 +16,7 @@ string get_input (int number)
 {
     for (i = 0; i < number; i++)
     {
-        get_string()
+        get_string("Player %i:", number++);
     }
 }
 
