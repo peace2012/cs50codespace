@@ -33,14 +33,15 @@ int main (void)
 if (p1_score < p2_score)
 {
     printf("Player 2 wins!\n");
-}
-if (p1_score == p2_score)
+
+    if (p1_score == p2_score)
 {
     printf("Tie!\n");
+
+    else {
+        printf("Player 1 wins!\n");
+    }
 }
-else
-{
-printf("Player 1 wins!\n");
 }
 
 }
