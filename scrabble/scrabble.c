@@ -40,7 +40,7 @@ if (p1_score == p2_score)
 }
 else
 {
-    printf("Player 1 wins!\n");
+printf("Player 1 wins!\n");
 }
 
 }
