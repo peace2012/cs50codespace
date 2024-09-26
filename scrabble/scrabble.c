@@ -52,9 +52,7 @@ int get_score (const char *str)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
-        if (str[i] == 'q', 'Q', 'z', 'Z') {
-                printf("success");
-            }
-        }
+        for (int j = 0; )
     }
+}
 
