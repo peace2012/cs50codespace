@@ -8,7 +8,7 @@ bool is_word(const char *str);
 string to_lowercase (char *str);
 int get_score (const char *str);
 
-
+const string *scrabble[] = {"aeilnorstu", "dg", "bcmp", "fhvwy", "k", "jx", "qz"]
 
 // // variable for number of players
 // const int N = 2;
@@ -76,7 +76,7 @@ int get_score (const char *str)
             case 'c':
             case 'm':
             case 'p':
-            
+
             case 'q':
             case 'z':
                 return 10;
