@@ -70,6 +70,7 @@ string to_lowercase (char *str)
 
 int get_score (const char *str, WordNumber array[], int length)
 {
+    int score = 0;
     for (int i = 0; str[i] != '\0'; i++)
     {
         for (int j = 0; j < length; j++)
@@ -77,12 +78,11 @@ int get_score (const char *str, WordNumber array[], int length)
             for (int k = 0; array[j].word[k] != '\0'; k++) {
                 if (str[i] == array[j].word[k])
                 {
-                return array[j].number;
+                score += array[j].number;
                 }
             }
         }
     }
-    fprintf(stderr, "Error with calculating your score.")
-    exit(1);
+    return score;
 }
 
