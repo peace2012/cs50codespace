@@ -7,6 +7,8 @@ string get_word (string player);
 bool is_word(const char *str);
 int get_score (const char *str);
 
+
+
 // // variable for number of players
 // const int N = 2;
 
