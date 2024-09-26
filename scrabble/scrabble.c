@@ -15,9 +15,6 @@ typedef struct {
 
 WordNumber scrabble[] = {{"aeilnorstu", 1}, {"dg", 2}, {"bcmp", 3}, {"fhvwy", 4}, {"k", 5}, {"jx", 8}, {"qz", 10}}
 
-// // variable for number of players
-// const int N = 2;
-
 int main (void)
 {
     string player_1_word = get_word("Player 1");
@@ -69,24 +66,13 @@ string to_lowercase (char *str)
 // compare each letter to an array of scrabble letters and scores
 // output the integer found
 
-int get_score (const char *str, const string)
+int get_score (const char *str, WordNumber *scrabble)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
-        if (str[i] == 'q' || str[i] == 'z') {
-            return 10;
-        }
-        switch (str[i]) {
-            case 'b':
-            case 'c':
-            case 'm':
-            case 'p':
+        for (int j = 0; scrabble[j])
 
-            case 'q':
-            case 'z':
-                return 10;
-                break;
-        }
+        // look through array word if there's a match return array number
     }
     return 1;
 }
