@@ -71,7 +71,17 @@ int get_score (const char *str)
         if (str[i] == 'q' || str[i] == 'z') {
             return 10;
         }
-        switch 
+        switch (str[i]) {
+            case 'b':
+            case 'c':
+            case 'm':
+            case 'p':
+            
+            case 'q':
+            case 'z':
+                return 10;
+                break;
+        }
     }
     return 1;
 }
