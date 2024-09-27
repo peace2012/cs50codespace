@@ -16,16 +16,21 @@ int main (void)
 {
     string text = get_input("Text");
 
-    float no_of_spaces = count(text, 32);
+    int no_of_spaces = count(text, 32);
     if (no_of_spaces <= 100) {
 
+        float no_of_words = ++no_of_spaces;
+        printf("%f\n", no_of_words);
+
         // total letters divided by total words
-        float L = (( count_alpha(text) / ++no_of_spaces )) * 100;
+        float L = ( count_alpha(text) / no_of_words ) * 100;
         printf("%f\n", L);
 
         // count punctuation to find number of sentences
         int total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
-        float S = ( total_sentences / ++no_of_spaces ) * 100;
+        printf("%i\n", total_sentences);
+
+        float S = ( total_sentences / no_of_words ) * 100;
         printf("%f\n", S);
 
         float result = (0.0588 * L) - (0.296 * S) - 15.8;
