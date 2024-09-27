@@ -24,11 +24,9 @@ int main (void)
         int S = ( total_sentences / ++no_of_spaces );
         printf("%i\n", S);
 
-        // divide no. of characters by number of spaces + 1
-        float L = ( (float)count_alpha(text) / ++no_of_spaces );
-        printf("%f\n", L);
 
-    int result = (0.0588 * (L*100)) - 0.296 * (S*100) - 15.8;
+
+    int result = (0.0588 * (L*100)) - (0.296 * (S*100)) - 15.8;
     printf("%i\n", result);
 
     }
