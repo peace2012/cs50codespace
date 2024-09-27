@@ -5,7 +5,7 @@
 
 string get_input (string str);
 int count (const char *str, const int alpha);
-float count_alpha(const char *str);
+int count_alpha(const char *str);
 
 // index = 0.0588 * L - 0.296 * S - 15.8
 // L = average number of letters per 100 words
@@ -26,7 +26,7 @@ int main (void)
         printf("L CORRECT %f\n", L);
 
         // count punctuation to find number of sentences
-        float total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
+        int total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
 
         float S = ( total_sentences / no_of_words ) * 100;
         printf("S CORRECT %f\n", S);
@@ -68,7 +68,7 @@ int count (const char *str, const int alpha)
 
 // loop through array
 // if char increase count
-float count_alpha(const char *str)
+int count_alpha(const char *str)
 {
     int count = 0;
 
