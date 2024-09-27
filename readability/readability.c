@@ -20,14 +20,13 @@ int main (void)
     if (no_of_spaces <= 100) {
 
         // count punctuation to find number of sentences
-        int S = 0;
-
-        S = S + count(text, 33) + count(text, 63) + count(text, 46);
+        int S = count(text, 33) + count(text, 63) + count(text, 46);
 
         // divide no. of characters by number of spaces + 1
-        float L = = ((float)count_alpha(text) / ++no_of_spaces );
+        float L = ((float)count_alpha(text) / ++no_of_spaces );
 
-        printf("%f\n", result);
+    int result = 0.0588 * (L - 0.296) * (S - 15.8);
+    printf("%i\n", result);
 
     }
     else
@@ -35,8 +34,7 @@ int main (void)
         printf("I can only count to 100.");
     }
 
-    // int index = 0.0588 * L - 0.296 * S - 15.8;
-    // printf("%i\n", index);
+
 }
 
 // gets text input
