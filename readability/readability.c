@@ -21,10 +21,10 @@ int main (void)
 
         // count punctuation to find number of sentences
         int total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
-        int S = ( total_sentences / ++no_of_spaces );
+        int S = ( total_sentences / 100 );
 
         // divide no. of characters by number of spaces + 1
-        float L = ((float)count_alpha(text) / ++no_of_spaces );
+        float L = ((float)count_alpha(text) / 100 );
 
     int result = 5.88 * L - 0.296 * S - 15.8;
     printf("%i\n", result);
