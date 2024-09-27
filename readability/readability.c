@@ -14,7 +14,7 @@ int main (void)
 {
     string text = get_input("Text");
 
-    int S = 
+    int S =
 
     printf("%i\n", S);
 
@@ -29,6 +29,9 @@ string get_input(string str)
 
     return output;
 }
+
+// count the number of something in a string
+int count
 
 // count the number of sentences
 int get_sentences(const char *str)
