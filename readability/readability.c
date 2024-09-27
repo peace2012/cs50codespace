@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 string get_input(string str);
 
@@ -11,6 +12,9 @@ string get_input(string str);
 int main (void)
 {
     string text = get_input("Text");
+
+    int S = 
+
     printf("%i\n", text[5]);
 
     // int index = 0.0588 * L - 0.296 * S - 15.8;
@@ -28,5 +32,14 @@ string get_input(string str)
 // count the number of sentences
 int get_sentences(string *str)
 {
-    
+    int count = 0;
+
+    for (int i = 0; i < strlen[str]; i++)
+    {
+        if (str[i] == 33 || str[i] == 46 || str[i] == 63) {
+            count++;
+        }
+    }
+
+    return count;
 }
