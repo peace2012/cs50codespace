@@ -20,7 +20,8 @@ int main (void)
     if (no_of_spaces <= 100) {
 
         // count punctuation to find number of sentences
-        int S = count(text, 33) + count(text, 63) + count(text, 46);
+        int total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
+        int S = ( total_sentences / ++no_of_spaces );
 
         // divide no. of characters by number of spaces + 1
         float L = ((float)count_alpha(text) / ++no_of_spaces );
