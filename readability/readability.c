@@ -20,7 +20,7 @@ int main (void)
     if (no_of_spaces <= 100) {
 
         // total letters divided by total words
-        float L = ( count_alpha(text) / ++no_of_spaces ) * 100;
+        float L = (( count_alpha(text) / ++no_of_spaces )) * 100;
         printf("%f\n", L);
 
         // count punctuation to find number of sentences
