@@ -5,7 +5,7 @@
 
 string get_input (string str);
 int count (const char *str, const int alpha);
-int count_alpha(const char *str);
+float count_alpha(const char *str);
 
 // index = 0.0588 * L - 0.296 * S - 15.8
 // L = average number of letters per 100 words
@@ -27,11 +27,11 @@ int main (void)
         printf("%i\n", S);
 
         // divide no. of characters by number of spaces + 1
-        int L = 0;
+        float L = 0;
 
         L = L + (count_alpha(text) / (no_of_spaces++));
 
-        printf("%i\n", L);
+        printf("%f\n", L);
 
     }
     else
@@ -68,7 +68,7 @@ int count (const char *str, const int alpha)
 
 // loop through array
 // if char increase count
-int count_alpha(const char *str)
+float count_alpha(const char *str)
 {
     int count = 0;
 
