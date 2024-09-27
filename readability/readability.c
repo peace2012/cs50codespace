@@ -13,37 +13,30 @@ int main(void)
     string text = get_input("Text");
 
     int no_of_spaces = count(text, 32);
-    if (no_of_spaces <= 100)
+
+    float no_of_words = ++no_of_spaces;
+
+    // total letters divided by total words
+    float L = (count_alpha(text) / no_of_words) * 100;
+
+    // count punctuation to find number of sentences
+    int total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
+
+    float S = (total_sentences / no_of_words) * 100;
+
+    int result = round(0.0588 * L - 0.296 * S - 15.8);
+
+    if (result <= 1)
     {
-
-        float no_of_words = ++no_of_spaces;
-
-        // total letters divided by total words
-        float L = (count_alpha(text) / no_of_words) * 100;
-
-        // count punctuation to find number of sentences
-        int total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
-
-        float S = (total_sentences / no_of_words) * 100;
-
-        int result = round(0.0588 * L - 0.296 * S - 15.8);
-
-        if (result <= 1)
-        {
-            printf("Before Grade 1\n");
-        }
-        else if (result >= 16)
-        {
-            printf("Grade 16+\n");
-        }
-        else
-        {
-            printf("Grade %i\n", result);
-        }
+        printf("Before Grade 1\n");
+    }
+    else if (result >= 16)
+    {
+        printf("Grade 16+\n");
     }
     else
     {
-        printf("I can only count to 100.");
+        printf("Grade %i\n", result);
     }
 }
 
