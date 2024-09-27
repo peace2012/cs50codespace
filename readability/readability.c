@@ -12,7 +12,7 @@ int main(void)
 {
     string text = get_input("Text");
 
-    int no_of_spaces = count(text, 32);
+    int no_of_spaces = count(text, ' ');
 
     float no_of_words = ++no_of_spaces;
 
@@ -20,7 +20,7 @@ int main(void)
     float L = (count_alpha(text) / no_of_words) * 100;
 
     // count punctuation to find number of sentences
-    int total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
+    int total_sentences = count(text, '!') + count(text, '?') + count(text, '.');
 
     float S = (total_sentences / no_of_words) * 100;
 
@@ -48,7 +48,7 @@ string get_input(string str)
     return output;
 }
 
-// count the number of something in a string
+// count specific alphanumeric characters in string
 int count(const char *str, const int alpha)
 {
     int count = 0;
@@ -64,8 +64,7 @@ int count(const char *str, const int alpha)
     return count;
 }
 
-// loop through array
-// if char increase count
+// count total alphanumeric characters in string
 int count_alpha(const char *str)
 {
     int count = 0;
@@ -77,6 +76,5 @@ int count_alpha(const char *str)
             count++;
         }
     }
-
     return count;
 }
