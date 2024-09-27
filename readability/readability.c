@@ -1,9 +1,11 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 string get_input (string str);
-int count (const char *str, const int ascii_dec);
+int count (const char *str, const int alpha);
+int count_alpha(const char *str);
 
 // index = 0.0588 * L - 0.296 * S - 15.8
 // L = average number of letters per 100 words
@@ -24,7 +26,12 @@ int main (void)
 
         printf("%i\n", S);
 
+        // divide no. of characters by number of spaces + 1
+        int L = 0;
 
+        L = L + (count_alpha(text) / (no_of_spaces++));
+
+        printf("%i\n", L);
 
     }
     else
@@ -45,13 +52,30 @@ string get_input (string str)
 }
 
 // count the number of something in a string
-int count (const char *str, const int ascii_dec)
+int count (const char *str, const int alpha)
 {
     int count = 0;
 
         for (int i = 0; str[i] !='\0'; i++)
     {
-        if (str[i] == ascii_dec) {
+        if (str[i] == alpha) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+// loop through array
+// if char increase count
+int count_alpha(const char *str)
+{
+    int count = 0;
+
+    for (int i = 0; str[i] != '\0'; i++)
+    {
+        if (isalpha(str[i]))
+        {
             count++;
         }
     }
