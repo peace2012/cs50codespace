@@ -40,9 +40,9 @@ int count (const char *str, const int ascii_dec)
 {
     int count = 0;
 
-        for (int i = 0; str[i] != "\0"; i++)
+        for (int i = 0; str[i] !='\0'; i++)
     {
-        if (str[i] == character) {
+        if (str[i] == ascii_dec) {
             count++;
         }
     }
