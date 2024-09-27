@@ -32,9 +32,9 @@ int main (void)
         float number_of_characters = count_alpha(text);
         float spaces_plus_one = no_of_spaces++;
 
-        L = L + ( (float)number_of_characters / spaces_plus_one );
+        float result = ((float)number_of_characters / spaces_plus_one );
 
-        printf("%f\n", L);
+        printf("%f\n", result);
 
     }
     else
