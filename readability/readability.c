@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
-string get_input(string str);
-int get_sentences(const char *str);
+string get_input (string str);
+int get_sentences (const char *str);
 
 // index = 0.0588 * L - 0.296 * S - 15.8
 // L = average number of letters per 100 words
@@ -14,7 +14,7 @@ int main (void)
 {
     string text = get_input("Text");
 
-    int S =
+    int S = 
 
     printf("%i\n", S);
 
@@ -23,7 +23,7 @@ int main (void)
 }
 
 // gets text input
-string get_input(string str)
+string get_input (string str)
 {
     string output = get_string("%s: ", str);
 
@@ -31,19 +31,31 @@ string get_input(string str)
 }
 
 // count the number of something in a string
-int count
-
-// count the number of sentences
-int get_sentences(const char *str)
+int count (const char *str, const char character)
 {
     int count = 0;
 
-    for (int i = 0; str[i] != "\0"; i++)
+        for (int i = 0; str[i] != "\0"; i++)
     {
-        if (str[i] == 33 || str[i] == 46 || str[i] == 63) {
+        if (str[i] == character) {
             count++;
         }
     }
 
     return count;
 }
+
+// // count the number of sentences
+// int get_sentences(const char *str)
+// {
+//     int count = 0;
+
+//     for (int i = 0; str[i] != "\0"; i++)
+//     {
+//         if (str[i] == 33 || str[i] == 46 || str[i] == 63) {
+//             count++;
+//         }
+//     }
+
+//     return count;
+// }
