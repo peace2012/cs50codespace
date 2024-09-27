@@ -58,7 +58,7 @@ string get_input(string input_name)
 }
 
 // checks user input is valid word
-bool is_string(const char *str)
+bool is_string(const char str)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {

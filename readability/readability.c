@@ -3,6 +3,7 @@
 #include <string.h>
 
 string get_input(string str);
+int get_sentences(const char *str);
 
 // index = 0.0588 * L - 0.296 * S - 15.8
 // L = average number of letters per 100 words
@@ -15,7 +16,7 @@ int main (void)
 
     int S = 
 
-    printf("%i\n", text[5]);
+    printf("%i\n", S);
 
     // int index = 0.0588 * L - 0.296 * S - 15.8;
     // printf("%i\n", index);
@@ -30,11 +31,11 @@ string get_input(string str)
 }
 
 // count the number of sentences
-int get_sentences(string *str)
+int get_sentences(const char *str)
 {
     int count = 0;
 
-    for (int i = 0; i < strlen[str]; i++)
+    for (int i = 0; str[i] != "\0"; i++)
     {
         if (str[i] == 33 || str[i] == 46 || str[i] == 63) {
             count++;
