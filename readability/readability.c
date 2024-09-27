@@ -24,3 +24,9 @@ string get_input(string str)
 
     return output;
 }
+
+// count the number of sentences
+int get_sentences(string *str)
+{
+    
+}
