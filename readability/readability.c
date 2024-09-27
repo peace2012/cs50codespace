@@ -16,11 +16,18 @@ int main (void)
 
     int no_of_spaces = count(text, 32);
     if (no_of_spaces <= 100) {
-        printf("less than 100 words\n");
+
+        // count punctuation to find number of sentences
+        int S = 0;
+
+        S = S + count(text, 33) + count(text, 63) + count(text, 46);
+
+        printf("%i\n", S);
+
     }
     else
     {
-        printf("more than 100 words\n");
+        printf("I can only count to 100.");
     }
 
     // int index = 0.0588 * L - 0.296 * S - 15.8;
