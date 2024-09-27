@@ -11,7 +11,7 @@ string get_input(string str);
 int main (void)
 {
     string text = get_input("Text");
-    printf("%s\n", text);
+    printf("%i\n", text[5]);
 
     // int index = 0.0588 * L - 0.296 * S - 15.8;
     // printf("%i\n", index);
