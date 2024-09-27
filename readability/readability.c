@@ -26,7 +26,7 @@ int main (void)
         // divide no. of characters by number of spaces + 1
         float L = ((float)count_alpha(text) / ++no_of_spaces );
 
-    int result = 0.0588 * (L*100) - 0.296 * (S*100) - 15.8;
+    int result = 5.88 * L - 0.296 * S - 15.8;
     printf("%i\n", result);
 
     }
