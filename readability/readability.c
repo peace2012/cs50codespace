@@ -3,7 +3,7 @@
 #include <string.h>
 
 string get_input (string str);
-int get_sentences (const char *str);
+int count (const char *str, const int ascii_dec);
 
 // index = 0.0588 * L - 0.296 * S - 15.8
 // L = average number of letters per 100 words
@@ -14,9 +14,14 @@ int main (void)
 {
     string text = get_input("Text");
 
-    int S = 
-
-    printf("%i\n", S);
+    int no_of_spaces = count(text, 32);
+    if (no_of_spaces <= 100) {
+        printf("less than 100 words\n");
+    }
+    else
+    {
+        printf("more than 100 words\n");
+    }
 
     // int index = 0.0588 * L - 0.296 * S - 15.8;
     // printf("%i\n", index);
@@ -31,7 +36,7 @@ string get_input (string str)
 }
 
 // count the number of something in a string
-int count (const char *str, const char character)
+int count (const char *str, const int ascii_dec)
 {
     int count = 0;
 
