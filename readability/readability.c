@@ -29,7 +29,7 @@ int main (void)
 
         float number_of_characters = count_alpha(text);
         printf("%f\n", number_of_characters);
-        float spaces_plus_one = no_of_spaces+1;
+        float spaces_plus_one = no_of_spaces++;
         printf("%f\n", spaces_plus_one);
 
         float result = ((float)number_of_characters / spaces_plus_one );
