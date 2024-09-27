@@ -2,15 +2,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 
 string get_input (string str);
 int count (const char *str, const int alpha);
 int count_alpha(const char *str);
-
-// index = 0.0588 * L - 0.296 * S - 15.8
-// L = average number of letters per 100 words
-// S = average number of sentences per 100 words
-// Would you like them here or there? I would not like them here or there. I would not like them anywhere.
 
 int main (void)
 {
@@ -23,24 +19,27 @@ int main (void)
 
         // total letters divided by total words
         float L = ( count_alpha(text) / no_of_words ) * 100;
-        printf("L CORRECT %f\n", L);
 
         // count punctuation to find number of sentences
         int total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
 
         float S = ( total_sentences / no_of_words ) * 100;
-        printf("S CORRECT %f\n", S);
 
-        float result = 0.0588 * L - 0.296 * S - 15.8;
-        printf("%f\n", result);
+        int result = round(0.0588 * L - 0.296 * S - 15.8);
 
+        if (result <= 1)
+        {
+            printf("Before Grade 1\n");
+        }
+        else
+        {
+        printf("Grade %i\n", result);
+        }
     }
     else
     {
         printf("I can only count to 100.");
     }
-
-
 }
 
 // gets text input
