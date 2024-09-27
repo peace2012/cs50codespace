@@ -20,20 +20,20 @@ int main (void)
     if (no_of_spaces <= 100) {
 
         float no_of_words = ++no_of_spaces;
-        printf("%f\n", no_of_words);
+        printf("no of words CORRECT %f\n", no_of_words);
 
         // total letters divided by total words
         float L = ( count_alpha(text) / no_of_words ) * 100;
-        printf("%f\n", L);
+        printf("L CORRECT %f\n", L);
 
         // count punctuation to find number of sentences
-        int total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
-        printf("%i\n", total_sentences);
+        float total_sentences = count(text, 33) + count(text, 63) + count(text, 46);
+        printf("total sentences CORRECT %f\n", total_sentences);
 
         float S = ( total_sentences / no_of_words ) * 100;
-        printf("%f\n", S);
+        printf("S CORRECT %f\n", S);
 
-        float result = (0.0588 * L) - (0.296 * S) - 15.8;
+        float result = 0.0588 * L - 0.296 * S - 15.8;
         printf("%f\n", result);
 
     }
