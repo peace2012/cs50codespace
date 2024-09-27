@@ -24,6 +24,8 @@ int main (void)
 
         printf("%i\n", S);
 
+
+
     }
     else
     {
@@ -56,18 +58,3 @@ int count (const char *str, const int ascii_dec)
 
     return count;
 }
-
-// // count the number of sentences
-// int get_sentences(const char *str)
-// {
-//     int count = 0;
-
-//     for (int i = 0; str[i] != "\0"; i++)
-//     {
-//         if (str[i] == 33 || str[i] == 46 || str[i] == 63) {
-//             count++;
-//         }
-//     }
-
-//     return count;
-// }
