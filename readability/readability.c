@@ -25,14 +25,7 @@ int main (void)
         S = S + count(text, 33) + count(text, 63) + count(text, 46);
 
         // divide no. of characters by number of spaces + 1
-        float L = 0;
-
-        float number_of_characters = count_alpha(text);
-        printf("%f\n", number_of_characters);
-        float spaces_plus_one = ++no_of_spaces;
-        printf("%f\n", spaces_plus_one);
-
-        float result = ((float)number_of_characters / spaces_plus_one );
+        float L = = ((float)count_alpha(text) / ++no_of_spaces );
 
         printf("%f\n", result);
 
