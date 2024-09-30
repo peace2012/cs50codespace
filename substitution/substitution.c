@@ -8,7 +8,7 @@ int CheckIfRepeated (char* key, int key_length);
 int main (int argc, string argv[])
 {
     // if > 1 command line argument return error
-    if (argc >= 3)
+    if (argc > 2)
     {
         printf("Error - enter 1 key of 26 characters\n");
         return 1;
