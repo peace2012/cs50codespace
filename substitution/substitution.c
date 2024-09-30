@@ -57,9 +57,9 @@ int main (int argc, string argv[])
 // look for character in array
 // return found throw error
 
-int find_target(string key, int low, int high, int target)
+int find_target(char[] *key, int low, int high, int target)
 {
-    qsort(key, ARRAY_SIZE(key), sizeof(key[0]), )
+    qsort(key, ARRAY_SIZE(key), sizeof(key[0]), CompareInts)
 }
 
 int CompareInts (const void *p1, const void *p2)
