@@ -83,7 +83,7 @@ string Cipher (char* plain_text, char* key)
 
     for (int i = 0; i < strlen(plain_text); i++)
     {
-        -97
+        cipher[i] = key[plain_text[i]-97];
     }
 
     // if original is upper, convert to upper
