@@ -5,6 +5,7 @@
 #include <cs50.h>
 
 int CheckIfRepeated (char* key);
+string ToUpper (char* str);
 string Cipher (char* plain_text, char* key);
 
 int main (int argc, string argv[])
@@ -90,12 +91,12 @@ string ToUpper (char* str)
             output[i] = toupper(str[i]);
         }
     }
-    return ouput;
+    return output;
 }
 
 string Cipher (char* plain_text, char* key)
 {
-    all_caps_key = ToUpper(key);
+    string all_caps_key = ToUpper(key);
 
     char *cipher = malloc(100 * sizeof(char));
 
@@ -104,15 +105,13 @@ string Cipher (char* plain_text, char* key)
         if (isupper(plain_text[i]) == 0)
         // not an uppercase letter
         {
-            cipher[i] = key[plain_text[i] - 97];
+            cipher[i] = tolower(all_caps_key[plain_text[i] - 97]);
         }
         else
+        // is uppercase
         {
-            cipher[i] = key[plain_text[i] - 65];
+            cipher[i] = toupper(all_caps_key[plain_text[i] - 65]);
         }
-
     }
-    // if original is upper, convert to upper
-
     return cipher;
 }
