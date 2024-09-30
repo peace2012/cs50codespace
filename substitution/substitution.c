@@ -81,4 +81,6 @@ int CheckIfRepeated (char* key, int key_length)
 string Cipher (char* plain_text, char* key)
 {
     
+
+    // if original is upper, convert to upper
 }
