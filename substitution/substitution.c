@@ -65,7 +65,7 @@ int CheckIfRepeated (char* key, int key_length)
 
     qsort(key, key_length, sizeof(key[0]), CompareInts);
 
-    for
+    for (int i = 1; i < )
 }
 
 int CompareInts (const void *p1, const void *p2)
