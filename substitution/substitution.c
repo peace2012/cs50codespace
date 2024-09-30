@@ -4,6 +4,7 @@
 #include <cs50.h>
 
 int CheckIfRepeated (char* key, int key_length);
+string Cipher (char* plain_text, char* key);
 
 int main (int argc, string argv[])
 {
@@ -45,7 +46,7 @@ int main (int argc, string argv[])
 string plain_text = get_string("plaintext:");
 
 // function to cipher plain text
-string cipher_text = Cipher(plain_text);
+string cipher_text = Cipher(plain_text, key);
 
 
 return 0;
@@ -77,3 +78,7 @@ int CheckIfRepeated (char* key, int key_length)
     return 0;
 }
 
+string Cipher (char* plain_text, char* key)
+{
+    
+}
