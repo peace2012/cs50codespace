@@ -37,6 +37,8 @@ int main (int argc, string argv[])
                 }
 
                 else
+
+
             }
         }
 
@@ -49,5 +51,9 @@ int main (int argc, string argv[])
 }
 }
 
-// check if char in string is alphabetical
+// take first character in string
+// look for character in array
+// return found throw error
+
+int binarySearch()
 
