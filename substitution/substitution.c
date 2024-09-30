@@ -64,8 +64,18 @@ int CheckIfRepeated (char* key, int key_length)
 {
     for (int i = 0; i <= key_length; i++)
     {
-        if (key[i] ==)
+        int j = 0
+
+        do
+        {
+            j++
+        }
+        while (key[i] != key[j])
+
+        return 1;
     }
+    
+}
 
 }
 
