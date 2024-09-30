@@ -29,7 +29,7 @@ int main (int argc, string argv[])
                 printf("Error - all 26 characters must be alphabetical\n");
                 return 1;
             }
-
+        }
         else
         {
 
