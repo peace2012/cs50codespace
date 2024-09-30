@@ -3,13 +3,12 @@
 #include <string.h>
 #include <cs50.h>
 
-int CheckIfRepeated (char* key, int key_length);
+int CheckIfRepeated (char* key);
 string Cipher (char* plain_text, char* key);
 
 int main (int argc, string argv[])
 {
     string key = argv[1];
-    int key_length = strlen(key);
 
     // if > 1 command line argument return error
     if (argc > 2)
@@ -19,7 +18,7 @@ int main (int argc, string argv[])
     }
 
     // loop through array confirm all 26 characters alphabetical
-    for (int i = 0; i < key_length; i++)
+    for (int i = 0; i < strlen(key); i++)
     {
         if (isalpha(key[i]) == 0)
         {
@@ -36,7 +35,7 @@ int main (int argc, string argv[])
     }
 
     // use function check if each character is unique
-    if (CheckIfRepeated(key, key_length) == 1)
+    if (CheckIfRepeated(key) == 1)
     {
         printf("Error - every character in key must be unique\n");
         return 1;
@@ -55,15 +54,15 @@ return 0;
 // loop through each character in string
 // compare target to each character in array
 
-int CheckIfRepeated (char* key, int key_length)
+int CheckIfRepeated (char* key)
 {
     int count;
 
-    for (int i = 0; i < key_length; i++)
+    for (int i = 0; i < strlen(key); i++)
     {
         count = 0;
 
-        for(int j = 0; j < key_length; j++)
+        for(int j = 0; j < strlen(key); j++)
         {
             if (key[i] == key[j])
             {
@@ -80,7 +79,10 @@ int CheckIfRepeated (char* key, int key_length)
 
 string Cipher (char* plain_text, char* key)
 {
-    for (int i = 0; i < strlen)
+    for (int i = 0; i < strlen(plain_text); i++)
+    {
+        
+    }
 
     // if original is upper, convert to upper
 }
