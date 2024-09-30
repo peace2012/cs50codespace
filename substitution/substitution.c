@@ -57,7 +57,7 @@ int main (int argc, string argv[])
 // look for character in array
 // return found throw error
 
-int binarySearch()
+int binarySearch(string key, int low, int high, int target)
 {
     qsort()
 }
