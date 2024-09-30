@@ -30,7 +30,13 @@ int main (int argc, string argv[])
             // loop through array confirm key has 26 characters all alpha
             for (int i = 0; i <= key_length ; i++)
             {
-                isalpha(key[i]);
+                if (isalpha(key[i]) == 0)
+                {
+                    printf("Error - key must be 26 characters");
+                    return 1;
+                }
+
+                else
             }
         }
 
