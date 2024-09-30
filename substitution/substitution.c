@@ -85,13 +85,16 @@ string Cipher (char* plain_text, char* key)
 
     for (int i = 0; i < strlen(plain_text); i++)
     {
-
-        cipher[i] = key[plain_text[i] - 97];
-
-        if (isupper(plain_text[i]) != 0)
+        if (isupper(plain_text[i]) == 0)
+        // not an uppercase letter
         {
-            cipher[i] = toupper(cipher[i]);
+            cipher[i] = key[plain_text[i] - 97];
         }
+        else
+        {
+            cipher[i] = key[plain_text[i] - 65];
+        }
+
     }
     // if original is upper, convert to upper
 
