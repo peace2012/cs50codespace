@@ -79,6 +79,14 @@ int CheckIfRepeated (char* key)
     return 0;
 }
 
+string ToUpper (char* str)
+{
+    for (int i = 0; i < strlen(str); i++)
+    {
+        
+    }
+}
+
 string Cipher (char* plain_text, char* key)
 {
     char *cipher = malloc(100 * sizeof(char));
