@@ -1,18 +1,18 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
 #include <cs50.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int CheckIfRepeated (char* key);
-string ToUpper (char* str);
-string Cipher (char* plain_text, char* key);
+int CheckIfRepeated(char *key);
+string ToUpper(char *str);
+string Cipher(char *plain_text, char *key);
 
-int main (int argc, string argv[])
+int main(int argc, string argv[])
 {
     string key = argv[1];
 
-    if (argc <2 )
+    if (argc < 2)
     {
         printf("Error - must enter 1 key of 26 characters\n");
         return 1;
@@ -49,21 +49,21 @@ int main (int argc, string argv[])
         return 1;
     }
 
-// get string to cipher from user
-string plain_text = get_string("plaintext: ");
+    // get string to cipher from user
+    string plain_text = get_string("plaintext: ");
 
-// function to cipher plain text
-string cipher_text = Cipher(plain_text, key);
+    // function to cipher plain text
+    string cipher_text = Cipher(plain_text, key);
 
-printf("ciphertext: %s\n", cipher_text);
+    printf("ciphertext: %s\n", cipher_text);
 
-return 0;
+    return 0;
 }
 
 // loop through each character in string
 // compare target to each character in array
 
-int CheckIfRepeated (char* key)
+int CheckIfRepeated(char *key)
 {
     int count;
 
@@ -71,13 +71,14 @@ int CheckIfRepeated (char* key)
     {
         count = 0;
 
-        for(int j = 0; j < strlen(key); j++)
+        for (int j = 0; j < strlen(key); j++)
         {
             if (key[i] == key[j])
             {
                 count++;
 
-                if (count > 1) {
+                if (count > 1)
+                {
                     return 1;
                 }
             }
@@ -86,7 +87,7 @@ int CheckIfRepeated (char* key)
     return 0;
 }
 
-string ToUpper (char* str)
+string ToUpper(char *str)
 {
     char *output = malloc(100 * sizeof(char));
 
@@ -104,7 +105,7 @@ string ToUpper (char* str)
     return output;
 }
 
-string Cipher (char* plain_text, char* key)
+string Cipher(char *plain_text, char *key)
 {
     string all_caps_key = ToUpper(key);
 
@@ -112,7 +113,8 @@ string Cipher (char* plain_text, char* key)
 
     for (int i = 0; i < strlen(plain_text); i++)
     {
-        if ((plain_text[i] >= 65 && plain_text[i] <= 90) || (plain_text[i] >= 97 && plain_text[i] <= 122))
+        if ((plain_text[i] >= 65 && plain_text[i] <= 90) ||
+            (plain_text[i] >= 97 && plain_text[i] <= 122))
         {
             if (isupper(plain_text[i]) == 0)
             // not an uppercase letter
