@@ -90,7 +90,7 @@ string Cipher (char* plain_text, char* key)
 
         if (isupper(plain_text[i]) != 0)
         {
-            
+            cipher[i] = toupper(cipher[i]);
         }
     }
     // if original is upper, convert to upper
