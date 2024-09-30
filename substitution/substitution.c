@@ -8,6 +8,7 @@ int CheckIfRepeated (char* key, int key_length);
 int main (int argc, string argv[])
 {
     string key = argv[1];
+    int key_length = strlen(key);
 
     // if > 1 command line argument return error
     if (argc > 2)
@@ -17,7 +18,7 @@ int main (int argc, string argv[])
     }
 
     // loop through array confirm all 26 characters alphabetical
-    for (int i = 0; i < strlen(key); i++)
+    for (int i = 0; i < key_length; i++)
     {
         if (isalpha(key[i]) == 0)
         {
@@ -33,7 +34,7 @@ int main (int argc, string argv[])
         return 1;
     }
 
-    if (CheckIfRepeated(key, strlen(key)) == 1)
+    if (CheckIfRepeated(key, key_length) == 1)
     {
         printf("Error - every character in key must be unique\n");
         return 1;
