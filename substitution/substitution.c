@@ -59,7 +59,9 @@ int main (int argc, string argv[])
 
 int find_target(char* key, int low, int high, int target)
 {
-    qsort(key, ARRAY_SIZE(key), sizeof(key[0]), CompareInts)
+    qsort(key, ARRAY_SIZE(key), sizeof(key[0]), CompareInts);
+
+    for 
 }
 
 int CompareInts (const void *p1, const void *p2)
