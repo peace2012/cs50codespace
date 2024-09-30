@@ -42,6 +42,7 @@ int main (int argc, string argv[])
 
 // get string
 
+
 }
 
 // take first character in string
