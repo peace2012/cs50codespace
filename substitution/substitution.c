@@ -34,20 +34,25 @@ int main (int argc, string argv[])
         return 1;
     }
 
+    // use function check if each character is unique
     if (CheckIfRepeated(key, key_length) == 1)
     {
         printf("Error - every character in key must be unique\n");
         return 1;
     }
 
-// get string
+// get string to cipher from user
+string plain_text = get_string("plaintext:");
+
+// function to cipher plain text
+string cipher_text = Cipher(plain_text);
 
 
+return 0;
 }
 
-// take first character in string
-// look for character in array
-// return found throw error
+// loop through each character in string
+// compare target to each character in array
 
 int CheckIfRepeated (char* key, int key_length)
 {
@@ -72,20 +77,3 @@ int CheckIfRepeated (char* key, int key_length)
     return 0;
 }
 
-
-//     qsort(key, key_length, sizeof(key[0]), CompareInts);
-
-//     for (int i = 0; i <= key_length; i++)
-//     {
-//         int res = bsearch(key[i], key, key_length, sizeof(key[0]), CompareInts);
-
-//     }
-// }
-
-// int CompareInts (const void *p1, const void *p2)
-// {
-//     int i1 = *(const int *)p1;
-//     int i2 = *(const int *)p2;
-
-//     return (i1 - i2);
-// }
