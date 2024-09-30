@@ -33,7 +33,7 @@ int main (int argc, string argv[])
         return 1;
     }
 
-    if (CheckIfRepeated(key, strlen(key)) == 0)
+    if (CheckIfRepeated(key, strlen(key)) == 1)
     {
         printf("Error - every character in key must be unique\n");
         return 1;
@@ -59,7 +59,6 @@ int CheckIfRepeated (char* key, int key_length)
             }
         }
     }
-
     return 0;
 }
 
