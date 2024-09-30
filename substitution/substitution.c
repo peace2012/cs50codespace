@@ -12,6 +12,12 @@ int main (int argc, string argv[])
 {
     string key = argv[1];
 
+    if (argc <2 )
+    {
+        printf("Error - must enter 1 key of 26 characters\n");
+        return 1;
+    }
+
     // if > 1 command line argument return error
     if (argc > 2)
     {
@@ -106,15 +112,29 @@ string Cipher (char* plain_text, char* key)
 
     for (int i = 0; i < strlen(plain_text); i++)
     {
-        if (isupper(plain_text[i]) == 0)
-        // not an uppercase letter
+        if (plain_text >= 65 && plain_text <= 90 || plain_text)
         {
-            cipher[i] = tolower(all_caps_key[plain_text[i] - 97]);
+            if (isupper(plain_text[i]) == 0)
+            // not an uppercase letter
+            {
+                cipher[i] = tolower(all_caps_key[plain_text[i] - 97]);
+            }
+            else
+            // is uppercase
+            {
+                cipher[i] = toupper(all_caps_key[plain_text[i] - 65]);
+            }
         }
         else
-        // is uppercase
         {
-            cipher[i] = toupper(all_caps_key[plain_text[i] - 65]);
+            switch(plain_text)
+            {
+                case " ":
+                case "'":
+                case "!":
+                case "?":
+                case ".":
+            }
         }
     }
     return cipher;
