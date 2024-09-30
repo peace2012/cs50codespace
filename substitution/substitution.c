@@ -26,6 +26,7 @@ int main (int argc, string argv[])
         {
             printf("Error - key must be 26 characters\n");
             printf("%i\n`", key_length);
+            printf("%s\n", key);
             return 1;
         }
 
