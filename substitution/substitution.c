@@ -31,16 +31,9 @@ int main(int argc, string argv[])
     }
 
     // if length of key is not 26 return error
-    if (strlen(key) != 26)
+    if (strlen(key) != 26 || CheckIfRepeated(key) == 1)
     {
-        printf("Error - key must be 26 characters\n");
-        return 1;
-    }
-
-    // use function check if each character is unique
-    if (CheckIfRepeated(key) == 1)
-    {
-        printf("Error - every character in key must be unique\n");
+        printf("Error - key must be 26 unique characters\n");
         return 1;
     }
 
