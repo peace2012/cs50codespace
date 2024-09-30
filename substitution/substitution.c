@@ -63,15 +63,19 @@ int main (int argc, string argv[])
 int CheckIfRepeated (char* key, int key_length)
 {
 
-    qsort(key, key_length, sizeof(key[0]), CompareInts);
+//     qsort(key, key_length, sizeof(key[0]), CompareInts);
 
-    for (int i = 1; i < )
-}
+//     for (int i = 0; i <= key_length; i++)
+//     {
+//         int res = bsearch(key[i], key, key_length, sizeof(key[0]), CompareInts);
 
-int CompareInts (const void *p1, const void *p2)
-{
-    int i1 = *(const int *)p1;
-    int i2 = *(const int *)p2;
+//     }
+// }
 
-    return (i1 - i2);
-}
+// int CompareInts (const void *p1, const void *p2)
+// {
+//     int i1 = *(const int *)p1;
+//     int i2 = *(const int *)p2;
+
+//     return (i1 - i2);
+// }
