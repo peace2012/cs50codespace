@@ -61,3 +61,11 @@ int find_target(string key, int low, int high, int target)
 {
     qsort(key, ARRAY_SIZE(key), sizeof(key[0]), )
 }
+
+int CompareInts (const void *p1, const void *p2)
+{
+    int i1 = *(const int *)p1;
+    int i2 = *(const int *)p2;
+
+    return (i1 - i2);
+}
