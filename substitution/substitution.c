@@ -79,9 +79,11 @@ int CheckIfRepeated (char* key)
 
 string Cipher (char* plain_text, char* key)
 {
+    string cipher;
+
     for (int i = 0; i < strlen(plain_text); i++)
     {
-        
+        -97
     }
 
     // if original is upper, convert to upper
