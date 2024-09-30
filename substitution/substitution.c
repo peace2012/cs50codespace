@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -42,11 +43,12 @@ int main (int argc, string argv[])
     }
 
 // get string to cipher from user
-string plain_text = get_string("plaintext:");
+string plain_text = get_string("plaintext: ");
 
 // function to cipher plain text
 string cipher_text = Cipher(plain_text, key);
 
+printf("\nciphertext: %s\n", cipher_text);
 
 return 0;
 }
@@ -79,12 +81,13 @@ int CheckIfRepeated (char* key)
 
 string Cipher (char* plain_text, char* key)
 {
-    string cipher;
+    char *cipher = malloc(100 * sizeof(char));
 
     for (int i = 0; i < strlen(plain_text); i++)
     {
         cipher[i] = key[plain_text[i]-97];
     }
-
     // if original is upper, convert to upper
+
+    return cipher;
 }
