@@ -64,7 +64,7 @@ int CheckIfRepeated (char* key, int key_length)
 {
     for (int i = 0; i <= key_length; i++)
     {
-        if 
+        if (key[i] ==)
     }
 
 }
