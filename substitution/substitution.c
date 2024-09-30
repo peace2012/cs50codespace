@@ -26,7 +26,8 @@ int main(int argc, string argv[])
     }
 
     // loop through array confirm all 26 characters alphabetical
-    for (int i = 0; i < strlen(key); i++)
+    int length = strlen(key);
+    for (int i = 0; i < length; i++)
     {
         if (isalpha(key[i]) == 0)
         {
@@ -66,12 +67,13 @@ int main(int argc, string argv[])
 int CheckIfRepeated(char *key)
 {
     int count;
+    int length = strlen(key);
 
-    for (int i = 0; i < strlen(key); i++)
+    for (int i = 0; i < length; i++)
     {
         count = 0;
 
-        for (int j = 0; j < strlen(key); j++)
+        for (int j = 0; j < length; j++)
         {
             if (key[i] == key[j])
             {
@@ -89,9 +91,10 @@ int CheckIfRepeated(char *key)
 
 string ToUpper(char *str)
 {
-    char *output = malloc(100 * sizeof(char));
+    char *output = malloc((strlen(str) + 1) * sizeof(char));
 
-    for (int i = 0; i < strlen(str); i++)
+    int length = strlen(str);
+    for (int i = 0; i < length; i++)
     {
         if (isupper(str[i]) == 0)
         {
@@ -109,9 +112,10 @@ string Cipher(char *plain_text, char *key)
 {
     string all_caps_key = ToUpper(key);
 
-    char *cipher = malloc(100 * sizeof(char));
+    char *cipher = malloc((strlen(plain_text) + 1) * sizeof(char));
 
-    for (int i = 0; i < strlen(plain_text); i++)
+    int length = strlen(plain_text);
+    for (int i = 0; i < length; i++)
     {
         if ((plain_text[i] >= 65 && plain_text[i] <= 90) ||
             (plain_text[i] >= 97 && plain_text[i] <= 122))
