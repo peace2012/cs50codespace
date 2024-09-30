@@ -12,14 +12,8 @@ int main(int argc, string argv[])
 {
     string key = argv[1];
 
-    if (argc < 2)
-    {
-        printf("Error - must enter 1 key of 26 characters\n");
-        return 1;
-    }
-
     // if > 1 command line argument return error
-    if (argc > 2)
+    if (argc != 2)
     {
         printf("Error - enter 1 key of 26 characters\n");
         return 1;
