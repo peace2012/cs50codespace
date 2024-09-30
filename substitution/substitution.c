@@ -5,7 +5,7 @@
 #include <cs50.h>
 
 int CheckIfRepeated (char* key);
-string ToUpper (char* str);
+string ToLower (char* str);
 string Cipher (char* plain_text, char* key);
 
 int main (int argc, string argv[])
@@ -80,7 +80,7 @@ int CheckIfRepeated (char* key)
     return 0;
 }
 
-string ToUpper (char* str)
+string ToLower (char* str)
 {
     char *output = malloc(100 * sizeof(char));
 
@@ -88,7 +88,7 @@ string ToUpper (char* str)
     {
         if (isupper(str[i]) == 0)
         {
-            output[i] = toupper(str[i]);
+            output[i] = tolower(str[i]);
         }
     }
     return output;
@@ -96,7 +96,7 @@ string ToUpper (char* str)
 
 string Cipher (char* plain_text, char* key)
 {
-    string all_caps_key = ToUpper(key);
+    string all_caps_key = ToLower(key);
 
     char *cipher = malloc(100 * sizeof(char));
 
