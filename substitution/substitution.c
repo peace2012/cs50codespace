@@ -19,10 +19,7 @@ int main (int argc, string argv[])
     // loop through array confirm all 26 characters alphabetical
     for (int i = 0; i <= strlen(key); i++)
     {
-        int alphabetical;
-        alphabetical = isalpha(key[i]);
-
-        if (alphabetical == 0)
+        if (isalpha(key[i]) == 0)
         {
             printf("Error - all 26 characters must be alphabetical\n");
             return 1;
