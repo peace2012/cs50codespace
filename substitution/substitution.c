@@ -66,6 +66,11 @@ int CheckIfRepeated (char* key, int key_length)
     {
         int j = 0
 
+        if (key[i] != key[j])
+        {
+            j++
+        }
+
         do
         {
             j++
@@ -74,7 +79,7 @@ int CheckIfRepeated (char* key, int key_length)
 
         return 1;
     }
-    
+
 }
 
 }
