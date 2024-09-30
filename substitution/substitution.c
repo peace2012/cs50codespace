@@ -31,7 +31,7 @@ int main (int argc, string argv[])
         else
         {
             // loop through array confirm key has 26 characters all alpha
-            for (int i = 0; i <= key_length ; i++)
+            for (int i = 0; i < key_length ; i++)
             {
                 if (isalpha(key[i]) == 0)
                 {
