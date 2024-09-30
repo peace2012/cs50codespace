@@ -16,45 +16,34 @@ int main (int argc, string argv[])
         return 1;
     }
 
-    else
+    // loop through array confirm all 26 characters alphabetical
+    for (int i = 0; i <= strlen(key); i++)
     {
-        // loop through array confirm all 26 characters alphabetical
-        for (int i = 0; i <= strlen(key); i++)
+        int alphabetical;
+        alphabetical = isalpha(key[i]);
+
+        if (alphabetical == 0)
         {
-            int alphabetical;
-            alphabetical = isalpha(key[i]);
-
-            if (alphabetical == 0)
-            {
-                printf("Error - all 26 characters must be alphabetical\n");
-                return 1;
-            }
+            printf("Error - all 26 characters must be alphabetical\n");
+            return 1;
         }
-        else
-        {
+    }
 
-            // if length of key is not 26 return error
-            if (strlen(key) != 26)
-            {
-                printf("Error - key must be 26 characters\n");
-                return 1;
-            }
+    // if length of key is not 26 return error
+    if (strlen(key) != 26)
+    {
+        printf("Error - key must be 26 characters\n");
+        return 1;
+    }
 
-                else
-                {
-                    if (CheckIfRepeated(key, strlen(key)) == 0)
-                    {
-                        printf("Error - every character in key must be unique\n");
-                        return 1;
-                    }
-
-                }
-            }
-        }
+    if (CheckIfRepeated(key, strlen(key)) == 0)
+    {
+        printf("Error - every character in key must be unique\n");
+        return 1;
+    }
 
 // get string
 
-}
 }
 
 // take first character in string
