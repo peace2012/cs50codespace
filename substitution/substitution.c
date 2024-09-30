@@ -1,6 +1,8 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#define ARRAY_SIZE(arr)  (sizeof((arr)) / sizeof((arr)[0]))
 
 int main (int argc, string argv[])
 {
@@ -56,4 +58,6 @@ int main (int argc, string argv[])
 // return found throw error
 
 int binarySearch()
-
+{
+    qsort()
+}
