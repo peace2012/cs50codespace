@@ -62,6 +62,13 @@ int main (int argc, string argv[])
 
 int CheckIfRepeated (char* key, int key_length)
 {
+    for (int i = 0; i <= key_length; i++)
+    {
+        if 
+    }
+
+}
+
 
 //     qsort(key, key_length, sizeof(key[0]), CompareInts);
 
