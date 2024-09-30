@@ -32,7 +32,7 @@ int main (int argc, string argv[])
             {
                 if (isalpha(key[i]) == 0)
                 {
-                    printf("Error - key must be 26 characters");
+                    printf("Error - all 26 characters must be alphabetical");
                     return 1;
                 }
 
