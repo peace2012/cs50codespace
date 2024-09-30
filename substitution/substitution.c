@@ -50,13 +50,19 @@ int main (int argc, string argv[])
 
 int CheckIfRepeated (char* key, int key_length)
 {
+    int count = 0;
+
     for (int i = 0; i < key_length; i++)
     {
         for(int j = 0; j < key_length; j++)
         {
             if (key[i] == key[j])
             {
-                return 1;
+                count++;
+
+                if (count > 1) {
+                    return 1;
+                }
             }
         }
     }
