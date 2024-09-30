@@ -112,7 +112,7 @@ string Cipher (char* plain_text, char* key)
 
     for (int i = 0; i < strlen(plain_text); i++)
     {
-        if ((plain_text >= 65 && plain_text <= 90) || (plain_text >= 97 && plain_text <= 122))
+        if ((plain_text[i] >= 65 && plain_text[i] <= 90) || (plain_text[i] >= 97 && plain_text[i] <= 122))
         {
             if (isupper(plain_text[i]) == 0)
             // not an uppercase letter
