@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#define ARRAY_SIZE(arr)  (sizeof((arr)) / sizeof((arr)[0]))
+// #define ARRAY_SIZE(arr)  (sizeof((arr)) / sizeof((arr)[0]))
 
 int main (int argc, string argv[])
 {
@@ -39,6 +39,9 @@ int main (int argc, string argv[])
                 }
 
                 else
+                {
+                    CheckIfRepeated(key, key_length)
+                }
 
 
             }
@@ -57,11 +60,12 @@ int main (int argc, string argv[])
 // look for character in array
 // return found throw error
 
-int find_target(char* key, int low, int high, int target)
+int CheckIfRepeated (char* key, int key_length)
 {
-    qsort(key, ARRAY_SIZE(key), sizeof(key[0]), CompareInts);
 
-    for 
+    qsort(key, key_length, sizeof(key[0]), CompareInts);
+
+    for
 }
 
 int CompareInts (const void *p1, const void *p2)
