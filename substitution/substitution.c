@@ -6,7 +6,7 @@
 
 int main (int argc, string argv[])
 {
-// if > 1 command line argument return error
+    // if > 1 command line argument return error
     if (argc >= 2)
     {
         printf("Error - enter 1 key of 26 characters");
@@ -40,18 +40,17 @@ int main (int argc, string argv[])
 
                 else
                 {
-                    CheckIfRepeated(key, key_length)
+                    if (CheckIfRepeated(key, key_length) == 0)
+                    {
+                        printf("Error - every character in key must be unique");
+                        return 1;
+                    }
+
                 }
-
-
             }
         }
 
-
-
-
 // get string
-
 
 }
 }
