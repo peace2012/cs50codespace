@@ -48,7 +48,7 @@ string plain_text = get_string("plaintext: ");
 // function to cipher plain text
 string cipher_text = Cipher(plain_text, key);
 
-printf("\nciphertext: %s\n", cipher_text);
+printf("ciphertext: %s\n", cipher_text);
 
 return 0;
 }
