@@ -1,15 +1,16 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-// #define ARRAY_SIZE(arr)  (sizeof((arr)) / sizeof((arr)[0]))
+#include <cs50.h>
+
+int CheckIfRepeated (char* key, int key_length);
 
 int main (int argc, string argv[])
 {
     // if > 1 command line argument return error
-    if (argc >= 2)
+    if (argc >= 3)
     {
-        printf("Error - enter 1 key of 26 characters");
+        printf("Error - enter 1 key of 26 characters\n");
         return 1;
     }
 
@@ -23,7 +24,7 @@ int main (int argc, string argv[])
         // if length of key is not 26 return error
         if (key_length != 26)
         {
-            printf("Error - key must be 26 characters");
+            printf("Error - key must be 26 characters\n");
             return 1;
         }
 
@@ -34,7 +35,7 @@ int main (int argc, string argv[])
             {
                 if (isalpha(key[i]) == 0)
                 {
-                    printf("Error - all 26 characters must be alphabetical");
+                    printf("Error - all 26 characters must be alphabetical\n");
                     return 1;
                 }
 
@@ -42,7 +43,7 @@ int main (int argc, string argv[])
                 {
                     if (CheckIfRepeated(key, key_length) == 0)
                     {
-                        printf("Error - every character in key must be unique");
+                        printf("Error - every character in key must be unique\n");
                         return 1;
                     }
 
@@ -73,8 +74,6 @@ int CheckIfRepeated (char* key, int key_length)
     }
 
     return 0;
-}
-
 }
 
 
