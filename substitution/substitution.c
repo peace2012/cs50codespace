@@ -17,7 +17,7 @@ int main (int argc, string argv[])
     }
 
     // loop through array confirm all 26 characters alphabetical
-    for (int i = 0; i <= strlen(key); i++)
+    for (int i = 0; i < strlen(key); i++)
     {
         if (isalpha(key[i]) == 0)
         {
