@@ -149,13 +149,18 @@ void record_preferences(int ranks[])
         {
             if (ranks[i] != j)
             {
+                bool found = false;
+
                 for (int k = 0; k < array_length; k++)
                     {
                         if (array[k] == j) {
+                            found = true;
                             break;
                         }
                     }
-                ++preferences[ranks[i]][j];
+                    if (!found) {
+                        ++preferences[ranks[i]][j];
+                    }
             }
 
         }
