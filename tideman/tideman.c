@@ -134,14 +134,12 @@ void record_preferences(int ranks[])
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < candidate_count; j++)
-        {
-            if (strcmp(ranks[i], candidates[j]) == 0)
+        if (strcmp(ranks[i], candidates[j]) == 0)
             {
-                for (int k = 0; k < candidate_count; k++)
+                for (int j = 0; k < candidate_count; j++)
                 {
-                    if (j != k) {
-                        ++preferences[j][k];
+                    if (i != j) {
+                        ++preferences[i][j];
                     }
                 }
             }
