@@ -149,13 +149,11 @@ void record_preferences(int ranks[])
         {
             if (ranks[i] != j)
             {
-                    int k = 0;
-                    do
+                for (int k = 0; k < array_length; k++)
                     {
+                        if (array[k] > j
                         ++preferences[ranks[i]][j];
-                        ++k;
                     }
-                    while (array[k] != j || k >= array_length);
             }
         }
     }
