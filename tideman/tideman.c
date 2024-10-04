@@ -147,11 +147,16 @@ rank 3 charlie
 
 
 // loop through candidates[] until < candidate_count to find ranks[0]
-// if ranks[0] found at position ++preferences[i][j]
+// if ranks[0] found
+// loop through preferences[i][j]
 
-// for i < candidate count start with candidate 0
-// if ranks[i] == candidates[0]
-// for j < candidate count loop through candidate 1, 2, 3
+// for each rank search candidates[]
+// for i < candidate_count
+// for j < candidate_count
+// if cmpstr (ranks[i] == candidates[j])
+// found the candidate in candidates array
+// update preferences array
+
 
 
 
