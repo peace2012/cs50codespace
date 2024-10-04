@@ -65,11 +65,11 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-
+    // Loop through array compare input name to candidates
     // repeat for i < length of candidates.name
     // if candidates[i].name == name return true && ++candidates[i].vote && return true
 
-    for ( int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(candidates[i].name, name) == 0)
         {
@@ -83,15 +83,15 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    // iterate through candidates.vote to find the highest value
-    // compare each to highest value, if equal print name
+    // Iterate through candidates.vote to find the highest value
+    // Compare each to highest value, if equal print name
 
     // repeat for i < candidate count
     // if candidates[i].votes > stored value, stored value = candidates[i].votes
 
     int greatest_votes = 0;
 
-    for ( int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > greatest_votes)
         {
@@ -102,7 +102,7 @@ void print_winner(void)
     // repeat for i < candidate count
     // if stored value == candidates[i].votes print candidates[i].name
 
-    for ( int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (greatest_votes == candidates[i].votes)
         {
