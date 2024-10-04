@@ -149,8 +149,11 @@ void record_preferences(int ranks[])
                 ++preferences[ranks[i]][j];
             }
         }
+        if (i > 0)
+        {
         array[i] = ranks[i];
         ++array_length;
+        }
     }
     return;
 }
