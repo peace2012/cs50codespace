@@ -130,7 +130,7 @@ void record_preferences(int ranks[])
 // for k < candidate_count
 // if j != k ++preferences[j][k]
 
-// if ranks[i]
+// look through ranks to find the lowest number
 
 {
     for (int i = 0; i < candidate_count; i++)
