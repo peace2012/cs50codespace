@@ -65,10 +65,11 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    // use input name, search array for name
-    // if found increase vote by 1
 
-    
+    // repeat for i < length of candidates.name
+    // if candidates[i].name == name return true && ++candidates[i].vote && return true
+
+    for ( int i = 0; i < )
 
     return false;
 }
