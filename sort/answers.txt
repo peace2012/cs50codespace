@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: It's the quickest algorithm to sort the list which is already sorted, this is because bubble sort has an omega of n.
+
+sort2 uses: merge sort
+
+How do you know?: It's the quickest algorithm to sort the list of reversed numbers and it sorts the sorted list in similar time. This is because it has a theta of log n meaning it is equally efficient in both best and worst case scenarios.
+
+sort3 uses: selection sort
+
+How do you know?: This algorithm performs equally badly sorting both reversed and sorted numbers. This is because selection sort has theta of n^2, meaning it performs the same in best and worst case scenarios. It also means time to solve is approximately proportional to the size of data set. So, as the size of the data set increases so does the amount of time it takes to sort.
