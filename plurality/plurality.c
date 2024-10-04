@@ -65,7 +65,11 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    // TODO
+    // use input name, search array for name
+    // if found increase vote by 1
+
+    
+
     return false;
 }
 
