@@ -133,8 +133,8 @@ void record_preferences(int ranks[])
 // --j because 0 value is used in array and ranks are 1, 2, 3
 
 // for rank[i]
-// ++preferences[rank[i][all candidates except rank[i]]]
-// 
+// ++preferences[rank[i][all candidates
+// except rank[i] + candidates already added]
 
 {
     for (int i = 0; i < candidate_count; i++)
