@@ -148,7 +148,7 @@ void record_preferences(int ranks[])
             {
                 for (int k = 0; k < array_length; k++)
                 {
-                    if (array[i] != j)
+                    if (array[k] != j)
                     {
                         ++preferences[ranks[i]][j];
                     }
