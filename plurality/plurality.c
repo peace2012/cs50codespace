@@ -25,7 +25,7 @@ void print_winner(void);
 int main(int argc, string argv[])
 {
     // Check for invalid usage
-    if (argc != 2)
+    if (argc < 2)
     {
         printf("Usage: plurality [candidate ...]\n");
         return 1;
