@@ -84,17 +84,31 @@ bool vote(string name)
 void print_winner(void)
 {
     // iterate through candidates.vote to find the highest value
-    // repeat for i < candidate count
-    // if candidates[i].vote > stored value record candidates[i].name and vote number
+    // compare each to highest value, if equal print name
 
-    int greatest_votes
+    // repeat for i < candidate count
+    // if candidates[i].votes > stored value, stored value = candidates[i].votes
+
+    int greatest_votes = 0;
 
     for ( int i = 0; i < candidate_count; i++)
     {
-        if ()
+        if (candidates[i].votes > greatest_votes)
+        {
+            greatest_votes = candidates[i].votes;
+        }
     }
 
+    // repeat for i < candidate count
+    // if stored value == candidates[i].votes print candidates[i].name
 
+    for ( int i = 0; i < candidate_count; i++)
+    {
+        if (greatest_votes == candidates[i].votes)
+        {
+            printf("%s\n", candidates[i].name);
+        }
+    }
 
     return;
 }
