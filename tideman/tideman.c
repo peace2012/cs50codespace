@@ -89,6 +89,8 @@ int main(int argc, string argv[])
         printf("\n");
     }
 
+    
+
     add_pairs();
     sort_pairs();
     lock_pairs();
