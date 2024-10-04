@@ -146,11 +146,12 @@ void add_pairs(void)
         {
             int difference = preferences[i][j] - preferences[j][i];
 
-            if ( difference > 0)
+            while (difference > 0)
             {
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
                 ++pair_count;
+                --difference;
             }
         }
     }
