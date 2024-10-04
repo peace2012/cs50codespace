@@ -139,6 +139,8 @@ void record_preferences(int ranks[])
 {
     for (int i = 0; i < candidate_count; i++)
     {
+        int array[MAX-1];
+
         for (int j = 0; j < candidate_count-1; j++)
         {
             if (j != i)
