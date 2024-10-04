@@ -125,17 +125,29 @@ j = i + 1
 (i    ) + (j + 1) = 0 + 2 = [0][2]
 (i + 1) + (j + 1) = 1 + 2 = [1][2]
 
+[0][0]
 [0][1]
 [0][2]
 [0][3]
-[1]
-
+[1][0]
+[1][1]
+[1][2]
+[1][3]
 
 rank 1 alice
 rank 2 bob
 rank 3 charlie
 
-// candidate is at rank 1 ++preferences[]
+[0]alice [1]bob [2]charlie
+
+[0][1]
+[1][0]
+[1][2]
+[2][1]
+
+
+// loop through candidates[] until < candidate_count to find ranks[0]
+// if ranks[0] found at position [1] ++preferences[i][j] 
 
 // for i < candidate count start with candidate 0
 // if ranks[i] == candidates[0]
