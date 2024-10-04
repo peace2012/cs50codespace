@@ -144,16 +144,17 @@ void add_pairs(void)
         {
             if (preferences[i][j] != preferences[j][i])
             {
+                pairs
                 ++pair_count;
             }
         }
     }
 
-typedef struct
-{
-    int winner;
-    int loser;
-} pair;
+// typedef struct
+// {
+//     int winner; index of winner
+//     int loser; index of loser
+// } pair;
 
     return;
 }
