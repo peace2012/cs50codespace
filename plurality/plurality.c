@@ -69,7 +69,14 @@ bool vote(string name)
     // repeat for i < length of candidates.name
     // if candidates[i].name == name return true && ++candidates[i].vote && return true
 
-    for ( int i = 0; i < )
+    for ( int i = 0; i < ; i++)
+    {
+        if (candidates[i].name == name)
+        {
+            ++candidates[i].vote;
+            return true;
+        }
+    }
 
     return false;
 }
