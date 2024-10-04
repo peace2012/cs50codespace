@@ -123,14 +123,14 @@ j = i + 1
 
 (i    ) + (j    ) = 0 + 1
 (i    ) + (j + 1) = 0 + 2
-
 (i + 1) + (j + 1) = 1 + 2
-(i + 1) + (j + 2) = 1 + 3
-(i + 2) + (j + 2) = 2 + 3
+
 
 rank 1 alice
 rank 2 bob
 rank 3 charlie
+
+// candidate is at rank 1 ++preferences[]
 
 // for i < candidate count start with candidate 0
 // if ranks[i] == candidates[0]
