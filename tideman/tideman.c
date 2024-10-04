@@ -147,7 +147,7 @@ rank 3 charlie
 
 
 // loop through candidates[] until < candidate_count to find ranks[0]
-// if ranks[0] found at position [1] ++preferences[i][j] 
+// if ranks[0] found at position ++preferences[i][j]
 
 // for i < candidate count start with candidate 0
 // if ranks[i] == candidates[0]
