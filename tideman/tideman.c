@@ -157,6 +157,7 @@ void record_preferences(int ranks[])
                         ++preferences[ranks[i]][j];
                     }
             }
+
         }
     }
     return;
