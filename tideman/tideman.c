@@ -98,7 +98,20 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    // placing the 
+    // place name into appropriate position of ranks array
+    // for i to < candidate_count
+    // if compare string name == candidates[i].name
+    // put name at ranks[name]
+    // return true
+
+    for ( i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(candidates[i].name == name))
+        {
+            ranks[rank] = name;
+            return true;
+        }
+    }
     return false;
 }
 
