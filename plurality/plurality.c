@@ -69,7 +69,7 @@ bool vote(string name)
     // repeat for i < length of candidates.name
     // if candidates[i].name == name return true && ++candidates[i].vote && return true
 
-    for ( int i = 0; i < ; i++)
+    for ( int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].name == name)
         {
@@ -77,13 +77,24 @@ bool vote(string name)
             return true;
         }
     }
-
     return false;
 }
 
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    // TODO
+    // iterate through candidates.vote to find the highest value
+    // repeat for i < candidate count
+    // if candidates[i].vote > stored value record candidates[i].name and vote number
+
+    int greatest_votes
+
+    for ( int i = 0; i < candidate_count; i++)
+    {
+        if ()
+    }
+
+
+
     return;
 }
