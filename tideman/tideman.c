@@ -128,9 +128,13 @@ j = i + 1
 (i + 1) + (j + 2) = 1 + 3
 (i + 2) + (j + 2) = 2 + 3
 
+rank 1 alice
+rank 2 bob
+rank 3 charlie
+
 // for i < candidate count start with candidate 0
 // for j < candidate count loop through candidate 1, 2, 3
-// 
+// if ranks[0] == candidate 
 
 
 {
