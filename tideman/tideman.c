@@ -155,8 +155,8 @@ rank 3 charlie
 // for j < candidate_count
 // if cmpstr (ranks[i] == candidates[j])
 // found the candidate in candidates array
-// update preferences array
-//
+// for k < candidate_count
+// if j != k ++preferences[j][k]
 
 
 
