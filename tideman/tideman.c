@@ -125,13 +125,12 @@ void record_preferences(int ranks[])
 
 // for each rank search candidates[]
 // for i < candidate_count
-// for j < candidate_count
 // if cmpstr (ranks[i] == candidates[j])
 // found the candidate in candidates array
 // for k < candidate_count
 // if j != k ++preferences[j][k]
 
-// if ranks[i] 
+// if ranks[i]
 
 {
     for (int i = 0; i < candidate_count; i++)
