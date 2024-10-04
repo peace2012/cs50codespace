@@ -118,34 +118,6 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 
-i = 0
-j = i + 1
-
-(i    ) + (j    ) = 0 + 1 = [0][1]
-(i    ) + (j + 1) = 0 + 2 = [0][2]
-(i + 1) + (j + 1) = 1 + 2 = [1][2]
-
-[0][0]
-[0][1]
-[0][2]
-[0][3]
-[1][0]
-[1][1]
-[1][2]
-[1][3]
-
-rank 1 alice
-rank 2 bob
-rank 3 charlie
-
-[0]alice [1]bob [2]charlie
-
-[0][1]
-[1][0]
-[1][2]
-[2][1]
-
-
 // loop through candidates[] until < candidate_count to find ranks[0]
 // if ranks[0] found
 // loop through preferences[i][j]
@@ -158,11 +130,17 @@ rank 3 charlie
 // for k < candidate_count
 // if j != k ++preferences[j][k]
 
-
-
-
 {
-    // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for ( int j = 0; j < candidate_count; j++)
+        {
+            if (strcmp(ranks[i] == candidates[j]))
+            {
+                
+            }
+        }
+    }
     return;
 }
 
