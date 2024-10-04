@@ -84,7 +84,7 @@ int main(int argc, string argv[])
             }
         }
 
-al        record_preferences(ranks);
+        record_preferences(ranks);
 
         printf("\n");
     }
