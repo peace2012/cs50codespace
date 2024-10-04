@@ -122,8 +122,7 @@ void record_preferences(int ranks[])
 // for i < candidate_count
 // for j = rank for candidate j < candidate_count
 // increase preferences by 1 for [i][--j]
-
-// look through ranks to find the lowest number
+// --j because 0 value is used in array and ranks are 1, 2, 3
 
 {
     for (int i = 0; i < candidate_count; i++)
