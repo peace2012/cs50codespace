@@ -146,18 +146,17 @@ void add_pairs(void)
         {
             if (preferences[i][j] > preferences[j][i])
             {
-                pairs[pair_count] = {i, j};
+                pairs[pair_count].winner = i;
+                pairs[pair_count].loser = j;
                 ++pair_count;
             }
         }
     }
 
-// typedef struct
-// {
-//     int winner; index of winner
-//     int loser; index of loser
-// } pair;
-
+    for (int i = 0; i < pair_count; i++)
+    {
+            printf("%i\n");
+    }
     return;
 }
 
