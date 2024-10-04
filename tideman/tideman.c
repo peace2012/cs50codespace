@@ -119,28 +119,19 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 
-// loop through candidates[] until < candidate_count to find ranks[0]
-// if ranks[0] found
-// loop through preferences[i][j]
-
-// for each rank search candidates[]
 // for i < candidate_count
-// if cmpstr (ranks[i] == candidates[j])
-// found the candidate in candidates array
-// for k < candidate_count
-// if j != k ++preferences[j][k]
+// for j = rank for candidate j < candidate_count
+// increase preferences by 1 for [i][--j]
 
 // look through ranks to find the lowest number
 
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < candidate_count; j++)
-            {
-                    if (i != j) {
-                        ++preferences[i][j];
-                    }
-            }
+        for (int j = ranks[i]; j < candidate_count; j++)
+        {
+            ++preferences[i][--j];
+        }
     }
     return;
 }
