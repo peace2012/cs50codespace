@@ -183,12 +183,18 @@ void sort_pairs(void)
     //          if pairs[i] = pairs [j]
     //              ++count[i]
 
-int length_pairs_array;
-int count[length_pairs_array] = 0;
+    typedef struct
+{
+    int pair;
+    int count;
+} pair_count;
+
+pair_count pair_counts[];
 
 for (int i = 0; i < length_pairs array; i++)
 {
-    
+
+
 
     // for (int j = (i+1); j < length_pairs_array; j++)
     // {
