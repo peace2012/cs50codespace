@@ -186,7 +186,7 @@ void sort_pairs(void)
     int count;
 } pair_count;
 
-pair_count pair_counts[];
+pair_count pair_counts[MAX];
 
 int pair_counts_length = 0;
 int length_pairs = sizeof(pairs) / sizeof(pairs[0]);
