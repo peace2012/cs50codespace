@@ -185,7 +185,8 @@ void sort_pairs(void)
 
     typedef struct
 {
-     pair;
+    int winner;
+    int loser
     int count;
 } pair_count;
 
@@ -194,19 +195,16 @@ pair_count pair_counts[MAX];
 for (int i = 0; i < ; i++)
 {
     for (int j = 0; j < ; j++)
-    if ()
+    if (pairs[i].winner == pair_counts[j].winner && pairs[i].loser == pair_counts[j].loser)
     {
-        pair_counts[pair] +=1;
+        pair_counts[j].count +=1;
     }
     else
     {
-        pair_counts[pair] = 1;
+        pair_counts[j].winner = pairs[i].winner;
+        pair_counts[j].loser = pairs[i].winner;
+        pair_counts[j].count = 1;
     }
-
-
-    // {
-
-    // }
 }
 
     return;
