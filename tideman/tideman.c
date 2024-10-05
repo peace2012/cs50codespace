@@ -192,13 +192,12 @@ void sort_pairs(void)
 
 pair_count pair_counts[MAX];
 
-int pair_counts_length;
+int pair_counts_length = 0;
 int length_pairs = sizeof(pairs) / sizeof(pairs[0]);
 
 for (int i = 0; i < length_pairs; i++)
 {
     bool found = false;
-    pair_counts_length = sizeof(pair_counts) / sizeof(pair_counts[0]);
 
     for (int j = 0; j < pair_counts_length; j++)
     {
@@ -211,9 +210,10 @@ for (int i = 0; i < length_pairs; i++)
     }
     if (!found)
     {
-    pair_counts[j].winner = pairs[i].winner;
-    pair_counts[j].loser = pairs[i].winner;
-    pair_counts[j].count = 1;
+    pair_counts[pair_counts_length].winner = pairs[i].winner;
+    pair_counts[pair_counts_length].loser = pairs[i].winner;
+    pair_counts[pair_counts_length].count = 1;
+    ++pair_counts_length;
     }
 }
 
