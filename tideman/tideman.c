@@ -188,13 +188,15 @@ int count[length_pairs_array] = 0;
 
 for (int i = 0; i < length_pairs array; i++)
 {
-    for (int j = (i+1); j < length_pairs_array; j++)
-    {
-        if (pairs[i].winner == pairs[j].winner && pairs[i].loser == pairs[j].loser)
-        {
-            ++count[i];
-        }
-    }
+    
+
+    // for (int j = (i+1); j < length_pairs_array; j++)
+    // {
+    //     if (pairs[i].winner == pairs[j].winner && pairs[i].loser == pairs[j].loser)
+    //     {
+    //         ++count[i];
+    //     }
+    // }
 }
 
     return;
