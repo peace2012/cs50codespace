@@ -225,8 +225,10 @@ for (int i = 0; i < pair_count; i++)
     int counter = -1
     while (counter != 0)
     {
+        if (pair_counts[i].count > pair_counts[i+1].count)
+        int
         counter = 0;
-        
+
     }
 
     // put the values back into pairs in decreasing order of strength of victory
