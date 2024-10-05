@@ -90,13 +90,13 @@ int main(int argc, string argv[])
     }
 
     // print reesults of record_preferences function
-        for (int i = 0; i < candidate_count; i++)
-    {
-        for (int j = 0; j < candidate_count; j++)
-        {
-            printf("[%i][%i] %i\n", i, j, preferences[i][j]);
-        }
-    }
+    // for (int i = 0; i < candidate_count; i++)
+    // {
+    //     for (int j = 0; j < candidate_count; j++)
+    //     {
+    //         printf("[%i][%i] %i\n", i, j, preferences[i][j]);
+    //     }
+    // }
 
     add_pairs();
     sort_pairs();
@@ -108,13 +108,13 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    // place name into appropriate position of ranks array
-    // for i to < candidate_count
+    // place index of candidate name into ranks array
+    // for i < candidate_count
     // if compare string name == candidates[i].name
-    // put name at ranks[name]
+    // put index of candidate at at ranks[rank]
     // return true
 
-    for ( int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(candidates[i], name) == 0)
         {
@@ -128,42 +128,16 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 
-// for i < candidate_count
-// for j = rank for candidate j < candidate_count
-// increase preferences by 1 for [i][--j]
-// --j because 0 value is used in array and ranks are 1, 2, 3
-
-// for rank[i]
-// ++preferences[rank[i][all candidates
-// except rank[i] + candidates already added]
+// for i up to candidate count -1 (because the last candidate didn't win any votes)
+//      for j = i + 1 (the loser is 1 place below the winner) up to candidate count
+//          ++preferences[index of winner / ranks[i]][ index of loser / ranks[j]]
 
 {
-    // int array[MAX-1];
-    // int array_length = 0;
-
-    for (int i = 0; i < (candidate_count-1); i++)
+    for (int i = 0; i < (candidate_count - 1); i++)
     {
-        // array[i] = ranks[i];
-        // ++array_length;
-
-        for (int j = (i+1); j < candidate_count; j++)
+        for (int j = (i + 1); j < candidate_count; j++)
         {
             ++preferences[ranks[i]][ranks[j]];
-            // if (ranks[i] != j)
-            // {
-            //     bool found = false;
-
-            //     for (int k = 0; k < array_length; k++)
-            //         {
-            //             if (array[k] == j) {
-            //                 found = true;
-            //                 break;
-            //             }
-            //         }
-            //         if (!found) {
-            //             ++preferences[ranks[i]][j];
-            //         }
-            // }
         }
     }
     return;
@@ -191,11 +165,11 @@ void add_pairs(void)
     }
 
     // print result of add_pairs function
-    // for (int i = 0; i < pair_count; i++)
-    // {
-    //     printf("%i, ", pairs[i].winner);
-    //     printf("%i\n", pairs[i].loser);
-    // }
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("%i, ", pairs[i].winner);
+        printf("%i\n", pairs[i].loser);
+    }
     return;
 }
 
