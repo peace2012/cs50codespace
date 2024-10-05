@@ -189,19 +189,18 @@ void sort_pairs(void)
     int count;
 } pair_count;
 
-pair_count pair_counts[MAX * (MAX - 1) / 2];
+pair_count pair_counts[MAX];
 
 for (int i = 0; i < length_pairs array; i++)
 {
-
-
+    if (pairs[i].winner == pairs[].winner && pairs[i].loser == pairs[j].loser)
+    {
+        ++count[i];
+    }
 
     // for (int j = (i+1); j < length_pairs_array; j++)
     // {
-    //     if (pairs[i].winner == pairs[j].winner && pairs[i].loser == pairs[j].loser)
-    //     {
-    //         ++count[i];
-    //     }
+
     // }
 }
 
