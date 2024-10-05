@@ -211,7 +211,7 @@ for (int i = 0; i < length_pairs; i++)
     if (!found)
     {
     pair_counts[pair_counts_length].winner = pairs[i].winner;
-    pair_counts[pair_counts_length].loser = pairs[i].winner;
+    pair_counts[pair_counts_length].loser = pairs[i].loser;
     pair_counts[pair_counts_length].count = 1;
     ++pair_counts_length;
     }
