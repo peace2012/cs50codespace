@@ -195,7 +195,7 @@ for (int i = 0; i < length_pairs array; i++)
 {
     if (pairs[i].winner == pairs[].winner && pairs[i].loser == pairs[j].loser)
     {
-        ++count[i];
+        pair_counts[]
     }
 
     // for (int j = (i+1); j < length_pairs_array; j++)
