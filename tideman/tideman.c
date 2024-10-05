@@ -186,7 +186,7 @@ void sort_pairs(void)
     typedef struct
 {
     int winner;
-    int loser
+    int loser;
     int count;
 } pair_count;
 
@@ -206,6 +206,7 @@ for (int i = 0; i < length_pairs; i++)
     {
         pair_counts[j].count +=1;
         found = true;
+    }
     }
     if (!found)
     {
