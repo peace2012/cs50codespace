@@ -189,7 +189,7 @@ void sort_pairs(void)
     int count;
 } pair_count;
 
-pair_count pair_counts[];
+pair_count pair_counts[MAX * (MAX - 1) / 2];
 
 for (int i = 0; i < length_pairs array; i++)
 {
