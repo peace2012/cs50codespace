@@ -222,10 +222,9 @@ for (int i = 0; i < pair_count; i++)
     }
 
     // sort the struct
-
     for (int i = ; i < pair_counts_length; i++)
     {
-            int counter = -1;
+
         while (counter != 0)
         {
             if (pair_counts[i].count > pair_counts[i+1].count)
