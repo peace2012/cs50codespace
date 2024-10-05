@@ -176,12 +176,8 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // int count[length pairs struct]
-    // int length pairs struct
-    // for i < length pairs struct
-    //      for j+1 < length pairs struct
-    //          if pairs[i] = pairs [j]
-    //              ++count[i]
+
+// count pairs and record count into struct
 
     typedef struct
 {
