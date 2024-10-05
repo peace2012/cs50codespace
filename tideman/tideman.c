@@ -177,9 +177,10 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // int count
-    // iterate over the array for i < length of pairs struct
-    // count the number of times the ith pair is in the array
-    // 
+    // for i < length pairs struct
+    // for j < 1
+    // if pairs[i].winner ==
+    // count the number of times each pair is in the array
 
     return;
 }
