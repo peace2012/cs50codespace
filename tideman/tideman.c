@@ -221,7 +221,10 @@ for (int i = 0; i < pair_count; i++)
         printf("%i\n", pair_counts[i].count);
     }
 
-    // 
+    // sort the struct
+    
+
+    // put the values back into pairs in decreasing order of strength of victory
 
     return;
 }
