@@ -192,10 +192,15 @@ void sort_pairs(void)
 
 pair_count pair_counts[MAX];
 
-for (int i = 0; i < ; i++)
+int pair_counts_length;
+int length_pairs = sizeof(pairs) / sizeof(pairs[0]);
+
+for (int i = 0; i < length_pairs; i++)
 {
     bool found = false;
-    for (int j = 0; j < ; j++)
+    pair_counts_length = sizeof(pair_counts) / sizeof(pair_counts[0]);
+
+    for (int j = 0; j < pair_counts_length; j++)
     {
     if (pairs[i].winner == pair_counts[j].winner && pairs[i].loser == pair_counts[j].loser)
     {
