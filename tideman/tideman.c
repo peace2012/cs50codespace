@@ -180,9 +180,8 @@ void sort_pairs(void)
     // int length pairs struct
     // for i < length pairs struct
     //      for j+1 < length pairs struct
-    //          
     //          if pairs[i] = pairs [j]
-    //              ++count
+    //              ++count[i]
     // if pairs[i].winner ==
     // count the number of times each pair is in the array
 
