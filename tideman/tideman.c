@@ -203,7 +203,7 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // iterate over the array for i < length of pairs array
-    // 
+    // count the number of times 
     return;
 }
 
