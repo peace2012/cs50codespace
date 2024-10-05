@@ -214,7 +214,7 @@ for (int i = 0; i < pair_count; i++)
 }
 
     // sort the struct
-for (int j = 1; j < (pair_counts_length-j); j++)
+for (int j = 1; j < (pair_counts_length-1); j++)
     {
     for (int i = 0; i < (pair_counts_length-j); i++)
     {
