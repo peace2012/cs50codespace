@@ -213,6 +213,14 @@ for (int i = 0; i < length_pairs; i++)
     }
 }
 
+    // print result of sort_pairs function
+    for (int i = 0; i < pair_counts_length; i++)
+    {
+        printf("%i, ", pair_counts[i].winner);
+        printf("%i, ", pair_counts[i].loser);
+        printf("%i\n", pair_counts[i].count);
+    }
+
     return;
 }
 
