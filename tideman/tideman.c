@@ -90,13 +90,13 @@ int main(int argc, string argv[])
     }
 
     // print reesults of record_preferences function
-    //     for (int i = 0; i < candidate_count; i++)
-    // {
-    //     for (int j = 0; j < candidate_count; j++)
-    //     {
-    //         printf("[%i][%i] %i\n", i, j, preferences[i][j]);
-    //     }
-    // }
+        for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            printf("[%i][%i] %i\n", i, j, preferences[i][j]);
+        }
+    }
 
     add_pairs();
     sort_pairs();
@@ -118,7 +118,7 @@ bool vote(int rank, string name, int ranks[])
     {
         if (strcmp(candidates[i], name) == 0)
         {
-            ranks[i] = rank;
+            ranks[rank] = i;
             return true;
         }
     }
@@ -138,32 +138,32 @@ void record_preferences(int ranks[])
 // except rank[i] + candidates already added]
 
 {
-    int array[MAX-1];
-    int array_length = 0;
+    // int array[MAX-1];
+    // int array_length = 0;
 
-    for (int i = 0; i < --candidate_count; i++)
+    for (int i = 0; i < (candidate_count-1); i++)
     {
-        array[i] = ranks[i];
-        ++array_length;
+        // array[i] = ranks[i];
+        // ++array_length;
 
-        for (int j = ++i; j < candidate_count; j++)
+        for (int j = (i+1); j < candidate_count; j++)
         {
             ++preferences[ranks[i]][ranks[j]];
-            if (ranks[i] != j)
-            {
-                bool found = false;
+            // if (ranks[i] != j)
+            // {
+            //     bool found = false;
 
-                for (int k = 0; k < array_length; k++)
-                    {
-                        if (array[k] == j) {
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found) {
-                        ++preferences[ranks[i]][j];
-                    }
-            }
+            //     for (int k = 0; k < array_length; k++)
+            //         {
+            //             if (array[k] == j) {
+            //                 found = true;
+            //                 break;
+            //             }
+            //         }
+            //         if (!found) {
+            //             ++preferences[ranks[i]][j];
+            //         }
+            // }
         }
     }
     return;
