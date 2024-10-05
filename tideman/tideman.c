@@ -178,7 +178,8 @@ void sort_pairs(void)
 {
     // int count
     // iterate over the array for i < length of pairs struct
-    // count the number of times the ith pair is in the array,
+    // count the number of times the ith pair is in the array
+    // 
 
     return;
 }
