@@ -223,7 +223,11 @@ for (int i = 0; i < pair_count; i++)
 
     // sort the struct
     int counter = -1
-    for (int i = 0; )
+    while (counter != 0)
+    {
+        counter = 0;
+        
+    }
 
     // put the values back into pairs in decreasing order of strength of victory
 
