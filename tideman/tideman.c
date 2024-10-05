@@ -206,6 +206,7 @@ for (int i = 0; i < length_pairs; i++)
     {
         pair_counts[j].count +=1;
         found = true;
+        break;
     }
     }
     if (!found)
