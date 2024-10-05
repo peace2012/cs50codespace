@@ -184,7 +184,7 @@ void sort_pairs(void)
     //              ++count[i]
 
 int length_pairs_array;
-int count[length_pairs_array];
+int count[length_pairs_array] = 0;
 
 for (int i = 0; i < length_pairs array; i++)
 {
