@@ -182,8 +182,17 @@ void sort_pairs(void)
     //      for j+1 < length pairs struct
     //          if pairs[i] = pairs [j]
     //              ++count[i]
-    // if pairs[i].winner ==
-    // count the number of times each pair is in the array
+
+int length_pairs_array;
+int count[length_pairs_array];
+
+for (int i = 0; i < length_pairs array; i++)
+{
+    for (int j = (i+1); j < length_pairs_array; j++)
+    {
+        if (pairs[i].winner == pairs[j].winner && pairs[i].loser == pairs[j].loser)
+    }
+}
 
     return;
 }
