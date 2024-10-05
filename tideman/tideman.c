@@ -194,16 +194,19 @@ pair_count pair_counts[MAX];
 
 for (int i = 0; i < ; i++)
 {
+    bool found = false;
     for (int j = 0; j < ; j++)
+    {
     if (pairs[i].winner == pair_counts[j].winner && pairs[i].loser == pair_counts[j].loser)
     {
         pair_counts[j].count +=1;
+        found = true;
     }
-    else
+    if (!found)
     {
-        pair_counts[j].winner = pairs[i].winner;
-        pair_counts[j].loser = pairs[i].winner;
-        pair_counts[j].count = 1;
+    pair_counts[j].winner = pairs[i].winner;
+    pair_counts[j].loser = pairs[i].winner;
+    pair_counts[j].count = 1;
     }
 }
 
