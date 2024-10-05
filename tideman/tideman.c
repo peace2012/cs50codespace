@@ -213,26 +213,24 @@ for (int i = 0; i < pair_count; i++)
     }
 }
 
-    // print result of sort_pairs function
-    for (int i = 0; i < pair_counts_length; i++)
-    {
-        printf("%i, ", pair_counts[i]);
-        printf("%i, ", pair_counts[i].loser);
-        printf("%i\n", pair_counts[i].count);
-    }
-
     // sort the struct
-for (int j = 0; j < (pair_counts_length-j); i++)
+for (int j = 1; j < (pair_counts_length-j); j++)
     {
     for (int i = 0; i < (pair_counts_length-j); i++)
     {
         if (pair_counts[i].count < pair_counts[i+1].count)
         {
-            temp = pair_counts[i];
+            pair_lib temp = pair_counts[i];
             pair_counts[i] = pair_counts[i+1];
             pair_counts[i+1] = temp;
         }
     }
+    }
+
+        // print result of sort_pairs function
+    for (int i = 0; i < pair_counts_length; i++)
+    {
+        printf("%i, %i (%i)\n", pair_counts[i].winner, pair_counts[i].loser, pair_counts[i].count);
     }
 
     // put the values back into pairs in decreasing order of strength of victory
