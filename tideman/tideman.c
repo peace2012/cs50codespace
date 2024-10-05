@@ -204,7 +204,8 @@ void sort_pairs(void)
 {
     // int count
     // iterate over the array for i < length of pairs array
-    // count the number of times each pair is in the array
+    // count the number of times the ith pair is in the array, 
+
     return;
 }
 
