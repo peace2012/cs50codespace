@@ -138,8 +138,8 @@ void record_preferences(int ranks[])
 // except rank[i] + candidates already added]
 
 {
-    int array[MAX-1];
-    int array_length = 0;
+    // int array[MAX-1];
+    // int array_length = 0;
 
     for (int i = 0; i < --candidate_count; i++)
     {
@@ -148,7 +148,7 @@ void record_preferences(int ranks[])
 
         for (int j = i+1; j < candidate_count; j++)
         {
-            ++preferences[ranks[i]][ranks[j]]
+            ++preferences[ranks[i]][ranks[j]];
             // if (ranks[i] != j)
             // {
             //     bool found = false;
@@ -166,7 +166,6 @@ void record_preferences(int ranks[])
             }
 
         }
-    }
     return;
 }
 
