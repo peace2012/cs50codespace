@@ -184,14 +184,14 @@ void sort_pairs(void)
     int winner;
     int loser;
     int count;
-} pair_count;
+} pair_lib;
 
-pair_count pair_counts[MAX];
+pair_lib pair_counts[MAX];
 
 int pair_counts_length = 0;
 int length_pairs = sizeof(pairs) / sizeof(pairs[0]);
 
-for (int i = 0; i < length_pairs; i++)
+for (int i = 0; i < pair_count; i++)
 {
     bool found = false;
 
