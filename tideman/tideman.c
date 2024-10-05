@@ -222,8 +222,9 @@ for (int i = 0; i < pair_count; i++)
     }
 
     // sort the struct
-
-    for (int i = 0; i < (pair_counts_length-1); i++)
+for (int j = 0; j < (pair_counts_length-j); i++)
+    {
+    for (int i = 0; i < (pair_counts_length-j); i++)
     {
         if (pair_counts[i].count < pair_counts[i+1].count)
         {
@@ -231,6 +232,7 @@ for (int i = 0; i < pair_count; i++)
             pair_counts[i] = pair_counts[i+1];
             pair_counts[i+1] = temp;
         }
+    }
     }
 
     // put the values back into pairs in decreasing order of strength of victory
