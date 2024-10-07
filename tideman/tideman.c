@@ -185,23 +185,13 @@ void sort_pairs(void)
 
 for (int i = 0; i < pair_count; i++)
 {
-    bool found = false;
-
-    for (int j = 0; j < pair_counts_length; j++)
+    for (int j = 0; j < pair_count; j++)
     {
     if (pairs[i].winner == pair_counts[j].winner && pairs[i].loser == pair_counts[j].loser)
     {
         pair_counts[j].count +=1;
-        found = true;
         break;
     }
-    }
-    if (!found)
-    {
-    pair_counts[pair_counts_length].winner = pairs[i].winner;
-    pair_counts[pair_counts_length].loser = pairs[i].loser;
-    pair_counts[pair_counts_length].count = 1;
-    ++pair_counts_length;
     }
 }
 
