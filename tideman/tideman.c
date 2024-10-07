@@ -10,7 +10,7 @@ int preferences[MAX][MAX];
 
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
-bool visited[MAX];
+bool* visited[MAX];
 
 // Each pair has a winner, loser
 typedef struct
@@ -194,9 +194,14 @@ for (int j = 1; j < pair_count; j++)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
+    for (int i = 0; i < candidate_count; i++)
+    {
+    visited[i] = false;
+    }
+
     for (int i = 0; i < pair_count; i++)
     {
-        if (!creates_cycle(pairs[i].winner, pairs[i].loser))
+        if (!creates_cycle(pairs[i].winner, pairs[i].loser, visited))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
