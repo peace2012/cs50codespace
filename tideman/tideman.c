@@ -10,6 +10,7 @@ int preferences[MAX][MAX];
 
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
+bool visited[MAX];
 
 // Each pair has a winner, loser
 typedef struct
@@ -214,9 +215,9 @@ for (int i = 0; i < candidate_count; i++)
 return;
 }
 
-bool creates_cycle(int winner, int loser)
+bool creates_cycle(int winner, int loser, bool[] visited)
 {
-    bool visited[MAX];
+
     if (visited[loser] == true)
     {
         return true;
