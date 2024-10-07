@@ -244,6 +244,7 @@ void lock_pairs(void)
     // for i pairs < pair_counts_length
     // for j < candidate_count
     //      if i == pair_counts_length - 1 (last of pair_counts)
+    //          
     //      if locked[pair_counts[i].winner][j] == true;
     //      found = true;
     // if (found)
