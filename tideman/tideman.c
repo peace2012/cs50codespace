@@ -229,10 +229,12 @@ bool checkCycleUtil(int winner, bool *visited, bool *inStack)
     {
         return true;
     }
-    if (visited[node])
+    if (visited[winner])
     {
         return false;
     }
+    visited[winner] = true;
+    inStack[winner] = true;
 }
 
 bool creates_cycle(int winner, int loser, bool* nodes)
