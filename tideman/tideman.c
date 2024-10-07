@@ -243,7 +243,7 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_counts_length; i++)
     {
-        if (i == pair_counts_length - 1) // (last pair of pair_counts)
+        if (i > 1) // (when no. of candidate greater than 2)
         {
             bool found = false;
             for (int j = 0; j < candidate_count; j++)
