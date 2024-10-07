@@ -33,7 +33,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-bool creates_cycle(int winner, int loser);
+bool creates_cycle(int winner, int loser, bool* visited);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -215,7 +215,7 @@ for (int i = 0; i < candidate_count; i++)
 return;
 }
 
-bool creates_cycle(int winner, int loser, bool[] visited)
+bool creates_cycle(int winner, int loser, bool* visited)
 {
 
     if (visited[loser] == true)
