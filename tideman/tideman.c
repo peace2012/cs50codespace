@@ -26,18 +26,6 @@ pair pairs[MAX * (MAX - 1) / 2];
 int pair_count;
 int candidate_count;
 
-// Struct for counting pairs
-    typedef struct
-{
-    int winner;
-    int loser;
-    int count;
-} pair_lib;
-
-pair_lib pair_counts[MAX];
-
-int pair_counts_length = 0;
-
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
