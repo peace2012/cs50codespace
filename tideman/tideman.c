@@ -285,15 +285,14 @@ void print_winner(void)
 
     for (int i = 0; i < candidate_count; i++)
     {
+        bool found = false;
         for (int j = 0; j < candidate_count; j++)
         {
-            bool found = false;
             if (locked[j][i] == true)
             {
                 found = true;
                 break;
             }
-
         }
         if (!found)
         {
