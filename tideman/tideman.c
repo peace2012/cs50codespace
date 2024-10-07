@@ -280,6 +280,6 @@ return;
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
+    // if there's no true value in a candidates losing column of locked, print name as winner
     return;
 }
