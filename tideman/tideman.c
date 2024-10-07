@@ -242,18 +242,15 @@ for (int j = 1; j < (pair_counts_length-1); j++)
 void lock_pairs(void)
 {
     // for i pairs < pair_counts_length
-    // for j < candidate_count
-    //      if i == pair_counts_length - 1 (last of pair_counts)
-    //          
-    //      if locked[pair_counts[i].winner][j] == true;
-    //      found = true;
-    // if (found)
-    //      lock_pair(i);
+    //      locked[pair_counts[i].winner][pair_counts[i].loser] = true;
 
-    void lock_pairs(int i)
-    {
-        locked[pair_counts[i].winner][pair_counts[i].loser] = true;
-    }
+    //      if i == pair_counts_length - 1 (last of pair_counts)
+    //          for j < candidate_count
+    //              if locked[pair_counts[i].winner][j] == true;
+    //                  found = true;
+
+    //              if (found)
+    //                  locked[pair_counts[i].winner][pair_counts[i].loser] = true;
 
     return;
 }
