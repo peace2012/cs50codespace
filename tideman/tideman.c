@@ -222,13 +222,13 @@ return;
 
 bool creates_cycle(int winner, int loser, bool* nodes)
 {
-    if (nodes[loser] == true)
+    if (nodes[winner] == true)
     {
         return true;
     }
     else
     {
-        nodes[loser] = true;
+        nodes[winner] = true;
     }
 
     printf("%i, %i\n", winner, loser);
@@ -246,7 +246,7 @@ bool creates_cycle(int winner, int loser, bool* nodes)
         {
             if (creates_cycle(loser, i, nodes) == true)
             {
-                printf("true, cycle found");
+                printf("true, cycle found\n");
                 return true;
             }
         }
