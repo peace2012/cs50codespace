@@ -223,8 +223,16 @@ for (int i = 0; i < candidate_count; i++)
 return;
 }
 
-bool creates_cycle()
+bool checkCycleUtil(int winner, bool *visited, bool *inStack)
 {
+    if (inStack[winner])
+    {
+        return true;
+    }
+    if (visited[node])
+    {
+        return false;
+    }
 }
 
 bool creates_cycle(int winner, int loser, bool* nodes)
