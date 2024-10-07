@@ -16,7 +16,7 @@ typedef struct
 {
     int winner;
     int loser;
-    int strength
+    int strength;
 } pair;
 
 // Array of candidates
