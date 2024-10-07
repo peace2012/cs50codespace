@@ -283,15 +283,19 @@ bool creates_cycle(int winner, int loser)
     if (locked[winner][loser] == false) {
         return false;
     }
-    for (int i = 0; i < candidate_count; i++)
+    if (locked[loser][winner] == true) {
+        return true;
+    }
+    if (loser == winner)
     {
-        if (locked[loser][i] == true)
+        return true;
+    }
+    else
+    for (int i = 0; i < candidate_count; i++)
         {
-            return true;
             creates_cycle(loser, i);
         }
-    }
-
+    return false;
 }
 
 // Print the winner of the election
