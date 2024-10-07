@@ -283,8 +283,6 @@ bool creates_cycle(int winner, int loser)
             }
         }
     }
-
-    else
     return false;
 }
 
