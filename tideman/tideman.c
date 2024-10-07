@@ -195,14 +195,15 @@ for (int j = 1; j < pair_count; j++)
 void lock_pairs(void)
 {
 
-
-    for (int i = 0; i < pair_count; i++)
-    {
-
-        for (int j = 0; j < candidate_count; j++)
+for (int j = 0; j < candidate_count; j++)
         {
         visited[j] = false;
         }
+        
+    for (int i = 0; i < pair_count; i++)
+    {
+
+
 
         if (!creates_cycle(pairs[i].winner, pairs[i].loser, visited))
         {
