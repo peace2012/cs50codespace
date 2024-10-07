@@ -216,8 +216,16 @@ return;
 
 bool creates_cycle(int winner, int loser)
 {
+    bool visited[MAX];
+    if (visited[loser] == true)
+    {
+        return true;
+    }
+    else
+    {
+        visited[loser] == true;
+    }
 
-    visited = 
     printf("%i, %i\n", winner, loser);
 
     if (locked[loser][winner] == true)
