@@ -216,8 +216,7 @@ return;
 
 bool creates_cycle(int winner, int loser)
 {
-    // if loser has no outgoing edges then return false, no cycle
-    if (loser == winner)
+    if (locked[loser][winner] == true)
     {
         return true;
     }
