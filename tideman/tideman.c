@@ -225,37 +225,33 @@ void lock_pairs(void)
 
 bool creates_cycle(int winner, int loser, bool *nodes)
 {
+    // if node previously visited, found cycle, return true
     if (nodes[winner])
     {
         return true;
     }
+    // set node as visited
     nodes[winner] = true;
 
-    // if (locked[loser][winner] == true)
-    // {
-    //     printf("true, edge back");
-    //     return true;
-    // }
-
+    // cycle through nodes
     for (int i = 0; i < candidate_count; i++)
     {
-
-        // printf("%i, %i, %s\n", loser, i, nodes[winner] ? "true" : "false");
+        // if there is an edge
         if (locked[loser][i] == true)
         {
-
-            if (nodes[i]){
+            // if node previously visited, found cycle, return true
+            if (nodes[i])
+            {
                 return true;
             }
-
+            // check if edge exists and record result
             if (creates_cycle(loser, i, nodes))
             {
-                printf("true, cycle found\n");
                 return true;
             }
         }
-
     }
+    // if no edge found, backtrack, record node as not visited
     nodes[winner] = false;
     return false;
 }
