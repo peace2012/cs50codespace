@@ -251,7 +251,6 @@ bool creates_cycle(int winner, int loser, bool* nodes)
             }
         }
     }
-    nodes[loser] = false;
     return false;
 }
 
