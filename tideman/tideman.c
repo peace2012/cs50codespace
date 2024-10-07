@@ -287,7 +287,8 @@ bool creates_cycle(int winner, int loser)
     {
         if (locked[loser][i] == true)
         {
-            if (creates_cycle(loser, i);
+            return true;
+            creates_cycle(loser, i);
         }
     }
 
