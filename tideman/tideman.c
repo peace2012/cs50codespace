@@ -183,8 +183,6 @@ void sort_pairs(void)
 
 // count pairs and record count into struct
 
-int length_pairs = sizeof(pairs) / sizeof(pairs[0]);
-
 for (int i = 0; i < pair_count; i++)
 {
     bool found = false;
