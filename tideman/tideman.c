@@ -287,12 +287,18 @@ void print_winner(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
+            bool found = false;
             if (locked[j][i] == true)
             {
+                found = true;
                 break;
             }
+
         }
+        if (!found)
+        {
         winner = candidates[i];
+        }
     }
     printf("%s\n", winner);
     return;
