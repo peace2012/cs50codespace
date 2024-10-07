@@ -225,13 +225,13 @@ return;
 
 bool creates_cycle(int winner, int loser, bool* nodes)
 {
-    if (nodes[winner])
+    if (nodes[winner][loser])
     {
         return false;
     }
     else
     {
-        nodes[winner] = true;
+        nodes[winner][loser] = true;
     }
 
     printf("%i, %i\n", winner, loser);
