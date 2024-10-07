@@ -230,9 +230,9 @@ for (int j = 1; j < (pair_counts_length-1); j++)
     }
 
         // print result of sort_pairs function
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < pair_counts_length; i++)
     {
-        printf("%, %i (%i)\n", pair_counts[i].winner, pair_counts[i].loser, pair_counts[i].count);
+        printf("%i, %i (%i)\n", pair_counts[i].winner, pair_counts[i].loser, pair_counts[i].count);
     }
 
     return;
@@ -266,9 +266,13 @@ void lock_pairs(void)
     }
 
 // print result of sort_pairs function
-for (int i = 0; i < pair_counts_length; i++)
+for (int i = 0; i < candidate_count; i++)
 {
-    printf("%i, %i (%i)\n", pair_counts[i].winner, pair_counts[i].loser, pair_counts[i].count);
+    for (int j = 0; j < candidate_count; j++)
+    {
+    printf("%s\n", myBool ? "true" : "false");
+    printf("%s", locked[j][i], pair_counts[i].loser, pair_counts[i].count);
+    }
 }
 
 return;
