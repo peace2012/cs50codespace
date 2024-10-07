@@ -201,7 +201,7 @@ void lock_pairs(void)
         }
     }
 
-// print result of sort_pairs function
+// print result of lock_pairs function
 for (int i = 0; i < candidate_count; i++)
 {
     for (int j = 0; j < candidate_count; j++)
