@@ -218,11 +218,6 @@ bool creates_cycle(int winner, int loser)
 {
     printf("%i, %i\n", winner, loser);
 
-    if (locked[winner][loser] == true)
-    {
-        return true;
-    }
-
     if (locked[loser][winner] == true)
     {
         return true;
