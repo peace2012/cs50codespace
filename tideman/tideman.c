@@ -293,7 +293,10 @@ bool creates_cycle(int winner, int loser)
     else
     for (int i = 0; i < candidate_count; i++)
         {
-            creates_cycle(loser, i);
+            if (creates_cycle(loser, i) == true)
+            {
+                return true;
+            }
         }
     return false;
 }
