@@ -220,6 +220,7 @@ bool creates_cycle(int winner, int loser)
 
     if (locked[loser][winner] == true)
     {
+        printf("true, edge back");
         return true;
     }
 
@@ -227,8 +228,10 @@ bool creates_cycle(int winner, int loser)
     {
         if (locked[loser][i] == true)
         {
-            if (creates_cycle(loser, i)==true)
+            bool cycle = creates_cycle(loser, i);
+            if (cycle)
             {
+                printf("%s", cycle ? "true" : "false");
                 return true;
             }
         }
