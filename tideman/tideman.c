@@ -176,13 +176,6 @@ void add_pairs(void)
             }
         }
     }
-
-    // // print result of add_pairs function
-    // for (int i = 0; i < pair_count; i++)
-    // {
-    //     printf("%i, ", pairs[i].winner);
-    //     printf("%i\n", pairs[i].loser);
-    // }
     return;
 }
 
