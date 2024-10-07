@@ -218,7 +218,7 @@ bool creates_cycle(int winner, int loser)
 {
     printf("%i, %i\n", winner, loser);
 
-    if (locked[loser][winner] == true)
+    if (locked[winner][loser] == true)
     {
         return true;
     }
