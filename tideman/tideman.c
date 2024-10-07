@@ -280,24 +280,23 @@ return;
 bool creates_cycle(int winner, int loser)
 {
     // if loser has no outgoing edges then return false, no cycle
-    if (locked[winner][loser] == false) {
-        return false;
-    }
-    if (locked[loser][winner] == true) {
-        return true;
-    }
     if (loser == winner)
     {
         return true;
     }
-    else
+
     for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[loser][i] == true)
         {
             if (creates_cycle(loser, i) == true)
             {
                 return true;
             }
         }
+    }
+
+    else
     return false;
 }
 
