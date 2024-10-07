@@ -33,7 +33,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-bool creates_cycle(int winner, int loser, bool* visited);
+bool creates_cycle(int winner, int loser, bool *visited);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -161,28 +161,29 @@ void add_pairs(void)
 void sort_pairs(void)
 {
 
-// count pairs and record count into struct
+    // count pairs and record count into struct
 
-for (int i = 0; i < pair_count; i++)
-{
-    pairs[i].strength = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
-}
+    for (int i = 0; i < pair_count; i++)
+    {
+        pairs[i].strength = preferences[pairs[i].winner][pairs[i].loser] -
+                            preferences[pairs[i].loser][pairs[i].winner];
+    }
 
     // sort the struct
-for (int j = 1; j < pair_count; j++)
+    for (int j = 1; j < pair_count; j++)
     {
-    for (int i = 0; i <= (pair_count-j); i++)
-    {
-        if (pairs[i].strength < pairs[i+1].strength)
+        for (int i = 0; i <= (pair_count - j); i++)
         {
-            pair temp = pairs[i];
-            pairs[i] = pairs[i+1];
-            pairs[i+1] = temp;
+            if (pairs[i].strength < pairs[i + 1].strength)
+            {
+                pair temp = pairs[i];
+                pairs[i] = pairs[i + 1];
+                pairs[i + 1] = temp;
+            }
         }
     }
-    }
 
-        // print result of sort_pairs function
+    // print result of sort_pairs function
     for (int i = 0; i < pair_count; i++)
     {
         printf("%i, %i (%i)\n", pairs[i].winner, pairs[i].loser, pairs[i].strength);
@@ -198,9 +199,9 @@ void lock_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
 
-for (int j = 0; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
-        visited[j] = false;
+            visited[j] = false;
         }
 
         if (!creates_cycle(pairs[i].winner, pairs[i].loser, visited))
@@ -209,20 +210,20 @@ for (int j = 0; j < candidate_count; j++)
         }
     }
 
-// print result of lock_pairs function
-for (int i = 0; i < candidate_count; i++)
-{
-    for (int j = 0; j < candidate_count; j++)
+    // print result of lock_pairs function
+    for (int i = 0; i < candidate_count; i++)
     {
-    printf("%s ", locked[j][i] ? "true" : "false");
+        for (int j = 0; j < candidate_count; j++)
+        {
+            printf("%s ", locked[j][i] ? "true" : "false");
+        }
+        printf("\n");
     }
-    printf("\n");
+
+    return;
 }
 
-return;
-}
-
-bool creates_cycle(int winner, int loser, bool* nodes)
+bool creates_cycle(int winner, int loser, bool *nodes)
 {
     if (nodes[winner])
     {
@@ -238,7 +239,7 @@ bool creates_cycle(int winner, int loser, bool* nodes)
 
     for (int i = 0; i < candidate_count; i++)
     {
-        printf("%i, %i, %s\n", loser, i, nodes[winner]? "true" : "false");
+        printf("%i, %i, %s\n", loser, i, nodes[winner] ? "true" : "false");
         if (locked[loser][i] == true)
         {
             if (creates_cycle(loser, i, nodes) == true)
@@ -270,7 +271,7 @@ void print_winner(void)
         }
         if (!found)
         {
-        winner = candidates[i];
+            winner = candidates[i];
         }
     }
     printf("%s\n", winner);
