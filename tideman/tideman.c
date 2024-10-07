@@ -203,9 +203,9 @@ for (int j = 1; j < (pair_count-1); j++)
     }
 
         // print result of sort_pairs function
-    for (int i = 0; i < pair_counts_length; i++)
+    for (int i = 0; i < pair_count; i++)
     {
-        printf("%i, %i (%i)\n", pair_counts[i].winner, pair_counts[i].loser, pair_counts[i].count);
+        printf("%i, %i (%i)\n", pairs[i].winner, pairs[i].loser, pairs[i].strength);
     }
 
     return;
