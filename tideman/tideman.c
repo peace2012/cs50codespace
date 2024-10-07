@@ -245,7 +245,7 @@ void lock_pairs(void)
     // locked[pair_counts[i].winner][pair_counts[i].loser] = true;
     // if i = pair_counts_length
     // for j < locked
-    // if locked[j]pair_counts[i].winner
+    // if pair_counts[i].winner 
 
 
     return;
