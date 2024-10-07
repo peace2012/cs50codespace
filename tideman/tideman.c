@@ -226,6 +226,7 @@ bool creates_cycle(int winner, int loser)
 
     for (int i = 0; i < candidate_count; i++)
     {
+        printf("%i, %i\n", loser, i);
         if (locked[loser][i] == true)
         {
             if (creates_cycle(loser, i) == true)
