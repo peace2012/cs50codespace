@@ -249,11 +249,12 @@ void lock_pairs(void)
 
         if (i == pair_counts_length - 1) // (last pair of pair_counts)
         {
+            bool found = false;
             for (int j = 0; j < candidate_count; j++)
             {
                 if (locked[pair_counts[i].winner][j] == true)
                 {
-                     bool found = true;
+                     found = true;
                 }
             }
             if (found)
