@@ -283,7 +283,13 @@ bool creates_cycle(int winner, int loser)
     if (locked[winner][loser] == false) {
         return false;
     }
-    
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[loser][i] == true)
+        {
+            creates_cycle(loser, i);
+        }
+    }
 
 }
 
