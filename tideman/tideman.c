@@ -180,6 +180,8 @@ void add_pairs(void)
 void sort_pairs(void)
 {
 
+
+
 // count pairs and record count into struct
 
 int length_pairs = sizeof(pairs) / sizeof(pairs[0]);
