@@ -244,12 +244,10 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_counts_length; i++)
     {
-        if (creates_cycle(pair_counts[i].winner, pair_counts[i].loser) == true)
+        if (!creates_cycle(pair_counts[i].winner, pair_counts[i].loser))
         {
-            break;
+            locked[pair_counts[i].winner][pair_counts[i].loser] = true;
         }
-        else
-        locked[pair_counts[i].winner][pair_counts[i].loser] = true;
     }
 
 // print result of sort_pairs function
