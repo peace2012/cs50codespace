@@ -185,26 +185,19 @@ void sort_pairs(void)
 
 for (int i = 0; i < pair_count; i++)
 {
-    for (int j = 0; j < pair_count; j++)
-    {
-    pairs[i].strength == preferences[i][j] - preferences[j][i];
-    {
-        pair_counts[j].count +=1;
-        break;
-    }
-    }
+    pairs[i].strength = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
 }
 
     // sort the struct
-for (int j = 1; j < (pair_counts_length-1); j++)
+for (int j = 1; j < (pair_count-1); j++)
     {
-    for (int i = 0; i < (pair_counts_length-j); i++)
+    for (int i = 0; i < (pair_count-j); i++)
     {
-        if (pair_counts[i].count < pair_counts[i+1].count)
+        if (pairs[i].strength < pairs[i+1].strength)
         {
-            pair_lib temp = pair_counts[i];
-            pair_counts[i] = pair_counts[i+1];
-            pair_counts[i+1] = temp;
+            pair temp = pairs[i];
+            pairs[i] = pairs[i+1];
+            pairs[i+1] = temp;
         }
     }
     }
