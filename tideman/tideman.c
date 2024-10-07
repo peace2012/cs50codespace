@@ -239,7 +239,7 @@ bool creates_cycle(int winner, int loser, bool* nodes)
 
     for (int i = 0; i < candidate_count; i++)
     {
-        printf("%i, %i\n", loser, i);
+        printf("%i, %i, %s\n", loser, i, nodes[winner]? "true" : "false");
         if (locked[loser][i] == true)
         {
             if (creates_cycle(loser, i, nodes) == true)
