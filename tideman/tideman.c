@@ -230,12 +230,10 @@ for (int j = 1; j < (pair_counts_length-1); j++)
     }
 
         // print result of sort_pairs function
-    for (int i = 0; i < pair_counts_length; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        printf("%i, %i (%i)\n", pair_counts[i].winner, pair_counts[i].loser, pair_counts[i].count);
+        printf("%, %i (%i)\n", pair_counts[i].winner, pair_counts[i].loser, pair_counts[i].count);
     }
-
-    // put the values back into pairs in decreasing order of strength of victory
 
     return;
 }
@@ -266,7 +264,14 @@ void lock_pairs(void)
             break;
         }
     }
-    return;
+
+// print result of sort_pairs function
+for (int i = 0; i < pair_counts_length; i++)
+{
+    printf("%i, %i (%i)\n", pair_counts[i].winner, pair_counts[i].loser, pair_counts[i].count);
+}
+
+return;
 }
 
 // Print the winner of the election
