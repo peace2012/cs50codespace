@@ -241,7 +241,11 @@ for (int j = 1; j < (pair_counts_length-1); j++)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
+    // for i pairs < pair_counts_length - 1
+    // locked[pair_counts[i].winner][pair_counts[i].loser] = true;
     // 
+
+
     return;
 }
 
