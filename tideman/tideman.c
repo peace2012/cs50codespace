@@ -217,23 +217,7 @@ return;
 bool creates_cycle(int winner, int loser)
 {
 
-    if (!visited[winner]) {
-
-        // Mark the current node as visited
-        // and part of recursion stack
-        visited[winner] = true;
-        recStack[winner] = true;
-
-        // Recur for all the vertices adjacent
-        // to this vertex
-        for (int x : adj[u]) {
-            if (!visited[x] &&
-                isCyclicUtil(adj, x, visited, recStack))
-                return true;
-            else if (recStack[x])
-                return true;
-        }
-    }
+    visited = 
     printf("%i, %i\n", winner, loser);
 
     if (locked[loser][winner] == true)
