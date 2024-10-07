@@ -242,11 +242,18 @@ for (int j = 1; j < (pair_counts_length-1); j++)
 void lock_pairs(void)
 {
     // for i pairs < pair_counts_length
-    // locked[pair_counts[i].winner][pair_counts[i].loser] = true;
-    // if i = pair_counts_length
-    // for last of pair_counts
-    // look through entire column where want to place true, if !true break
+    //
+    //      if i = pair_counts_length - 1 (last of pair_counts)
+    // for j < candidate_count
+    //      if locked[pair_counts[i].winner][j] == true;
+    //      found = true;
+    // if (found)
+    //      lock_pair();
 
+    void lock_pairs(void)
+    {
+        locked[pair_counts[i].winner][pair_counts[i].loser] = true;
+    }
 
     return;
 }
