@@ -243,8 +243,6 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_counts_length; i++)
     {
-        locked[pair_counts[i].winner][pair_counts[i].loser] = true;
-
         if (i == pair_counts_length - 1) // (last pair of pair_counts)
         {
             bool found = false;
@@ -263,6 +261,7 @@ void lock_pairs(void)
             else
             break;
         }
+        locked[pair_counts[i].winner][pair_counts[i].loser] = true;
     }
 
 // print result of sort_pairs function
