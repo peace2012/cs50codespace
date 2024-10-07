@@ -228,10 +228,9 @@ bool creates_cycle(int winner, int loser)
     {
         if (locked[loser][i] == true)
         {
-            bool cycle = creates_cycle(loser, i);
-            if (cycle)
+            if (creates_cycle(loser, i) == true)
             {
-                printf("%s", cycle ? "true" : "false");
+                printf("true, cycle found");
                 return true;
             }
         }
