@@ -270,9 +270,9 @@ for (int i = 0; i < candidate_count; i++)
 {
     for (int j = 0; j < candidate_count; j++)
     {
-    printf("%s\n", myBool ? "true" : "false");
-    printf("%s", locked[j][i], pair_counts[i].loser, pair_counts[i].count);
+    printf("%s ", locked[j][i] ? "true" : "false");
     }
+    printf("\n");
 }
 
 return;
