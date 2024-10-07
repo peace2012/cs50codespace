@@ -25,6 +25,18 @@ pair pairs[MAX * (MAX - 1) / 2];
 int pair_count;
 int candidate_count;
 
+// Struct for counting pairs
+    typedef struct
+{
+    int winner;
+    int loser;
+    int count;
+} pair_lib;
+
+pair_lib pair_counts[MAX];
+
+int pair_counts_length = 0;
+
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
@@ -179,16 +191,6 @@ void sort_pairs(void)
 
 // count pairs and record count into struct
 
-    typedef struct
-{
-    int winner;
-    int loser;
-    int count;
-} pair_lib;
-
-pair_lib pair_counts[MAX];
-
-int pair_counts_length = 0;
 int length_pairs = sizeof(pairs) / sizeof(pairs[0]);
 
 for (int i = 0; i < pair_count; i++)
@@ -241,17 +243,28 @@ for (int j = 1; j < (pair_counts_length-1); j++)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // for i pairs < pair_counts_length
-    //      locked[pair_counts[i].winner][pair_counts[i].loser] = true;
+    for (int i = 0; i < pair_counts_length; i++)
+    {
+        locked[pair_counts[i].winner][pair_counts[i].loser] = true;
 
-    //      if i == pair_counts_length - 1 (last of pair_counts)
-    //          for j < candidate_count
-    //              if locked[pair_counts[i].winner][j] == true;
-    //                  found = true;
-
-    //              if (found)
-    //                  locked[pair_counts[i].winner][pair_counts[i].loser] = true;
-
+        if (i == pair_counts_length - 1) // (last pair of pair_counts)
+        {
+            for (int j = 0; j < candidate_count)
+            {
+                if (locked[pair_counts[i].winner][j] == true)
+                {
+                     bool found = true;
+                }
+            }
+            if (found)
+            {
+                locked[pair_counts[i].winner][pair_counts[i].loser] = true;
+                break;
+            }
+            else
+            break;
+        }
+    }
     return;
 }
 
