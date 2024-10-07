@@ -245,7 +245,7 @@ void lock_pairs(void)
     // locked[pair_counts[i].winner][pair_counts[i].loser] = true;
     // if i = pair_counts_length
     // for last of pair_counts
-    // if pair_counts[i].winner
+    // look through entire column where want to place true, if !true break
 
 
     return;
