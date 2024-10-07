@@ -277,9 +277,12 @@ for (int i = 0; i < candidate_count; i++)
 return;
 }
 
-bool creates_cycle()
+bool creates_cycle(int winner, int loser)
 {
-    
+    // if loser has no outgoing edges then return false, no cycle
+    if ()
+
+
 }
 
 // Print the winner of the election
