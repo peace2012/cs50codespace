@@ -227,7 +227,7 @@ bool creates_cycle(int winner, int loser, bool* nodes)
 {
     if (nodes[winner])
     {
-        return false;
+        return true;
     }
     else
     {
