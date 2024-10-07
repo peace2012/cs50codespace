@@ -244,24 +244,11 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_counts_length; i++)
     {
-        if (i > 1) // (when no. of candidate greater than 2)
+        if (creates_cycle(pair_counts[i].winner, pair_counts[i].loser) == true)
         {
-            bool found = false;
-            for (int j = 0; j < candidate_count; j++)
-            {
-                if (locked[pair_counts[i].winner][j] == true)
-                {
-                     found = true;
-                }
-            }
-            if (found)
-            {
-                locked[pair_counts[i].winner][pair_counts[i].loser] = true;
-                break;
-            }
-            else
             break;
         }
+        else
         locked[pair_counts[i].winner][pair_counts[i].loser] = true;
     }
 
