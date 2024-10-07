@@ -242,7 +242,7 @@ bool creates_cycle(int winner, int loser, bool *nodes)
         printf("%i, %i, %s\n", loser, i, nodes[winner] ? "true" : "false");
         if (locked[loser][i] == true)
         {
-            if (creates_cycle(loser, i, nodes) == true)
+            if (creates_cycle(loser, i, nodes))
             {
                 printf("true, cycle found\n");
                 return true;
