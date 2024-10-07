@@ -241,7 +241,7 @@ for (int j = 1; j < (pair_counts_length-1); j++)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // TODO
+    // 
     return;
 }
 
