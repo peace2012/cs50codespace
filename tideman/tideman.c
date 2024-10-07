@@ -283,7 +283,7 @@ bool creates_cycle(int winner, int loser)
     if (locked[winner][loser] == false) {
         return false;
     }
-    if 
+    
 
 }
 
