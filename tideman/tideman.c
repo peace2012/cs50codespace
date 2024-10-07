@@ -187,7 +187,8 @@ for (int i = 0; i < pair_count; i++)
 {
     for (int j = 0; j < pair_count; j++)
     {
-    if (pairs[i].winner == pair_counts[j].winner && pairs[i].loser == pair_counts[j].loser)
+
+    pairs[i].strength == pair_counts[j].winner && pairs[i].loser == pair_counts[j].loser)
     {
         pair_counts[j].count +=1;
         break;
