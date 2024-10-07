@@ -220,16 +220,15 @@ for (int i = 0; i < candidate_count; i++)
 return;
 }
 
-bool creates_cycle(int winner, int loser, bool* visited)
+bool creates_cycle(int winner, int loser, bool* nodes)
 {
-
-    if (visited[loser] == true)
+    if (nodes[loser] == true)
     {
         return true;
     }
     else
     {
-        visited[loser] == true;
+        nodes[loser] = true;
     }
 
     printf("%i, %i\n", winner, loser);
@@ -245,14 +244,14 @@ bool creates_cycle(int winner, int loser, bool* visited)
         printf("%i, %i\n", loser, i);
         if (locked[loser][i] == true)
         {
-            if (creates_cycle(loser, i, visited) == true)
+            if (creates_cycle(loser, i, nodes) == true)
             {
                 printf("true, cycle found");
                 return true;
             }
         }
     }
-    visited[loser] = false;
+    nodes[loser] = false;
     return false;
 }
 
